@@ -1,0 +1,64 @@
+apiVersion: v1
+items:
+- apiVersion: integreatly.org/v1alpha1
+  kind: Grafana
+  metadata:
+    name: "{{ .Release.Name }}-grafana"
+    labels: {{- include "bluescape-monitoring-grafana.labels" . | nindent 6 }}
+  spec:
+    config:
+      auth:
+        disable_login_form: {{ .Values.grafana.config.auth.disable_login_form }}
+        disable_signout_menu: {{ .Values.grafana.config.auth.disable_signout_menu }}
+      {{- if hasKey .Values.grafana.config.auth "anonymous" }}
+      auth.anonymous:
+        enabled: {{ default false .Values.grafana.config.auth.anonymous.enabled }}
+        auth.basic:
+          enabled: {{ default false .Values.grafana.config.auth.anonymous.auth.basic }}
+      {{- else }}
+      {{- end }}
+      {{- if hasKey .Values.grafana.config.auth.users "auto_assign_org_role" }}
+      users:
+        auto_assign_org_role: {{ .Values.grafana.config.auth.users.auto_assign_org_role }}
+      {{- else }}
+      {{- end }}
+      {{- if hasKey .Values.grafana.config "auth.generic_oauth" }}
+      auth.generic_oauth:
+        {{- range $key, $value := .Values.grafana.config.auth.generic_oauth }}
+        {{ $key }}: {{ $value }}
+        {{- end }}
+      {{- else }}
+      {{- end }}
+      log:
+        level: warn
+        mode: console
+      security:
+        admin_password: secret
+        admin_user: root
+        allow_embedding: false
+      server:
+        domain: "grafana.{{ .Values.grafana.domain_name }}"
+        root_url: "https://%(domain)s"
+        serve_from_sub_path: false
+    dashboardLabelSelector:
+    - matchExpressions:
+      - key: app.kubernetes.io/instance
+        operator: In
+        values:
+        - {{ .Values.grafana.cluster_id }}
+    {{- if .Values.grafana.ingress.enabled }}
+    ingress:
+      enabled: true
+      hostname: "grafana.{{ .Values.grafana.domain_name }}"
+      {{- if or .Values.grafana.ingress.tls }}
+      tlsEnabled: true
+      tlsSecretName: "grafana.{{ .Values.grafana.domain_name }}"
+      {{- end }}
+      annotations:
+        {{- range $key, $value := .Values.grafana.ingress.annotations }}
+        {{ $key }}: {{ $value | quote }}
+        {{- end }}
+    {{- end }}
+    service:
+      type: ClusterIP
+kind: List

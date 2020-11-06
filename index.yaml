@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  bluescape-monitoring-grafana:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2020-11-06T11:04:15.982839-08:00"
+    description: A Helm chart for Kubernetes
+    digest: 337ca73ecd2f144e45a70c4ce8b1995d1a6994e64150c928ebd94198e026f349
+    name: bluescape-monitoring-grafana
+    type: application
+    urls:
+    - https://bluescape.github.io/helm-charts/bluescape-monitoring-grafana-0.1.0.tgz
+    version: 0.1.0
+generated: "2020-11-06T11:04:15.976448-08:00"
