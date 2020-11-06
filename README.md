@@ -1,2 +1,2 @@
-# helm-chart
+# helm-charts
 For hosting Bluescape Helm charts.
