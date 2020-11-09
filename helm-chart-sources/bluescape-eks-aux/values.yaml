@@ -4,6 +4,8 @@
 
 vault:
   enabled: true
+  domain_name: ${domain_name}
+  cluster_id: ${cluster_id}
 
 cert_manager:
   setup_letsencrypt_prod_cluster_issuer: true
