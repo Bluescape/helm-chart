@@ -1,0 +1,16 @@
+# Default values for bluescape-eks-aux.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+vault:
+  enabled: true
+
+cert_manager:
+  setup_letsencrypt_prod_cluster_issuer: true
+  setup_letsencrypt_prod_cluster_dns_issuer: true
+
+external_secrets:
+  setup_argocd_secret: true
+  setup_github_secret: true
+  setup_loki_secret: true
+

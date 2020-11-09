@@ -1,0 +1,23 @@
+{{- if .Values.cert_manager.setup_letsencrypt_prod_cluster_dns_issuer }}
+apiVersion: cert-manager.io/v1alpha2
+kind: ClusterIssuer
+metadata:
+  name:   "{{ .Release.Name }}-letsencrypt-prod-dns"
+  labels:
+    {{- include "bluescape-eks-aux.labels" . | nindent 4 }}
+spec:
+  acme:
+    email: itamar.perez@bluescape.com
+    privateKeySecretRef:
+      name: letsencrypt-production-dns
+    server: 'https://acme-v02.api.letsencrypt.org/directory'
+    solvers:
+      - dns01:
+          route53:
+            accessKeyID: ''
+            region: us-west-2
+            role: ''
+            secretAccessKeySecretRef:
+              name: ''
+        selector: {}
+{{- end }}
