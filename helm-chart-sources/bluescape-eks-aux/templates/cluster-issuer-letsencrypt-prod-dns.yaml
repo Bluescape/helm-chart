@@ -2,7 +2,7 @@
 apiVersion: cert-manager.io/v1alpha2
 kind: ClusterIssuer
 metadata:
-  name:   "{{ .Release.Name }}-letsencrypt-prod-dns"
+  name:   "letsencrypt-prod-dns"
   labels:
     {{- include "bluescape-eks-aux.labels" . | nindent 4 }}
 spec:

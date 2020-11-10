@@ -2,7 +2,7 @@
 apiVersion: cert-manager.io/v1alpha2
 kind: ClusterIssuer
 metadata:
-  name: "{{ .Release.Name }}-letsencrypt-prod"
+  name: "letsencrypt-prod"
   labels:
     app: {{ template "bluescape-eks-aux.name" . }}
     chart: {{ template "bluescape-eks-aux.chart" . }}
