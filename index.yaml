@@ -3,9 +3,9 @@ entries:
   bluescape-eks-aux:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-11-09T14:29:20.063518-08:00"
+    created: "2020-11-09T17:52:37.304328-08:00"
     description: A Helm chart for Kubernetes
-    digest: 071af74cdec1c22140a08ee9d35347282d26688ce6592973c62015bf4d78e449
+    digest: 33ff9342ab88457ed564231b51b9a5126ab048b28da78052daf228b051ae8745
     name: bluescape-eks-aux
     type: application
     urls:
@@ -14,9 +14,9 @@ entries:
   bluescape-monitoring-grafana:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-11-09T14:29:20.063848-08:00"
+    created: "2020-11-09T17:52:37.304652-08:00"
     description: A Helm chart for Kubernetes
-    digest: a257cc7e56228f57a695bfce59814b141859f109f0e6b05f6468e624017ca3fa
+    digest: cae2c3db34c3d615d95ce7dce2d324420fdd4803c186d715a74e615f73690696
     name: bluescape-monitoring-grafana
     type: application
     urls:
@@ -25,7 +25,7 @@ entries:
   cortex:
   - apiVersion: v2
     appVersion: v1.4.0
-    created: "2020-11-09T14:29:20.073405-08:00"
+    created: "2020-11-09T17:52:37.312233-08:00"
     dependencies:
     - alias: memcached
       condition: memcached.enabled
@@ -43,7 +43,7 @@ entries:
       repository: https://charts.bitnami.com/bitnami
       version: 4.2.27
     description: Cortex
-    digest: 7381a6bbc44d7a4d65d33c7e35b900d6e2a3847993018ac5096afc883a76e77e
+    digest: 9b2a9bddc51aaafa9a05e87157c173c24b8012299ffcf80ace8bdb478a1a0c22
     home: https://cortexmetrics.io/
     icon: https://avatars2.githubusercontent.com/u/43045022?s=200&v=4
     kubeVersion: ^1.10.0-0
@@ -59,9 +59,9 @@ entries:
   kube-oidc-proxy:
   - apiVersion: v1
     appVersion: v0.3.0
-    created: "2020-11-09T14:29:20.07401-08:00"
+    created: "2020-11-09T17:52:37.312883-08:00"
     description: A Helm chart for kube-oidc-proxy
-    digest: a2054fd1ea2d1f41795ee1f7ab05472b9cc10bf26d4f11eeed306d65daaf5288
+    digest: aba8597b41e2b14f1cbaa85412c41214b26840336400e3657765bf40962f63f9
     home: https://github.com/jetstack/kube-oidc-proxy
     maintainers:
     - name: mhrabovcin
@@ -70,4 +70,4 @@ entries:
     urls:
     - https://bluescape.github.io/helm-charts/packages/kube-oidc-proxy-0.3.1.tgz
     version: 0.3.1
-generated: "2020-11-09T14:29:20.06203-08:00"
+generated: "2020-11-09T17:52:37.303099-08:00"

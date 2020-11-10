@@ -4,15 +4,15 @@
 
 vault:
   enabled: false
-  domain_name: ${domain_name}
-  cluster_id: ${cluster_id}
+  #domain_name: ${domain_name}
+  #cluster_id: ${cluster_id}
 
 cert_manager:
-  setup_letsencrypt_prod_cluster_issuer: true
-  setup_letsencrypt_prod_cluster_dns_issuer: true
+  setup_letsencrypt_prod_cluster_issuer: false
+  setup_letsencrypt_prod_cluster_dns_issuer: false
 
 external_secrets:
-  setup_argocd_secret: true
-  setup_github_secret: true
-  setup_loki_secret: true
+  setup_argocd_secret: false
+  setup_github_secret: false
+  setup_loki_secret: false
 
