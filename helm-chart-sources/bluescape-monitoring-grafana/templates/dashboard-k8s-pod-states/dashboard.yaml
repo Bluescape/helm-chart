@@ -1,0 +1,12 @@
+apiVersion: integreatly.org/v1alpha1
+kind: GrafanaDashboard
+metadata:
+  name:  dashboard-k8s-pod-state
+  namespace: grafana
+  labels:
+    app: grafana
+spec:
+  name:  dashboard-k8s-pod-state
+  configMapRef:
+    name:  dashboard-k8s-pod-state
+    key:  dashboard-k8s-pod-state.yaml
