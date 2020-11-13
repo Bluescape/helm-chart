@@ -22,7 +22,7 @@ items:
         auto_assign_org_role: {{ .Values.grafana.config.auth.users.auto_assign_org_role }}
       {{- else }}
       {{- end }}
-      {{- if hasKey .Values.grafana.config "auth.generic_oauth" }}
+      {{- if hasKey .Values.grafana.config.auth "generic_oauth" }}
       auth.generic_oauth:
         {{- range $key, $value := .Values.grafana.config.auth.generic_oauth }}
         {{ $key }}: {{ $value }}
