@@ -6,18 +6,16 @@ metadata:
 data:
   dashboard-k8s-pod-states.yaml: |-
     {
+      "__inputs": [
+
+      ],
+      "__requires": [
+
+      ],
       "annotations": {
-        "list": [
-          {
-            "builtIn": 1,
-            "datasource": "$Source",
-            "enable": true,
-            "hide": true,
-            "iconColor": "rgba(0, 211, 255, 1)",
-            "name": "Annotations & Alerts",
-            "type": "dashboard"
-          }
-        ]
+          "list": [
+
+          ]
       },
       "editable": true,
       "gnetId": null,
@@ -35,7 +33,7 @@ data:
             "#299c46",
             "#d44a3a"
           ],
-          "datasource": "$Source",
+          "datasource": "$datasource",
           "format": "none",
           "gauge": {
             "maxValue": 100,
@@ -118,7 +116,7 @@ data:
             "#299c46",
             "#890f02"
           ],
-          "datasource": "$Source",
+          "datasource": "$datasource",
           "format": "none",
           "gauge": {
             "maxValue": 100,
@@ -199,7 +197,7 @@ data:
             "#e0752d",
             "#890f02"
           ],
-          "datasource": "$Source",
+          "datasource": "$datasource",
           "format": "none",
           "gauge": {
             "maxValue": 100,
@@ -280,7 +278,7 @@ data:
             "#bf1b00",
             "#890f02"
           ],
-          "datasource": "$Source",
+          "datasource": "$datasource",
           "format": "none",
           "gauge": {
             "maxValue": 100,
@@ -361,7 +359,7 @@ data:
             "#bf1b00",
             "#890f02"
           ],
-          "datasource": "$Source",
+          "datasource": "$datasource",
           "format": "none",
           "gauge": {
             "maxValue": 100,
@@ -442,7 +440,7 @@ data:
             "#bf1b00",
             "#890f02"
           ],
-          "datasource": "$Source",
+          "datasource": "$datasource",
           "format": "none",
           "gauge": {
             "maxValue": 100,
@@ -519,7 +517,7 @@ data:
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "$Source",
+          "datasource": "$datasource",
           "fill": 1,
           "fillGradient": 2,
           "gridPos": {
@@ -611,7 +609,7 @@ data:
         },
         {
           "columns": [],
-          "datasource": "$Source",
+          "datasource": "$datasource",
           "fontSize": "100%",
           "gridPos": {
             "h": 17,
@@ -688,7 +686,7 @@ data:
               "link": true,
               "linkTargetBlank": true,
               "linkTooltip": "Compute Resources Pod Dashboard ($__cell_4)",
-              "linkUrl": "./d/6581e46e4e5c7ba40a07646395ef7b23/kubernetes-compute-resources-pod?orgId=1&refresh=30s&var-datasource=$Source&var-cluster=&var-namespace=$__cell_1&var-pod=$__cell_4",
+              "linkUrl": "./d/6581e46e4e5c7ba40a07646395ef7b23/kubernetes-compute-resources-pod?orgId=1&refresh=30s&var-datasource=$datasource&var-cluster=&var-namespace=$__cell_1&var-pod=$__cell_4",
               "mappingType": 1,
               "pattern": "pod",
               "thresholds": [],
@@ -709,7 +707,7 @@ data:
               "link": true,
               "linkTargetBlank": true,
               "linkTooltip": "Compute Resources Namespace Dashboard ($__cell_1)",
-              "linkUrl": "./d/85a562078cdf77779eaa1add43ccec1e/kubernetes-compute-resources-namespace-pods?orgId=1&refresh=10s&var-datasource=$Source&var-namespace=$__cell_1",
+              "linkUrl": "./d/85a562078cdf77779eaa1add43ccec1e/kubernetes-compute-resources-namespace-pods?orgId=1&refresh=10s&var-datasource=$datasource&var-namespace=$__cell_1",
               "mappingType": 1,
               "pattern": "namespace",
               "thresholds": [],
@@ -730,7 +728,7 @@ data:
               "link": true,
               "linkTargetBlank": true,
               "linkTooltip": "Compute Resources Node Dashboard ($__cell_2)",
-              "linkUrl": "./d/200ac8fdbfbb74b39aff88118e4d1c2c/kubernetes-compute-resources-node-pods?orgId=1&refresh=10s&var-datasource=$Source&var-node=$__cell_2",
+              "linkUrl": "./d/200ac8fdbfbb74b39aff88118e4d1c2c/kubernetes-compute-resources-node-pods?orgId=1&refresh=10s&var-datasource=$datasource&var-node=$__cell_2",
               "mappingType": 1,
               "pattern": "node",
               "thresholds": [],
@@ -814,19 +812,18 @@ data:
         "list": [
           {
             "current": {
-              "text": "prometheus",
-              "value": "prometheus"
+                "text": "default",
+                "value": "default"
             },
             "hide": 0,
-            "includeAll": false,
-            "label": "Prometheus",
-            "multi": false,
-            "name": "Source",
-            "options": [],
+            "label": null,
+            "name": "datasource",
+            "options": [
+
+            ],
             "query": "prometheus",
             "refresh": 1,
             "regex": "",
-            "skipUrlSync": false,
             "type": "datasource"
           },
           {
@@ -837,7 +834,7 @@ data:
                 "$__all"
               ]
             },
-            "datasource": "$Source",
+            "datasource": "$datasource",
             "definition": "label_values(up, namespace)",
             "hide": 0,
             "includeAll": true,
@@ -864,7 +861,7 @@ data:
                 "$__all"
               ]
             },
-            "datasource": "$Source",
+            "datasource": "$datasource",
             "definition": "label_values(phase)",
             "hide": 0,
             "includeAll": true,
@@ -891,7 +888,7 @@ data:
                 "$__all"
               ]
             },
-            "datasource": "$Source",
+            "datasource": "$datasource",
             "definition": "label_values(kube_pod_info, node)",
             "hide": 0,
             "includeAll": true,
