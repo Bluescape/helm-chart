@@ -6,7 +6,7 @@ metadata:
   labels:
     app.kubernetes.io/instance: "{{ .Values.grafana.cluster_id }}"
 data:
-  dashboard-k8s-pod-states.yaml: |-
+  dashboard-k8s-pod-states.json: |-
     {
       "__inputs": [
 
@@ -563,7 +563,7 @@ data:
               "expr": "count(kube_pod_status_phase == 1) by (namespace)",
               "format": "time_series",
               "instant": false,
-              "legendFormat": {{ printf "{{ namespace }}" }},
+              "legendFormat": "{{ printf "{{ namespace }}" }}",
               "refId": "A"
             }
           ],
@@ -794,7 +794,7 @@ data:
               "format": "table",
               "instant": true,
               "intervalFactor": 1,
-              "legendFormat": {{ printf "{{ pod }}" }},
+              "legendFormat": "{{ printf "{{ pod }}" }}",
               "refId": "A"
             }
           ],

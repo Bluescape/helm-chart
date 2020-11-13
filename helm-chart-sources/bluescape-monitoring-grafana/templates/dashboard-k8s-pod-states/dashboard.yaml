@@ -9,4 +9,4 @@ spec:
   name:  dashboard-k8s-pod-states
   configMapRef:
     name:  dashboard-k8s-pod-states
-    key:  dashboard-k8s-pod-states.yaml
+    key:  dashboard-k8s-pod-states.json
