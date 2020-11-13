@@ -4,7 +4,7 @@ metadata:
   name: dashboard-k8s-pod-states
   namespace: grafana
   labels:
-    app.kubernetes.io/instance: "{{ .Values.grafana.cluster_id }}"
+    {{- include "bluescape-monitoring-grafana.labels" . | nindent 4 }}
 data:
   dashboard-k8s-pod-states.yaml: |-
     {
