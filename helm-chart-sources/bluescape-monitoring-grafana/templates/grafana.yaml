@@ -46,6 +46,7 @@ items:
         operator: In
         values:
         - {{ .Values.grafana.cluster_id }}
+        - grafana-{{ .Values.grafana.cluster_id }}
     {{- if .Values.grafana.ingress.enabled }}
     ingress:
       enabled: true
