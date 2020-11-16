@@ -516,7 +516,7 @@ data:
               "expr": "gatekeeper_constraints{status=\"active\", kubernetes_name=\"gatekeeper-audit-service\"}",
               "format": "time_series",
               "interval": "",
-              "legendFormat": "{{ printf "[{{ enforcement_action }}]" }}" ,
+              "legendFormat": "{{ printf "[{{enforcement_action}}]" }}",
               "refId": "A"
             }
           ],
@@ -574,7 +574,7 @@ data:
               "expr": "gatekeeper_constraints{status=\"error\",kubernetes_name=\"gatekeeper-audit-service\"}",
               "format": "time_series",
               "interval": "",
-              "legendFormat": "{{ printf "[{{ enforcement_action }}]" }}",
+              "legendFormat": "{{ printf "[{{enforcement_action}}]" }}",
               "refId": "A"
             }
           ],
