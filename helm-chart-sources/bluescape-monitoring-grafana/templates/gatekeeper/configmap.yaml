@@ -12,7 +12,7 @@ data:
         "list": [
           {
             "builtIn": 1,
-            "datasource": "-- Grafana --",
+            "datasource": "Prometheus",
             "enable": true,
             "hide": true,
             "iconColor": "rgba(0, 211, 255, 1)",
@@ -26,8 +26,8 @@ data:
       "editable": true,
       "gnetId": null,
       "graphTooltip": 0,
-      "id": 8,
-      "iteration": 1600381267353,
+      "id": 25,
+      "iteration": 1605555872231,
       "links": [],
       "panels": [
         {
@@ -65,8 +65,11 @@ data:
           "lines": true,
           "linewidth": 1,
           "nullPointMode": "null",
+          "options": {
+            "alertThreshold": true
+          },
           "percentage": false,
-          "pluginVersion": "7.1.1",
+          "pluginVersion": "7.2.2",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -158,8 +161,11 @@ data:
           "lines": true,
           "linewidth": 1,
           "nullPointMode": "null",
+          "options": {
+            "alertThreshold": true
+          },
           "percentage": false,
-          "pluginVersion": "7.1.1",
+          "pluginVersion": "7.2.2",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -171,7 +177,7 @@ data:
             {
               "expr": "sum by (admission_status)(rate(gatekeeper_request_count{admission_status=\"allow\"}[5m]))",
               "interval": "",
-              "legendFormat": "{{ printf "{{ admission_status }}" }}"
+              "legendFormat": "{{ printf "{{ admission_status }}" }}",
               "refId": "A"
             },
             {
@@ -262,7 +268,7 @@ data:
             },
             "textMode": "auto"
           },
-          "pluginVersion": "7.1.1",
+          "pluginVersion": "7.2.2",
           "targets": [
             {
               "expr": "gatekeeper_audit_last_run_time{}*1000",
@@ -320,7 +326,7 @@ data:
             },
             "textMode": "auto"
           },
-          "pluginVersion": "7.1.1",
+          "pluginVersion": "7.2.2",
           "targets": [
             {
               "expr": "gatekeeper_violations{enforcement_action=\"deny\"}",
@@ -389,7 +395,7 @@ data:
             },
             "textMode": "auto"
           },
-          "pluginVersion": "7.1.1",
+          "pluginVersion": "7.2.2",
           "targets": [
             {
               "expr": "gatekeeper_violations{enforcement_action=\"dryrun\"}",
@@ -447,7 +453,7 @@ data:
             },
             "textMode": "auto"
           },
-          "pluginVersion": "7.1.1",
+          "pluginVersion": "7.2.2",
           "targets": [
             {
               "expr": "gatekeeper_violations{enforcement_action=\"unrecognized\"}",
@@ -504,13 +510,13 @@ data:
             },
             "showUnfilled": true
           },
-          "pluginVersion": "7.1.1",
+          "pluginVersion": "7.2.2",
           "targets": [
             {
               "expr": "gatekeeper_constraints{status=\"active\", kubernetes_name=\"gatekeeper-audit-service\"}",
               "format": "time_series",
               "interval": "",
-              "legendFormat": "{{ printf "[{{ enforcement_actions }}]" }}",
+              "legendFormat": "{{ printf "[{{ enforcement_action }}]" }}" ,
               "refId": "A"
             }
           ],
@@ -562,13 +568,13 @@ data:
             },
             "showUnfilled": true
           },
-          "pluginVersion": "7.1.1",
+          "pluginVersion": "7.2.2",
           "targets": [
             {
               "expr": "gatekeeper_constraints{status=\"error\",kubernetes_name=\"gatekeeper-audit-service\"}",
               "format": "time_series",
               "interval": "",
-              "legendFormat": "{{ printf "[{{ enforcement_actions }}]" }}",
+              "legendFormat": "{{ printf "[{{ enforcement_action }}]" }}",
               "refId": "A"
             }
           ],
@@ -630,7 +636,7 @@ data:
             },
             "showUnfilled": true
           },
-          "pluginVersion": "7.1.1",
+          "pluginVersion": "7.2.2",
           "targets": [
             {
               "expr": "gatekeeper_constraint_templates{status=\"active\",kubernetes_name=\"gatekeeper-audit-service\"}",
@@ -697,7 +703,7 @@ data:
             },
             "showUnfilled": true
           },
-          "pluginVersion": "7.1.1",
+          "pluginVersion": "7.2.2",
           "targets": [
             {
               "expr": "gatekeeper_constraint_templates{status=\"error\",kubernetes_name=\"gatekeeper-audit-service\"}",
@@ -747,8 +753,11 @@ data:
           "lines": true,
           "linewidth": 1,
           "nullPointMode": "null",
+          "options": {
+            "alertThreshold": true
+          },
           "percentage": false,
-          "pluginVersion": "7.1.1",
+          "pluginVersion": "7.2.2",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -809,7 +818,10 @@ data:
       "refresh": "",
       "schemaVersion": 26,
       "style": "dark",
-      "tags": [],
+      "tags": [
+        "bluescape",
+        "k8s"
+      ],
       "templating": {
         "list": [
           {
@@ -853,5 +865,5 @@ data:
       "timezone": "",
       "title": "Gatekeeper",
       "uid": "nYFtbkzMz",
-      "version": 23
+      "version": 4
     }
