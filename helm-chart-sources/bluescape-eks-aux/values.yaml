@@ -13,6 +13,7 @@ cert_manager:
 
 external_secrets:
   setup_gatekeeper_policy_manager_secret: false
+  setup_prometheus_metrics_secret: false
   setup_argocd_secret: false
   setup_github_secret: false
   setup_loki_secret: false
