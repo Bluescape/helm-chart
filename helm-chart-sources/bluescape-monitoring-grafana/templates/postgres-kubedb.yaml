@@ -39,5 +39,5 @@ spec:
   terminationPolicy: WipeOut
   updateStrategy:
     type: RollingUpdate
-  version: "10.6"
+  version: "11.1"
   {{- end }}

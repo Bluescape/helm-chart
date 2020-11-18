@@ -3,9 +3,9 @@ entries:
   bluescape-eks-aux:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-11-18T14:07:43.376173-08:00"
+    created: "2020-11-18T14:27:19.959296-08:00"
     description: A Helm chart for Kubernetes
-    digest: ddbd7a4177d2f2d67a9217ee7002ea4f127c04e647126024746da1944a2fc3a8
+    digest: 06e92861b5341f77de78be80b11d56cb0cbaec90f85a8ab169c13f705d88e440
     name: bluescape-eks-aux
     type: application
     urls:
@@ -14,9 +14,9 @@ entries:
   bluescape-monitoring-grafana:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-11-18T14:07:43.380311-08:00"
+    created: "2020-11-18T14:27:19.963988-08:00"
     description: A Helm chart for Kubernetes
-    digest: 77689e506b86eb5c21bd098b7cb814b52a1f63ef2ef5498badff8e8215b752e9
+    digest: 88d9c8520430d2a86a45ece6aa509a8fff7a2dcfc979aa3f64895c7bb35ec3c6
     name: bluescape-monitoring-grafana
     type: application
     urls:
@@ -25,7 +25,7 @@ entries:
   cortex:
   - apiVersion: v2
     appVersion: v1.4.0
-    created: "2020-11-18T14:07:43.39033-08:00"
+    created: "2020-11-18T14:27:19.972602-08:00"
     dependencies:
     - alias: memcached
       condition: memcached.enabled
@@ -43,7 +43,7 @@ entries:
       repository: https://charts.bitnami.com/bitnami
       version: 4.2.27
     description: Cortex
-    digest: 65fc50291568f6ebcab5b088acdc88cf682be256f7156df9713af203c1554ab9
+    digest: f423c3b74bf69448fb516d134ee93b0279f583220b5208f2ad424cb9ba8ba6af
     home: https://cortexmetrics.io/
     icon: https://avatars2.githubusercontent.com/u/43045022?s=200&v=4
     kubeVersion: ^1.10.0-0
@@ -59,10 +59,10 @@ entries:
   gatekeeper-policy-manager:
   - apiVersion: v2
     appVersion: v0.4.0
-    created: "2020-11-18T14:07:43.391837-08:00"
+    created: "2020-11-18T14:27:19.974409-08:00"
     description: A Helm chart for Gatekeeper Policy Manager which is a simple read-only
       web UI for viewing OPA Gatekeeper policies' status in a Kubernetes Cluster.
-    digest: 989b3e8a359c9c9ace59c7b322c12d31c8df1b39b87978869443f02aa1a99efa
+    digest: 1e37670b8369222ca1f9558cf32eed9fdaf4c1f62853438205cbb1e981296259
     name: gatekeeper-policy-manager
     type: application
     urls:
@@ -71,9 +71,9 @@ entries:
   kube-oidc-proxy:
   - apiVersion: v1
     appVersion: v0.3.0
-    created: "2020-11-18T14:07:43.392941-08:00"
+    created: "2020-11-18T14:27:19.975729-08:00"
     description: A Helm chart for kube-oidc-proxy
-    digest: 0501a8f48df9cf6b93f1377668f69aec46f2e0eeaf38a5626e13a2a644a06643
+    digest: bc30e0c1da5eb709db12dd2a0a907e558ef1be01df6e67ebfce6ba48b97d0cd1
     home: https://github.com/jetstack/kube-oidc-proxy
     maintainers:
     - name: mhrabovcin
@@ -82,4 +82,4 @@ entries:
     urls:
     - https://bluescape.github.io/helm-charts/packages/kube-oidc-proxy-0.3.1.tgz
     version: 0.3.1
-generated: "2020-11-18T14:07:43.373302-08:00"
+generated: "2020-11-18T14:27:19.957251-08:00"
