@@ -10,7 +10,7 @@ data:
     {
       "__inputs": [
         {
-          "name": "prometheus",
+          "name": "DS_PROMETHEUS",
           "label": "Prometheus",
           "description": "",
           "type": "datasource",
@@ -50,7 +50,7 @@ data:
             "type": "dashboard"
           },
           {
-            "datasource": "prometheus",
+            "datasource": "${DS_PROMETHEUS}",
             "enable": true,
             "expr": "sum(changes(nginx_ingress_controller_config_last_reload_successful_timestamp_seconds{instance!=\"unknown\",controller_class=~\"$controller_class\",namespace=~\"$namespace\"}[30s])) by (controller_class)",
             "hide": false,
@@ -81,7 +81,7 @@ data:
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "datasource": "prometheus",
+          "datasource": "${DS_PROMETHEUS}",
           "format": "ops",
           "gauge": {
             "maxValue": 100,
@@ -163,7 +163,7 @@ data:
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "datasource": "prometheus",
+          "datasource": "${DS_PROMETHEUS}",
           "format": "none",
           "gauge": {
             "maxValue": 100,
@@ -246,7 +246,7 @@ data:
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "datasource": "prometheus",
+          "datasource": "${DS_PROMETHEUS}",
           "format": "percentunit",
           "gauge": {
             "maxValue": 100,
@@ -328,7 +328,7 @@ data:
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "datasource": "prometheus",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 0,
           "format": "none",
           "gauge": {
@@ -381,9 +381,9 @@ data:
           "tableColumn": "",
           "targets": [
             {
-              "expr": "avg(nginx_ingress_controller_success{controller_pod=~\"$controller\",controller_class=~\"$controller_class\",controller_namespace=~\"$namespace\"})",
+              "expr": "avg(irate(nginx_ingress_controller_success{controller_pod=~\"$controller\",controller_class=~\"$controller_class\",controller_namespace=~\"$namespace\"}[1m])) * 60",
               "format": "time_series",
-              "instant": true,
+              "instant": false,
               "intervalFactor": 1,
               "refId": "A",
               "step": 4
@@ -401,7 +401,7 @@ data:
               "value": "null"
             }
           ],
-          "valueName": "avg"
+          "valueName": "total"
         },
         {
           "cacheTimeout": null,
@@ -412,7 +412,7 @@ data:
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "datasource": "prometheus",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 0,
           "format": "none",
           "gauge": {
@@ -492,7 +492,7 @@ data:
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "prometheus",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "editable": true,
           "error": false,
@@ -602,7 +602,7 @@ data:
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "prometheus",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "editable": false,
           "error": false,
@@ -651,7 +651,7 @@ data:
               "instant": false,
               "interval": "10s",
               "intervalFactor": 1,
-              "legendFormat": "{{ printf "{{ ingress }}" }}",
+              "legendFormat":  "{{ printf "{{ ingress }}" }}",
               "metric": "container_memory_usage:sort_desc",
               "refId": "A",
               "step": 10
@@ -703,7 +703,7 @@ data:
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "prometheus",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "editable": true,
           "error": false,
@@ -819,7 +819,7 @@ data:
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "prometheus",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 2,
           "editable": false,
           "error": false,
@@ -921,7 +921,7 @@ data:
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "prometheus",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 3,
           "editable": false,
           "error": false,
@@ -1024,7 +1024,7 @@ data:
         },
         {
           "columns": [],
-          "datasource": "prometheus",
+          "datasource": "${DS_PROMETHEUS}",
           "fontSize": "100%",
           "gridPos": {
             "h": 8,
@@ -1196,7 +1196,7 @@ data:
               "hide": false,
               "instant": true,
               "intervalFactor": 1,
-              "legendFormat": "{{ printf "{{ ingress }}" }}",
+              "legendFormat":  "{{ printf "{{ ingress }}" }}",
               "refId": "C"
             },
             {
@@ -1205,7 +1205,7 @@ data:
               "hide": false,
               "instant": true,
               "intervalFactor": 1,
-              "legendFormat": "{{ printf "{{ ingress }}" }}",
+              "legendFormat":  "{{ printf "{{ ingress }}" }}",
               "refId": "D"
             },
             {
@@ -1214,7 +1214,7 @@ data:
               "hide": false,
               "instant": true,
               "intervalFactor": 1,
-              "legendFormat": "{{ printf "{{ destination_service }}" }}",
+              "legendFormat":  "{{ printf "{{ destination_service }}" }}",
               "refId": "E"
             },
             {
@@ -1232,7 +1232,7 @@ data:
               "format": "table",
               "instant": true,
               "intervalFactor": 1,
-              "legendFormat": "{{ printf "{{ ingress }}" }}",
+              "legendFormat":  "{{ printf "{{ ingress }}" }}",
               "refId": "G"
             }
           ],
@@ -1249,7 +1249,7 @@ data:
               "value": "current"
             }
           ],
-          "datasource": "prometheus",
+          "datasource": "${DS_PROMETHEUS}",
           "fontSize": "100%",
           "gridPos": {
             "h": 8,
@@ -1334,12 +1334,22 @@ data:
       "templating": {
         "list": [
           {
+            "hide": 0,
+            "label": "datasource",
+            "name": "DS_PROMETHEUS",
+            "options": [],
+            "query": "prometheus",
+            "refresh": 1,
+            "regex": "",
+            "type": "datasource"
+          },
+          {
             "allValue": ".*",
             "current": {
               "text": "All",
               "value": "$__all"
             },
-            "datasource": "prometheus",
+            "datasource": "${DS_PROMETHEUS}",
             "hide": 0,
             "includeAll": true,
             "label": "Namespace",
@@ -1362,7 +1372,7 @@ data:
               "text": "All",
               "value": "$__all"
             },
-            "datasource": "prometheus",
+            "datasource": "${DS_PROMETHEUS}",
             "hide": 0,
             "includeAll": true,
             "label": "Controller Class",
@@ -1385,7 +1395,7 @@ data:
               "text": "All",
               "value": "$__all"
             },
-            "datasource": "prometheus",
+            "datasource": "${DS_PROMETHEUS}",
             "hide": 0,
             "includeAll": true,
             "label": "Controller",
@@ -1409,7 +1419,7 @@ data:
               "text": "All",
               "value": "$__all"
             },
-            "datasource": "prometheus",
+            "datasource": "${DS_PROMETHEUS}",
             "hide": 0,
             "includeAll": true,
             "label": "Ingress",
