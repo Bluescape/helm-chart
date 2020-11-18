@@ -7,6 +7,13 @@ items:
     labels: {{- include "bluescape-monitoring-grafana.labels" . | nindent 6 }}
   spec:
     config:
+      {{- if .Values.ha_mode }}
+      deployment:
+        replicas: 3
+        envFrom:
+          - secretRef:
+              name: postgres-grafana-auth
+      {{- end }}
       auth:
         disable_login_form: {{ .Values.grafana.config.auth.disable_login_form }}
         disable_signout_menu: {{ .Values.grafana.config.auth.disable_signout_menu }}
@@ -40,6 +47,14 @@ items:
         domain: "grafana.{{ .Values.grafana.domain_name }}"
         root_url: "https://%(domain)s"
         serve_from_sub_path: false
+      {{- if .Values.ha_mode }}
+      database:
+        type: postgres
+        host: postgres.grafana:5432
+        name: grafana
+        username: "$__env{POSTGRES_USER}"
+        password: "$__env{POSTGRES_PASSWORD}"
+      {{- end }}
     dashboardLabelSelector:
     - matchExpressions:
       - key: app.kubernetes.io/instance
