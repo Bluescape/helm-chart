@@ -7,7 +7,7 @@ items:
     labels: {{- include "bluescape-monitoring-grafana.labels" . | nindent 6 }}
   spec:
     config:
-      {{- if .Values.ha_mode }}
+      {{- if .Values.grafana.ha_mode }}
       deployment:
         replicas: 3
         envFrom:
@@ -47,7 +47,7 @@ items:
         domain: "grafana.{{ .Values.grafana.domain_name }}"
         root_url: "https://%(domain)s"
         serve_from_sub_path: false
-      {{- if .Values.ha_mode }}
+      {{- if .Values.grafana.ha_mode }}
       database:
         type: postgres
         host: postgres.grafana:5432
