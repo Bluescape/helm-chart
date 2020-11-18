@@ -9,6 +9,11 @@ grafana:
   domain_name: example.io
   cluster_id: example
 
+  # Deploy cluster in HA Mode - 3 replicas with PostgreSQL database cluster
+  # deployed with kubedb
+  # Requires kubedb generated postgresql secret called "postgres-grafana-auth"
+  ha_mode: false
+
   config:
     auth:
       users:
