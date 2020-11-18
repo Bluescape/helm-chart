@@ -8,9 +8,10 @@ metadata:
 data:
   express-app-dashboard.json: |-
     {
-      "__inputs": [
-        ],
-        "__requires": [],
+    "__inputs": [
+            ],
+            "__requires": [],
+
       "annotations": {
         "list": [
           {
@@ -27,7 +28,8 @@ data:
       "editable": true,
       "gnetId": null,
       "graphTooltip": 0,
-      "iteration": 1585486556975,
+      "id": 39,
+      "iteration": 1605724532570,
       "links": [],
       "panels": [
         {
@@ -35,7 +37,14 @@ data:
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "prometheus",
+          "datasource": "$datasource",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {},
+              "links": []
+            },
+            "overrides": []
+          },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
@@ -60,10 +69,11 @@ data:
           "links": [],
           "nullPointMode": "null",
           "options": {
-            "dataLinks": []
+            "alertThreshold": true
           },
           "paceLength": 10,
           "percentage": false,
+          "pluginVersion": "7.2.2",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -126,7 +136,14 @@ data:
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "prometheus",
+          "datasource": "$datasource",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {},
+              "links": []
+            },
+            "overrides": []
+          },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
@@ -152,10 +169,11 @@ data:
           "links": [],
           "nullPointMode": "null",
           "options": {
-            "dataLinks": []
+            "alertThreshold": true
           },
           "paceLength": 10,
           "percentage": false,
+          "pluginVersion": "7.2.2",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -218,7 +236,14 @@ data:
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "prometheus",
+          "datasource": "$datasource",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {},
+              "links": []
+            },
+            "overrides": []
+          },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
@@ -247,10 +272,11 @@ data:
           "links": [],
           "nullPointMode": "null",
           "options": {
-            "dataLinks": []
+            "alertThreshold": true
           },
           "paceLength": 10,
           "percentage": false,
+          "pluginVersion": "7.2.2",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -313,7 +339,14 @@ data:
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "prometheus",
+          "datasource": "$datasource",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {},
+              "links": []
+            },
+            "overrides": []
+          },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
@@ -344,10 +377,11 @@ data:
           "links": [],
           "nullPointMode": "null as zero",
           "options": {
-            "dataLinks": []
+            "alertThreshold": true
           },
           "paceLength": 10,
           "percentage": false,
+          "pluginVersion": "7.2.2",
           "pointradius": 2,
           "points": false,
           "renderer": "flot",
@@ -407,12 +441,9 @@ data:
         }
       ],
       "refresh": "",
-      "schemaVersion": 22,
+      "schemaVersion": 26,
       "style": "dark",
-      "tags": [
-        "bluescape",
-        "k8s"
-      ],
+      "tags": [],
       "templating": {
         "list": [
           {
@@ -422,7 +453,7 @@ data:
               "text": "All",
               "value": "$__all"
             },
-            "datasource": "prometheus",
+            "datasource": "$datasource",
             "definition": "label_values(http_request_duration_seconds_count, job)",
             "hide": 0,
             "includeAll": true,
@@ -445,10 +476,10 @@ data:
             "allValue": null,
             "current": {
               "selected": true,
-              "text": "staging",
-              "value": "staging"
+              "text": "All",
+              "value": "$__all"
             },
-            "datasource": "prometheus",
+            "datasource": "$datasource",
             "definition": "label_values(http_request_duration_seconds_count, namespace)",
             "hide": 0,
             "includeAll": true,
@@ -466,6 +497,25 @@ data:
             "tagsQuery": "",
             "type": "query",
             "useTags": false
+          },
+          {
+            "current": {
+              "selected": false,
+              "text": "Prometheus",
+              "value": "Prometheus"
+            },
+            "hide": 0,
+            "includeAll": false,
+            "label": null,
+            "multi": false,
+            "name": "datasource",
+            "options": [],
+            "query": "prometheus",
+            "queryValue": "",
+            "refresh": 1,
+            "regex": "",
+            "skipUrlSync": false,
+            "type": "datasource"
           }
         ]
       },
@@ -501,5 +551,5 @@ data:
       "timezone": "",
       "title": "Express Apps",
       "uid": "mwTG5sGWz",
-      "version": 1
+      "version": 8
     }
