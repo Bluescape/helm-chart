@@ -25,11 +25,12 @@ data:
       "editable": true,
       "gnetId": 9820,
       "graphTooltip": 0,
-      "id": 22,
+      "id": 40,
       "links": [],
       "panels": [
         {
           "collapsed": false,
+          "datasource": null,
           "gridPos": {
             "h": 1,
             "w": 24,
@@ -52,6 +53,12 @@ data:
           ],
           "datasource": "Cortex",
           "description": "Number of metrics ingested per second. Note that a metric is essentially one data point in a metric series.",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "format": "none",
           "gauge": {
             "maxValue": 100,
@@ -83,7 +90,6 @@ data:
           "maxDataPoints": 100,
           "nullPointMode": "connected",
           "nullText": null,
-          "options": {},
           "postfix": "",
           "postfixFontSize": "50%",
           "prefix": "",
@@ -135,6 +141,12 @@ data:
             "#299c46"
           ],
           "datasource": "Cortex",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "format": "percentunit",
           "gauge": {
             "maxValue": 100,
@@ -166,7 +178,6 @@ data:
           "maxDataPoints": 100,
           "nullPointMode": "connected",
           "nullText": null,
-          "options": {},
           "postfix": "",
           "postfixFontSize": "50%",
           "prefix": "",
@@ -218,6 +229,12 @@ data:
           ],
           "datasource": "Cortex",
           "description": "DynamoDB Write Capacity Units. AWS charges ~$0.000725 per WCU per hour (US-WEST-1 as of 1/03/19)",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "format": "none",
           "gauge": {
             "maxValue": 100,
@@ -249,7 +266,6 @@ data:
           "maxDataPoints": 100,
           "nullPointMode": "connected",
           "nullText": null,
-          "options": {},
           "postfix": "",
           "postfixFontSize": "50%",
           "prefix": "",
@@ -301,6 +317,12 @@ data:
           ],
           "datasource": "Cortex",
           "description": "95 Percentile age of chunks stored in ingesters. Ideally we want chunks to last at least 12 hours so that queries on recent data is fast",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "format": "dtdurations",
           "gauge": {
             "maxValue": 100,
@@ -332,7 +354,6 @@ data:
           "maxDataPoints": 100,
           "nullPointMode": "connected",
           "nullText": null,
-          "options": {},
           "postfix": "",
           "postfixFontSize": "50%",
           "prefix": "",
@@ -383,6 +404,12 @@ data:
             "#d44a3a"
           ],
           "datasource": "Cortex",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "format": "none",
           "gauge": {
             "maxValue": 100,
@@ -414,7 +441,6 @@ data:
           "maxDataPoints": 100,
           "nullPointMode": "connected",
           "nullText": null,
-          "options": {},
           "postfix": "",
           "postfixFontSize": "50%",
           "prefix": "",
@@ -465,6 +491,12 @@ data:
             "#299c46"
           ],
           "datasource": "Cortex",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "format": "percentunit",
           "gauge": {
             "maxValue": 100,
@@ -496,7 +528,6 @@ data:
           "maxDataPoints": 100,
           "nullPointMode": "connected",
           "nullText": null,
-          "options": {},
           "postfix": "",
           "postfixFontSize": "50%",
           "prefix": "",
@@ -548,6 +579,12 @@ data:
           ],
           "datasource": "Cortex",
           "description": "DynamoDB Read Capacity Units. AWS charges ~$0.000125 per WCU per hour (US-WEST-1 as of 1/03/19)",
+          "fieldConfig": {
+            "defaults": {
+              "custom": {}
+            },
+            "overrides": []
+          },
           "format": "none",
           "gauge": {
             "maxValue": 100,
@@ -579,7 +616,6 @@ data:
           "maxDataPoints": 100,
           "nullPointMode": "connected",
           "nullText": null,
-          "options": {},
           "postfix": "",
           "postfixFontSize": "50%",
           "prefix": "",
@@ -622,6 +658,7 @@ data:
         },
         {
           "collapsed": true,
+          "datasource": null,
           "gridPos": {
             "h": 1,
             "w": 24,
@@ -1777,6 +1814,7 @@ data:
         },
         {
           "collapsed": true,
+          "datasource": null,
           "gridPos": {
             "h": 1,
             "w": 24,
@@ -1835,7 +1873,7 @@ data:
                   "format": "time_series",
                   "interval": "2m",
                   "intervalFactor": 1,
-                  "legendFormat": "{{ printf "Tenant: {{ user }}" }}",
+                  "legendFormat":  "{{ printf "Tenant: {{ user }}" }}",
                   "refId": "A"
                 },
                 {
@@ -1946,7 +1984,7 @@ data:
                   "expr": "avg_over_time(cortex_ingester_flush_queue_length{app=\"ingester\"}[2m])",
                   "format": "time_series",
                   "intervalFactor": 1,
-                  "legendFormat": "{{ printf "{{ instance }}" }}",
+                  "legendFormat":  "{{ printf "{{ instance }}" }}",
                   "refId": "B"
                 }
               ],
@@ -2344,7 +2382,7 @@ data:
                   "format": "time_series",
                   "interval": "1m",
                   "intervalFactor": 2,
-                  "legendFormat": "{{ printf "p50 - {{ route }}" }}",
+                  "legendFormat":  "{{ printf "p50 - {{ route }}" }}",
                   "refId": "A"
                 },
                 {
@@ -2511,6 +2549,7 @@ data:
         },
         {
           "collapsed": true,
+          "datasource": null,
           "gridPos": {
             "h": 1,
             "w": 24,
@@ -3240,7 +3279,7 @@ data:
                   "expr": "sum(irate(cortex_memcache_request_duration_seconds_count{method=\"Memcache.Put\",kubernetes_name=\"querier\"}[5m])) by (kubernetes_name, status_code)",
                   "format": "time_series",
                   "intervalFactor": 1,
-                  "legendFormat": "{{ printf "{{ status_code }}" }}",
+                  "legendFormat":  "{{ printf "{{ status_code }}" }}",
                   "refId": "A"
                 }
               ],
@@ -3324,7 +3363,7 @@ data:
                   "expr": "(sum(cortex_cache_hits) by (name, app))/(sum(cortex_cache_fetched_keys) by (name, app))",
                   "format": "time_series",
                   "intervalFactor": 1,
-                  "legendFormat": "{{ printf "{{app}} - {{ name }}" }}",
+                  "legendFormat":  "{{ printf "{{app}} - {{ name }}" }}",
                   "refId": "A"
                 }
               ],
@@ -3704,6 +3743,7 @@ data:
         },
         {
           "collapsed": true,
+          "datasource": null,
           "gridPos": {
             "h": 1,
             "w": 24,
@@ -4020,7 +4060,7 @@ data:
                   "format": "time_series",
                   "interval": "1m",
                   "intervalFactor": 1,
-                  "legendFormat": "{{ printf "{{ status_code }}" }}",
+                  "legendFormat": "{{ printf "{{ status_code }}" }}" ,
                   "refId": "A"
                 }
               ],
@@ -4105,7 +4145,7 @@ data:
                   "expr": "sum(rate(cortex_dynamo_failures_total{operation=~\".*Write.*\"}[2m])) by (table, error)",
                   "format": "time_series",
                   "intervalFactor": 1,
-                  "legendFormat": "{{ printf "{{ table }} - {{ error }}" }}",
+                  "legendFormat":  "{{ printf "{{ table }} - {{ error }}" }}",
                   "refId": "A"
                 }
               ],
@@ -4534,6 +4574,7 @@ data:
         },
         {
           "collapsed": true,
+          "datasource": null,
           "gridPos": {
             "h": 1,
             "w": 24,
@@ -4785,7 +4826,7 @@ data:
                   "expr": "sum by (status_code)(irate(cortex_cassandra_request_duration_seconds_count{operation=\"INSERT\"}[5m]))",
                   "format": "time_series",
                   "intervalFactor": 1,
-                  "legendFormat": "{{ printf "{{ status_code }}" }}",
+                  "legendFormat":  "{{ printf "{{ status_code }}" }}",
                   "refId": "A"
                 }
               ],
@@ -4933,10 +4974,12 @@ data:
         }
       ],
       "refresh": false,
-      "schemaVersion": 19,
+      "schemaVersion": 26,
       "style": "dark",
       "tags": [
-        "cortex"
+        "cortex",
+        "bluescape",
+        "k8s"
       ],
       "templating": {
         "list": []
@@ -4973,5 +5016,5 @@ data:
       "timezone": "browser",
       "title": "Cortex Performance",
       "uid": "EucFH4rmzd",
-      "version": 1
+      "version": 2
     }

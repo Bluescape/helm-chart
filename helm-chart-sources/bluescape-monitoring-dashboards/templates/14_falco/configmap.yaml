@@ -109,7 +109,7 @@ data:
                     "expr": "rate(falco_events[5m])",
                     "interval": "",
                     "intervalFactor": 1,
-                    "legendFormat": "{{`{{rule}} (node=\"{{kubernetes_node}}\",ns=\"{{k8s_ns_name}}\",pod=\"{{k8s_pod_name}}\")"`}},
+                    "legendFormat": "{{ printf "{{rule}} (node=\"{{kubernetes_node}}\",ns=\"{{k8s_ns_name}}\",pod=\"{{k8s_pod_name}}\")" }}",
                     "refId": "A"
                   }
                 ],
