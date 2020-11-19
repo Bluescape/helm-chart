@@ -5,6 +5,9 @@
 nameOverride: ""
 fullnameOverride: ""
 
+custom_dashboards:
+  enable: true
+
 grafana:
   replicaCount: 3
   domain_name: example.io

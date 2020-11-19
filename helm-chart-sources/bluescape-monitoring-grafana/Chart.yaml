@@ -21,3 +21,10 @@ version: 0.2.0
 # incremented each time you make changes to the application. Versions are not expected to
 # follow Semantic Versioning. They should reflect the version the application is using.
 appVersion: 1.16.0
+
+dependencies:
+  - name: bluescape-monitoring-dashboards
+    alias: bluescape-monitoring-dashboards
+    version: 0.1.0
+    repository: https://bluescape.github.io/helm-charts
+    condition: custom_dashboards.enable
