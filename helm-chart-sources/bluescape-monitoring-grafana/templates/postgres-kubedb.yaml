@@ -40,4 +40,4 @@ spec:
   updateStrategy:
     type: RollingUpdate
   version: "11.1"
-  {{- end }}
+{{- end }}
