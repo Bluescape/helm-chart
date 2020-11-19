@@ -6,7 +6,7 @@ nameOverride: ""
 fullnameOverride: ""
 
 custom_dashboards:
-  enable: true
+  enable: false
 
 grafana:
   replicaCount: 1
