@@ -2,6 +2,8 @@
 apiVersion: kubedb.com/v1alpha1
 kind: Postgres
 metadata:
+  annotations:
+    "helm.sh/hook": "post-install"
   name: postgres-grafana
 spec:
   replicas: 3

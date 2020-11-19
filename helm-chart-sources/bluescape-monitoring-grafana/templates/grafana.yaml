@@ -6,15 +6,14 @@ items:
     name: "{{ .Release.Name }}-grafana"
     labels: {{- include "bluescape-monitoring-grafana.labels" . | nindent 6 }}
   spec:
+    {{- if .Values.grafana.ha_mode }}
     deployment:
       replicas: {{ .Values.grafana.replicaCount }}
+      envFrom:
+        - secretRef:
+            name: postgres-grafana-auth
+    {{- end }}
     config:
-      {{- if .Values.grafana.ha_mode }}
-      deployment:
-        envFrom:
-          - secretRef:
-              name: postgres-grafana-auth
-      {{- end }}
       auth:
         disable_login_form: {{ .Values.grafana.config.auth.disable_login_form }}
         disable_signout_menu: {{ .Values.grafana.config.auth.disable_signout_menu }}
@@ -53,7 +52,7 @@ items:
         type: postgres
         host: postgres-grafana.grafana:5432
         name: grafana
-        username: "$__env{POSTGRES_USER}"
+        user: "$__env{POSTGRES_USER}"
         password: "$__env{POSTGRES_PASSWORD}"
       {{- end }}
     dashboardLabelSelector:

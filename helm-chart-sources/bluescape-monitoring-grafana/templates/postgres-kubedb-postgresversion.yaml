@@ -4,7 +4,6 @@ kind: PostgresVersion
 metadata:
   annotations:
     "helm.sh/hook": "pre-install"
-    "helm.sh/hook-delete-policy": hook-succeeded
   name: "11.1"
   labels:
     app: kubedb
