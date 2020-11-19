@@ -6,6 +6,7 @@ nameOverride: ""
 fullnameOverride: ""
 
 grafana:
+  replicaCount: 3
   domain_name: example.io
   cluster_id: example
 

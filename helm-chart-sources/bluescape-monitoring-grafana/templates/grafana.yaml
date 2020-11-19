@@ -6,10 +6,11 @@ items:
     name: "{{ .Release.Name }}-grafana"
     labels: {{- include "bluescape-monitoring-grafana.labels" . | nindent 6 }}
   spec:
+    deployment:
+      replicas: {{ .Values.grafana.replicaCount }}
     config:
       {{- if .Values.grafana.ha_mode }}
       deployment:
-        replicas: 3
         envFrom:
           - secretRef:
               name: postgres-grafana-auth
@@ -50,7 +51,7 @@ items:
       {{- if .Values.grafana.ha_mode }}
       database:
         type: postgres
-        host: postgres.grafana:5432
+        host: postgres-grafana.grafana:5432
         name: grafana
         username: "$__env{POSTGRES_USER}"
         password: "$__env{POSTGRES_PASSWORD}"
