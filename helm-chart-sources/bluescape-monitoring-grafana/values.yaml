@@ -9,7 +9,7 @@ custom_dashboards:
   enable: true
 
 grafana:
-  replicaCount: 3
+  replicaCount: 1
   domain_name: example.io
   cluster_id: example
 
