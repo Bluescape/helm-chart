@@ -3,20 +3,31 @@ entries:
   bluescape-eks-aux:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-11-20T16:52:06.768778-08:00"
+    created: "2020-11-23T05:13:06.7711-08:00"
     description: A Helm chart for Kubernetes
-    digest: b9f3329cf6d3de9288bc6626f268fb4c9dfb5ddc925ff1290223043117b431e4
+    digest: b4c69d39bad4b270105f079dd8b8a3a0ce725f5a698204fa026af6e2597a0a54
     name: bluescape-eks-aux
     type: application
     urls:
     - https://bluescape.github.io/helm-charts/packages/bluescape-eks-aux-0.1.0.tgz
     version: 0.1.0
+  bluescape-monitoring-crds:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2020-11-23T05:13:06.776186-08:00"
+    description: A Helm chart for Kubernetes
+    digest: c5517015779822ac571317b2ef1e250d0e917539de28334c24a27946943ec430
+    name: bluescape-monitoring-crds
+    type: application
+    urls:
+    - https://bluescape.github.io/helm-charts/packages/bluescape-monitoring-crds-0.1.0.tgz
+    version: 0.1.0
   bluescape-monitoring-dashboards:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-11-20T16:52:06.773131-08:00"
+    created: "2020-11-23T05:13:06.779811-08:00"
     description: A Helm chart for Kubernetes
-    digest: 9731d1dc41a5c2f688296f81aa92aaca9fe1d182f96669765f3ba6ac3448c499
+    digest: 90c307c871237756e538fd387e8aa70fe0d1690a99d8c401c8f9c2ba93a7e8d4
     name: bluescape-monitoring-dashboards
     type: application
     urls:
@@ -25,7 +36,7 @@ entries:
   bluescape-monitoring-grafana:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-11-20T16:52:06.777128-08:00"
+    created: "2020-11-23T05:13:06.78277-08:00"
     dependencies:
     - alias: bluescape-monitoring-dashboards
       condition: custom_dashboards.enable
@@ -33,7 +44,7 @@ entries:
       repository: https://bluescape.github.io/helm-charts
       version: 0.1.0
     description: A Helm chart for Kubernetes
-    digest: dc08cb05e0f9762a2d2e746c34f8587bb453a2216d6aa5183660b7259c07d086
+    digest: c6f639d512c6555154b99ce151709d85fe5796b3d58462821a1b0e52db320b31
     name: bluescape-monitoring-grafana
     type: application
     urls:
@@ -42,7 +53,7 @@ entries:
   cortex:
   - apiVersion: v2
     appVersion: v1.4.0
-    created: "2020-11-20T16:52:06.78392-08:00"
+    created: "2020-11-23T05:13:06.789839-08:00"
     dependencies:
     - alias: memcached
       condition: memcached.enabled
@@ -60,7 +71,7 @@ entries:
       repository: https://charts.bitnami.com/bitnami
       version: 4.2.27
     description: Cortex
-    digest: 505da080ea19388c61dba7ed1f5eb56e19a196669e3b1907b0b6de8d13d4ef43
+    digest: 9ca97cafe40e46d4918b8bddf49cb86bd68e12f7a3ffd654a91cc3bfcc123b8c
     home: https://cortexmetrics.io/
     icon: https://avatars2.githubusercontent.com/u/43045022?s=200&v=4
     kubeVersion: ^1.10.0-0
@@ -76,10 +87,10 @@ entries:
   gatekeeper-policy-manager:
   - apiVersion: v2
     appVersion: v0.4.0
-    created: "2020-11-20T16:52:06.784567-08:00"
+    created: "2020-11-23T05:13:06.790466-08:00"
     description: A Helm chart for Gatekeeper Policy Manager which is a simple read-only
       web UI for viewing OPA Gatekeeper policies' status in a Kubernetes Cluster.
-    digest: 2aeb06425814bdf6565c26ff12fec057f0aab4276df4bba5a0dc70e836c2513f
+    digest: 36505b206d645d098203649be8fc17c00398963aecc3eeebb29abf11a6ecd8c9
     name: gatekeeper-policy-manager
     type: application
     urls:
@@ -88,9 +99,9 @@ entries:
   kube-oidc-proxy:
   - apiVersion: v1
     appVersion: v0.3.0
-    created: "2020-11-20T16:52:06.785188-08:00"
+    created: "2020-11-23T05:13:06.791078-08:00"
     description: A Helm chart for kube-oidc-proxy
-    digest: 98170bfc2398abc7998cdcf732841826ef48cc1fdf5a3dbda67b9c359afb7394
+    digest: 714ddffefd8d137b8e82096065a2b36018d9a3c27dfec91e79218a2da4152184
     home: https://github.com/jetstack/kube-oidc-proxy
     maintainers:
     - name: mhrabovcin
@@ -99,4 +110,4 @@ entries:
     urls:
     - https://bluescape.github.io/helm-charts/packages/kube-oidc-proxy-0.3.1.tgz
     version: 0.3.1
-generated: "2020-11-20T16:52:06.767581-08:00"
+generated: "2020-11-23T05:13:06.770505-08:00"
