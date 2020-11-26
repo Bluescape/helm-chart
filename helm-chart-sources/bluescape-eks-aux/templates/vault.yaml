@@ -137,6 +137,7 @@ spec:
               # Bluescape SA names:
               - analytics-data-transform
               - analytics-init
+              - analytics-data-refresh
               - browser-client
               - bull-exporter
               - cmt
