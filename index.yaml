@@ -3,9 +3,9 @@ entries:
   bluescape-eks-aux:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-11-25T18:35:30.808714-08:00"
+    created: "2020-11-25T18:49:22.874515-08:00"
     description: A Helm chart for Kubernetes
-    digest: eefdd560bf7b3dde2d31df195c36ae1a00ef0f1c648589225cf56e6e84730f3b
+    digest: 2e676cee70bc16c192d0bdde7c2f04cde8e2a0d61497be8439c038e6a4cf1321
     name: bluescape-eks-aux
     type: application
     urls:
@@ -14,9 +14,9 @@ entries:
   bluescape-monitoring-crds:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-11-25T18:35:30.81398-08:00"
+    created: "2020-11-25T18:49:22.880579-08:00"
     description: A Helm chart for Kubernetes
-    digest: ed58d2bdfec46bd9863dac327eb7588be1412bc0d58adf18dfa010ba7903e908
+    digest: 27793a02bb222a0d466df942436fa2dc8a0d2c0102e4a91cac0cdb25b2b34cb7
     name: bluescape-monitoring-crds
     type: application
     urls:
@@ -25,9 +25,9 @@ entries:
   bluescape-monitoring-dashboards:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-11-25T18:35:30.817235-08:00"
+    created: "2020-11-25T18:49:22.884034-08:00"
     description: A Helm chart for Kubernetes
-    digest: bf6c68622fe94406e57defeb7c3e78a3d01b7194736712428b48d77193a43415
+    digest: fd08461bd13636c1bd979f5dc05fe7cbec6265e627de84d328d48eec49145818
     name: bluescape-monitoring-dashboards
     type: application
     urls:
@@ -36,7 +36,7 @@ entries:
   bluescape-monitoring-grafana:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-11-25T18:35:30.820518-08:00"
+    created: "2020-11-25T18:49:22.887752-08:00"
     dependencies:
     - alias: bluescape-monitoring-dashboards
       condition: custom_dashboards.enable
@@ -44,7 +44,7 @@ entries:
       repository: https://bluescape.github.io/helm-charts
       version: 0.1.0
     description: A Helm chart for Kubernetes
-    digest: 8596b12c145a4e9d16066032444d5502b49af1c8ae3375ddb1d9c9e76b5037ea
+    digest: 2199b99aff4e381e940989a47a3edd5b2f4f5be4a5b4d98cac288dc9bd4038f6
     name: bluescape-monitoring-grafana
     type: application
     urls:
@@ -53,7 +53,7 @@ entries:
   cortex:
   - apiVersion: v2
     appVersion: v1.4.0
-    created: "2020-11-25T18:35:30.827121-08:00"
+    created: "2020-11-25T18:49:22.894725-08:00"
     dependencies:
     - alias: memcached
       condition: memcached.enabled
@@ -71,7 +71,7 @@ entries:
       repository: https://charts.bitnami.com/bitnami
       version: 4.2.27
     description: Cortex
-    digest: bf2d8cf99758ebbc6bc8ff4e6c88f87d157157bd4579dbd55299ccd45c5f9dbe
+    digest: 38d6f557c09b825a4acb3484f9149039cf677833eee4f98bc156b1c22292df40
     home: https://cortexmetrics.io/
     icon: https://avatars2.githubusercontent.com/u/43045022?s=200&v=4
     kubeVersion: ^1.10.0-0
@@ -87,10 +87,10 @@ entries:
   gatekeeper-policy-manager:
   - apiVersion: v2
     appVersion: v0.4.0
-    created: "2020-11-25T18:35:30.828033-08:00"
+    created: "2020-11-25T18:49:22.895314-08:00"
     description: A Helm chart for Gatekeeper Policy Manager which is a simple read-only
       web UI for viewing OPA Gatekeeper policies' status in a Kubernetes Cluster.
-    digest: 2a613a4e6312c222552017a3a17b7515ba18b39f2a4f16578ea0c1a6347e98c7
+    digest: 65ca26b4619f43a833d8cefc7a7f9b8abea7118d6089065cd308891b24e065fd
     name: gatekeeper-policy-manager
     type: application
     urls:
@@ -99,9 +99,9 @@ entries:
   kube-oidc-proxy:
   - apiVersion: v1
     appVersion: v0.3.0
-    created: "2020-11-25T18:35:30.828847-08:00"
+    created: "2020-11-25T18:49:22.912503-08:00"
     description: A Helm chart for kube-oidc-proxy
-    digest: 217533a8cbbd6732f715e95fe34f4e2a7e3de2ba023f4a16a90b058baee6a051
+    digest: aa4bb462000b9703b8188db209db72a82472116b745f9215bf03452bc61182fe
     home: https://github.com/jetstack/kube-oidc-proxy
     maintainers:
     - name: mhrabovcin
@@ -110,4 +110,4 @@ entries:
     urls:
     - https://bluescape.github.io/helm-charts/packages/kube-oidc-proxy-0.3.1.tgz
     version: 0.3.1
-generated: "2020-11-25T18:35:30.808133-08:00"
+generated: "2020-11-25T18:49:22.873909-08:00"
