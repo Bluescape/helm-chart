@@ -138,6 +138,7 @@ spec:
               - analytics-data-transform
               - analytics-init
               - analytics-data-refresh
+              - analytics-data-import
               - browser-client
               - bull-exporter
               - cmt
