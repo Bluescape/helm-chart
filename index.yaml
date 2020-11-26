@@ -3,9 +3,9 @@ entries:
   bluescape-eks-aux:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-11-23T05:13:06.7711-08:00"
+    created: "2020-11-25T18:35:30.808714-08:00"
     description: A Helm chart for Kubernetes
-    digest: b4c69d39bad4b270105f079dd8b8a3a0ce725f5a698204fa026af6e2597a0a54
+    digest: eefdd560bf7b3dde2d31df195c36ae1a00ef0f1c648589225cf56e6e84730f3b
     name: bluescape-eks-aux
     type: application
     urls:
@@ -14,9 +14,9 @@ entries:
   bluescape-monitoring-crds:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-11-23T05:13:06.776186-08:00"
+    created: "2020-11-25T18:35:30.81398-08:00"
     description: A Helm chart for Kubernetes
-    digest: c5517015779822ac571317b2ef1e250d0e917539de28334c24a27946943ec430
+    digest: ed58d2bdfec46bd9863dac327eb7588be1412bc0d58adf18dfa010ba7903e908
     name: bluescape-monitoring-crds
     type: application
     urls:
@@ -25,9 +25,9 @@ entries:
   bluescape-monitoring-dashboards:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-11-23T05:13:06.779811-08:00"
+    created: "2020-11-25T18:35:30.817235-08:00"
     description: A Helm chart for Kubernetes
-    digest: 90c307c871237756e538fd387e8aa70fe0d1690a99d8c401c8f9c2ba93a7e8d4
+    digest: bf6c68622fe94406e57defeb7c3e78a3d01b7194736712428b48d77193a43415
     name: bluescape-monitoring-dashboards
     type: application
     urls:
@@ -36,7 +36,7 @@ entries:
   bluescape-monitoring-grafana:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-11-23T05:13:06.78277-08:00"
+    created: "2020-11-25T18:35:30.820518-08:00"
     dependencies:
     - alias: bluescape-monitoring-dashboards
       condition: custom_dashboards.enable
@@ -44,7 +44,7 @@ entries:
       repository: https://bluescape.github.io/helm-charts
       version: 0.1.0
     description: A Helm chart for Kubernetes
-    digest: c6f639d512c6555154b99ce151709d85fe5796b3d58462821a1b0e52db320b31
+    digest: 8596b12c145a4e9d16066032444d5502b49af1c8ae3375ddb1d9c9e76b5037ea
     name: bluescape-monitoring-grafana
     type: application
     urls:
@@ -53,7 +53,7 @@ entries:
   cortex:
   - apiVersion: v2
     appVersion: v1.4.0
-    created: "2020-11-23T05:13:06.789839-08:00"
+    created: "2020-11-25T18:35:30.827121-08:00"
     dependencies:
     - alias: memcached
       condition: memcached.enabled
@@ -71,7 +71,7 @@ entries:
       repository: https://charts.bitnami.com/bitnami
       version: 4.2.27
     description: Cortex
-    digest: 9ca97cafe40e46d4918b8bddf49cb86bd68e12f7a3ffd654a91cc3bfcc123b8c
+    digest: bf2d8cf99758ebbc6bc8ff4e6c88f87d157157bd4579dbd55299ccd45c5f9dbe
     home: https://cortexmetrics.io/
     icon: https://avatars2.githubusercontent.com/u/43045022?s=200&v=4
     kubeVersion: ^1.10.0-0
@@ -87,10 +87,10 @@ entries:
   gatekeeper-policy-manager:
   - apiVersion: v2
     appVersion: v0.4.0
-    created: "2020-11-23T05:13:06.790466-08:00"
+    created: "2020-11-25T18:35:30.828033-08:00"
     description: A Helm chart for Gatekeeper Policy Manager which is a simple read-only
       web UI for viewing OPA Gatekeeper policies' status in a Kubernetes Cluster.
-    digest: 36505b206d645d098203649be8fc17c00398963aecc3eeebb29abf11a6ecd8c9
+    digest: 2a613a4e6312c222552017a3a17b7515ba18b39f2a4f16578ea0c1a6347e98c7
     name: gatekeeper-policy-manager
     type: application
     urls:
@@ -99,9 +99,9 @@ entries:
   kube-oidc-proxy:
   - apiVersion: v1
     appVersion: v0.3.0
-    created: "2020-11-23T05:13:06.791078-08:00"
+    created: "2020-11-25T18:35:30.828847-08:00"
     description: A Helm chart for kube-oidc-proxy
-    digest: 714ddffefd8d137b8e82096065a2b36018d9a3c27dfec91e79218a2da4152184
+    digest: 217533a8cbbd6732f715e95fe34f4e2a7e3de2ba023f4a16a90b058baee6a051
     home: https://github.com/jetstack/kube-oidc-proxy
     maintainers:
     - name: mhrabovcin
@@ -110,4 +110,4 @@ entries:
     urls:
     - https://bluescape.github.io/helm-charts/packages/kube-oidc-proxy-0.3.1.tgz
     version: 0.3.1
-generated: "2020-11-23T05:13:06.770505-08:00"
+generated: "2020-11-25T18:35:30.808133-08:00"
