@@ -3,9 +3,9 @@ entries:
   bluescape-eks-aux:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-11-25T19:16:46.571085-08:00"
+    created: "2020-12-02T11:59:20.171964-08:00"
     description: A Helm chart for Kubernetes
-    digest: 3aafb7ae7ed0ab62f0bc754919ecad214859cc3ca6cc19e3b57ed6f85272ebc8
+    digest: f7281179ffdb1340f797a684c57fc0b4e455d675fac87b2b14b810837b24810f
     name: bluescape-eks-aux
     type: application
     urls:
@@ -14,9 +14,9 @@ entries:
   bluescape-monitoring-crds:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-11-25T19:16:46.578061-08:00"
+    created: "2020-12-02T11:59:20.177114-08:00"
     description: A Helm chart for Kubernetes
-    digest: 982f49f4b25dc9c73fce87c0f43984e5b63fc169714eed119c9ebb08e9f5b003
+    digest: e6ab3474062ef3c2a20e0af6c0f1bf5e0fbf62e60e65b1fab047cdf06544033d
     name: bluescape-monitoring-crds
     type: application
     urls:
@@ -25,9 +25,9 @@ entries:
   bluescape-monitoring-dashboards:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-11-25T19:16:46.583036-08:00"
+    created: "2020-12-02T11:59:20.18061-08:00"
     description: A Helm chart for Kubernetes
-    digest: 0385e292f131ed46529f0edf9f9a758a2c86b6a01532e1e3788a3069ca36f877
+    digest: bfcf1c7cb2972ed7f62f7339524cd37046cef014eb341beebafa925b4a8504ed
     name: bluescape-monitoring-dashboards
     type: application
     urls:
@@ -36,7 +36,7 @@ entries:
   bluescape-monitoring-grafana:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-11-25T19:16:46.603164-08:00"
+    created: "2020-12-02T11:59:20.18371-08:00"
     dependencies:
     - alias: bluescape-monitoring-dashboards
       condition: custom_dashboards.enable
@@ -44,7 +44,7 @@ entries:
       repository: https://bluescape.github.io/helm-charts
       version: 0.1.0
     description: A Helm chart for Kubernetes
-    digest: 8d47a968b31b79fe78f7d445931eff624f523d7001fbbbb3e05bfcfc4bd9d484
+    digest: b4b64d38ef9c7140d71f788d9fc936685dec38e24e28fa8162585b01175c9cad
     name: bluescape-monitoring-grafana
     type: application
     urls:
@@ -53,7 +53,7 @@ entries:
   cortex:
   - apiVersion: v2
     appVersion: v1.4.0
-    created: "2020-11-25T19:16:46.610386-08:00"
+    created: "2020-12-02T11:59:20.1904-08:00"
     dependencies:
     - alias: memcached
       condition: memcached.enabled
@@ -71,7 +71,7 @@ entries:
       repository: https://charts.bitnami.com/bitnami
       version: 4.2.27
     description: Cortex
-    digest: 513365563f3e22108c50a33d446d7e6a30aee07e648be6c2d185efbdc3b3dcaa
+    digest: 5e80b4da17f3bdf4de2dc28407d571f45b4fbd92a7b67ef622ee81efc3156823
     home: https://cortexmetrics.io/
     icon: https://avatars2.githubusercontent.com/u/43045022?s=200&v=4
     kubeVersion: ^1.10.0-0
@@ -87,10 +87,10 @@ entries:
   gatekeeper-policy-manager:
   - apiVersion: v2
     appVersion: v0.4.0
-    created: "2020-11-25T19:16:46.611023-08:00"
+    created: "2020-12-02T11:59:20.190972-08:00"
     description: A Helm chart for Gatekeeper Policy Manager which is a simple read-only
       web UI for viewing OPA Gatekeeper policies' status in a Kubernetes Cluster.
-    digest: 24ee5bbcc169ae337687f990092aa18b55c7011d737808334a8836aea0551999
+    digest: db0d812b6f1e61da9d6ad880a404b24a0b3835a0bf80adaf8b237fff6f5c1865
     name: gatekeeper-policy-manager
     type: application
     urls:
@@ -99,9 +99,9 @@ entries:
   kube-oidc-proxy:
   - apiVersion: v1
     appVersion: v0.3.0
-    created: "2020-11-25T19:16:46.611665-08:00"
+    created: "2020-12-02T11:59:20.191574-08:00"
     description: A Helm chart for kube-oidc-proxy
-    digest: 8ee711499da1cf949802d1b7f6fa457f20eee684841ec3a725f45b40571a866b
+    digest: 5a18dc3b68dc2a5bf19f4d9eb8fe19dfd7d02f98b4ca72e569d222fcd0c02329
     home: https://github.com/jetstack/kube-oidc-proxy
     maintainers:
     - name: mhrabovcin
@@ -110,4 +110,4 @@ entries:
     urls:
     - https://bluescape.github.io/helm-charts/packages/kube-oidc-proxy-0.3.1.tgz
     version: 0.3.1
-generated: "2020-11-25T19:16:46.569875-08:00"
+generated: "2020-12-02T11:59:20.171417-08:00"
