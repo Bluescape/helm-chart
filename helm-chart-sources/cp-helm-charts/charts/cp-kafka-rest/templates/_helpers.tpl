@@ -69,3 +69,34 @@ We truncate at 63 chars because some Kubernetes name fields are limited to this 
 {{- printf "http://%s:8081" (include "cp-kafka-rest.cp-schema-registry.fullname" .) -}}
 {{- end -}}
 {{- end -}}
+
+{{/*
+Common labels
+*/}}
+{{- define "cp-kafka-rest.labels" -}}
+helm.sh/chart: {{ include "cp-kafka-rest.chart" . }}
+{{ include "cp-kafka-rest.selectorLabels" . }}
+{{- if .Chart.AppVersion }}
+app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
+{{- end }}
+app.kubernetes.io/managed-by: {{ .Release.Service }}
+{{- end }}
+
+{{/*
+Selector labels
+*/}}
+{{- define "cp-kafka-rest.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "cp-kafka-rest.name" . }}
+app.kubernetes.io/instance: {{ .Release.Name }}
+{{- end }}
+
+{{/*
+Create the name of the service account to use
+*/}}
+{{- define "cp-kafka-rest.serviceAccountName" -}}
+{{- if .Values.serviceAccount.create }}
+{{- default (include "cp-kafka-rest.fullname" .) .Values.serviceAccount.name }}
+{{- else }}
+{{- default "default" .Values.serviceAccount.name }}
+{{- end }}
+{{- end }}

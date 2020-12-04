@@ -62,3 +62,34 @@ Default GroupId to Release Name but allow it to be overridden
 {{- .Release.Name -}}
 {{- end -}}
 {{- end -}}
+
+{{/*
+Common labels
+*/}}
+{{- define "cp-schema-registry.labels" -}}
+helm.sh/chart: {{ include "cp-schema-registry.chart" . }}
+{{ include "cp-schema-registry.selectorLabels" . }}
+{{- if .Chart.AppVersion }}
+app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
+{{- end }}
+app.kubernetes.io/managed-by: {{ .Release.Service }}
+{{- end }}
+
+{{/*
+Selector labels
+*/}}
+{{- define "cp-schema-registry.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "cp-schema-registry.name" . }}
+app.kubernetes.io/instance: {{ .Release.Name }}
+{{- end }}
+
+{{/*
+Create the name of the service account to use
+*/}}
+{{- define "cp-schema-registry.serviceAccountName" -}}
+{{- if .Values.serviceAccount.create }}
+{{- default (include "cp-schema-registry.fullname" .) .Values.serviceAccount.name }}
+{{- else }}
+{{- default "default" .Values.serviceAccount.name }}
+{{- end }}
+{{- end }}
