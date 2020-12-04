@@ -143,7 +143,7 @@ The configuration parameters in this section control the resources requested and
 | Parameter | Description | Default |
 | --------- | ----------- | --------|
 | `serviceAccount.create` | If true, create the cp-kafka-connect service account | `true` |
-| `serviceAccount.name` | name of the cp-kafka-connect service account to use or create | `{{ cp-kafka-connect.fullname }}` |
+| `serviceAccount.name` | name of the cp-kafka-connect service account to use or create | `{{ cp-schema-registry.fullname }}` |
 | `serviceAccount.annotations` | annotations for the cp-kafka-connect service account | `{}` |
 | `podSecurityContext` | podSecurityContext | `{}` |
 | `securityContext` | securityContext for containers in pod | `{}` |
