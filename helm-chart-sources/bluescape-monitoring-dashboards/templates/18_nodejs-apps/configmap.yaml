@@ -878,6 +878,8 @@ data:
       "schemaVersion": 18,
       "style": "dark",
       "tags": [
+        "bluescape",
+        "k8s",
         "nodejs"
       ],
       "templating": {

@@ -2809,7 +2809,10 @@ data:
       "schemaVersion": 26,
       "style": "dark",
       "tags": [
+        "bluescape",
+        "k8s",
         "ambassador"
+
       ],
       "templating": {
         "list": [

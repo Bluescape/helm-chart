@@ -1544,7 +1544,11 @@ data:
       "refresh": false,
       "schemaVersion": 21,
       "style": "dark",
-      "tags": [],
+      "tags": [
+        "bluescape",
+        "k8s",
+        "nodejs"
+        ],
       "templating": {
         "list": [
           {

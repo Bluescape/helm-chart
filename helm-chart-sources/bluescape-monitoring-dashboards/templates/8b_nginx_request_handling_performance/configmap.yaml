@@ -916,6 +916,8 @@ data:
       "schemaVersion": 22,
       "style": "dark",
       "tags": [
+        "bluescape",
+        "k8s",
         "nginx"
       ],
       "templating": {
