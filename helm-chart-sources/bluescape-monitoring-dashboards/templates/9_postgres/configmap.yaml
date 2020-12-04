@@ -4589,7 +4589,7 @@ data:
           ]
         },
         "timezone": "browser",
-        "title": "Datastore/PostgreSQL Overview",
+        "title": "Datastores / PostgreSQL Overview",
         "uid": "IvhES05ik",
         "version": 1
       }

@@ -1759,7 +1759,7 @@ data:
         ]
       },
       "timezone": "",
-      "title": "Application/Nodejs Metrics",
+      "title": "Application / Nodejs Metrics",
       "uid": "zvsXmKEWk",
       "version": 48,
       "description": "Nodejs runtime metrics"

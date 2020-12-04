@@ -314,7 +314,7 @@ data:
           ]
         },
         "timezone": "",
-        "title": "Logging/Loki-Promtail",
+        "title": "Logging / Loki-Promtail",
         "uid": "loki",
         "version": 1
       }

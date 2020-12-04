@@ -1468,7 +1468,7 @@ data:
         ]
       },
       "timezone": "browser",
-      "title": "NGINX/General Overview",
+      "title": "NGINX / General Overview",
       "uid": "nginx",
       "version": 1
     }

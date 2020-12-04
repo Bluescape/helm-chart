@@ -301,7 +301,7 @@ data:
       },
       "timepicker": {},
       "timezone": "",
-      "title": "Security/Falco Overview",
+      "title": "Security / Falco Overview",
       "uid": "FvUFlfuZz",
       "version": 4,
       "description": "Grafana dashboard for Falco output events"
