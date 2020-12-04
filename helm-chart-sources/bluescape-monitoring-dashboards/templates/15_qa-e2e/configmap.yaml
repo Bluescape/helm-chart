@@ -2518,7 +2518,8 @@ data:
       "style": "dark",
       "tags": [
       "bluescape",
-      "k8s"
+      "k8s",
+      "qa"
       ],
       "templating": {
         "list": [
@@ -2732,7 +2733,7 @@ data:
         ]
       },
       "timezone": "",
-      "title": "QA E2E Testing",
+      "title": "QA/E2E Testing",
       "uid": "IuEdWTqWk",
       "version": 3
     }

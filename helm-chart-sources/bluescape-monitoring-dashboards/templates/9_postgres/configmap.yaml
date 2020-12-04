@@ -3429,7 +3429,8 @@ data:
           "Percona",
           "PostgreSQL",
           "bluescape",
-          "k8s"
+          "k8s",
+          "datastore"
         ],
         "templating": {
           "list": [
@@ -4588,7 +4589,7 @@ data:
           ]
         },
         "timezone": "browser",
-        "title": "PostgreSQL Overview",
+        "title": "Datastore/PostgreSQL Overview",
         "uid": "IvhES05ik",
         "version": 1
       }

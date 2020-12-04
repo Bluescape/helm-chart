@@ -941,7 +941,7 @@ data:
         ]
       },
       "timezone": "browser",
-      "title": "K8s Pod States",
+      "title": "Kubernetes/Pod States",
       "uid": "MITEhmuWk",
       "version": 1
     }

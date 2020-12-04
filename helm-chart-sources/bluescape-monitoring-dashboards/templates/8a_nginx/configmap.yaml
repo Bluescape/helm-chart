@@ -1468,7 +1468,7 @@ data:
         ]
       },
       "timezone": "browser",
-      "title": "NGINX Ingress controller",
+      "title": "NGINX/General Overview",
       "uid": "nginx",
       "version": 1
     }

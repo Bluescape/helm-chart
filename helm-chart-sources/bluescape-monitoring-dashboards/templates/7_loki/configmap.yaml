@@ -260,7 +260,8 @@ data:
         "style": "dark",
         "tags": [
         "bluescape",
-        "k8s"
+        "k8s",
+        "logging"
         ],
         "templating": {
           "list": [
@@ -313,7 +314,7 @@ data:
           ]
         },
         "timezone": "",
-        "title": "Loki-Promtail",
+        "title": "Logging/Loki-Promtail",
         "uid": "loki",
         "version": 1
       }

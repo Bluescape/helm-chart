@@ -6228,7 +6228,8 @@ data:
       "style": "dark",
       "tags": [
       "bluescape",
-      "k8s"
+      "k8s",
+      "qa"
       ],
       "templating": {
         "list": [
@@ -6424,7 +6425,7 @@ data:
         ]
       },
       "timezone": "",
-      "title": "QA K6 Testing",
+      "title": "QA/K6 Testing",
       "uid": "kU93b9gGk",
       "version": 3
     }

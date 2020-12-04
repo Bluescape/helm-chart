@@ -443,7 +443,11 @@ data:
       "refresh": "",
       "schemaVersion": 26,
       "style": "dark",
-      "tags": [],
+      "tags": [
+        "bluescape",
+        "k8s",
+        "express"
+        ],
       "templating": {
         "list": [
           {
@@ -549,7 +553,7 @@ data:
         ]
       },
       "timezone": "",
-      "title": "Express Apps",
+      "title": "Application/Express Apps",
       "uid": "mwTG5sGWz",
       "version": 8
     }

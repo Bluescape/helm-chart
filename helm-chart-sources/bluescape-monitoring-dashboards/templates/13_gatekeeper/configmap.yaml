@@ -820,7 +820,9 @@ data:
       "style": "dark",
       "tags": [
         "bluescape",
-        "k8s"
+        "k8s",
+        "gatekeeper",
+        "security"
       ],
       "templating": {
         "list": [
@@ -863,7 +865,7 @@ data:
         ]
       },
       "timezone": "",
-      "title": "Gatekeeper",
+      "title": "Security/Gatekeeper",
       "uid": "nYFtbkzMz",
       "version": 4
     }

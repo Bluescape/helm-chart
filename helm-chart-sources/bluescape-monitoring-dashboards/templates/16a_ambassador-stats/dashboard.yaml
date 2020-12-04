@@ -1,12 +1,12 @@
 apiVersion: integreatly.org/v1alpha1
 kind: GrafanaDashboard
 metadata:
-  name:  ambassador-dashboard
+  name:  ambassador-stats-dashboard
   namespace: grafana
   labels:
     {{- include "bluescape-monitoring-dashboards.labels" . | nindent 4 }}
 spec:
-  name:  ambassador-dashboard
+  name:  ambassador-stats-dashboard
   configMapRef:
-    name:  ambassador-dashboard
-    key:  ambassador-dashboard.json
+    name:  ambassador-stats-dashboard
+    key:  ambassador-stats-dashboard.json

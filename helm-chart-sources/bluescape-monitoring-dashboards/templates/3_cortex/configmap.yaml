@@ -4979,7 +4979,8 @@ data:
       "tags": [
         "cortex",
         "bluescape",
-        "k8s"
+        "k8s",
+        "logging"
       ],
       "templating": {
         "list": []
@@ -5014,7 +5015,7 @@ data:
         ]
       },
       "timezone": "browser",
-      "title": "Cortex Performance",
+      "title": "Logging/Cortex Performance",
       "uid": "EucFH4rmzd",
       "version": 2
     }

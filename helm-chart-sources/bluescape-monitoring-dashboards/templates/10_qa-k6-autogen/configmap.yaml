@@ -5357,7 +5357,8 @@ data:
       "style": "dark",
       "tags": [
       "bluescape",
-      "k8s"
+      "k8s",
+      "qa"
       ],
       "templating": {
         "list": [
@@ -5654,7 +5655,7 @@ data:
         ]
       },
       "timezone": "",
-      "title": "K6 Auto Generated Swagger Tests",
+      "title": "QA/K6 Auto Generated Swagger Tests",
       "uid": "Rab4VWiMz",
       "version": 5
     }
