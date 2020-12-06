@@ -9,26 +9,23 @@ CAUTION: Open Source Helm charts are not supported by Confluent.
 
 [source,bash]
 Installing helm chart
-----
+```
 * helm repo add confluentinc https://confluentinc.github.io/cp-helm-charts/  
 * helm repo update    
 * helm install confluentinc/cp-helm-charts --name my-confluent --version 0.5.0   
-----
+```
+
 1.  Add `confluentinc` helm charts repo
 2. Update repo information 
 3. Install Confluent Platform with release name «my-confluent» and version `0.5.0` 
 
 ## Contributing
-
 We welcome any contributions:
-
 NOTE: It's not officially supported repo, hence support is on "best effort" basis.
-
 * Report all enhancements, bugs, and tasks as https://github.com/confluentinc/cp-helm-charts/issues[GitHub issues]
 * Provide fixes or enhancements by opening pull requests in GitHub
 
 ## Documentation
-
 https://helm.sh/[Helm] is an open-source packaging tool that helps you install applications and services on Kubernetes.
 Helm uses a packaging format called charts.
 Charts are a collection of YAML templates that describe a related set of Kubernetes resources.
@@ -322,13 +319,11 @@ You may alternatively set up a Kubernetes cluster in the cloud using  other prov
 https://cloud.google.com/kubernetes-engine/docs/quickstart[Google Kubernetes Engine (GKE)].
 
 [[create-local-minikube]]
-=== Install Minikube and Drivers
+### Install Minikube and Drivers
+* Minikube version 0.23.0 or higher is required for docker server `https://github.com/moby/moby/pull/31352%5B17.05]`, which adds support for using `+ARG+` in `+FROM+` in your `+Dockerfile+`.
+* First follow the basic https://github.com/kubernetes/minikube[Minikube installation instructions].
+* Then install the https://github.com/kubernetes/minikube/blob/master/docs/drivers.md[Minikube drivers].
 
-Minikube version 0.23.0 or higher is required for docker server https://github.com/moby/moby/pull/31352%5B17.05], which adds support for using `+ARG+` in `+FROM+` in your `+Dockerfile+`.
-
-First follow the basic https://github.com/kubernetes/minikube[Minikube installation instructions].
-
-Then install the https://github.com/kubernetes/minikube/blob/master/docs/drivers.md[Minikube drivers].
 Minikube uses Docker Machine to manage the Kubernetes VM so it benefits from the driver plugin architecture that Docker Machine uses to provide a consistent way to manage various VM providers.
 Minikube embeds VirtualBox and VMware Fusion drivers so there are no additional steps to use them.
 However, other drivers require an extra binary to be present  in the host `PATH`.
@@ -338,7 +333,7 @@ If you are running on macOS, in particular make sure to install the `hyperkit` d
 
 ```
 brew install hyperkit
-minikube config set driver hyperkit     #<1>
+minikube config set driver hyperkit    
 ```
 #### Use hyperkit drivel by default
 ### Start Minikube
