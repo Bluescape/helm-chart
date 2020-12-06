@@ -6,8 +6,11 @@ metadata:
   namespace: vault
 spec:
   size: 3
-  image: vault:1.4.2
+  image: vault:1.6.0
   bankVaultsImage: banzaicloud/bank-vaults:latest
+
+  vaultPodSpec:
+    priorityClassName: system-node-critical
 
   # Specify the ServiceAccount where the Vault Pod and the Bank-Vaults configurer/unsealer is running
   serviceAccount: vault
@@ -104,11 +107,11 @@ spec:
     # Detail can reference: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container
     vault:
       limits:
-        memory: "512Mi"
-        cpu: "200m"
+        cpu: 2
+        memory: 1Gi
       requests:
-        memory: "256Mi"
-        cpu: "100m"
+        cpu: 1
+        memory: 512Mi
 
   # See: https://github.com/banzaicloud/bank-vaults#example-external-vault-configuration for more details.
   externalConfig:
@@ -135,10 +138,10 @@ spec:
               - loki
               - promtail
               # Bluescape SA names:
+              - analytics-data-import
+              - analytics-data-refresh
               - analytics-data-transform
               - analytics-init
-              - analytics-data-refresh
-              - analytics-data-import
               - browser-client
               - bull-exporter
               - cmt

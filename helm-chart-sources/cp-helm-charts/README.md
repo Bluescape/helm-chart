@@ -1,41 +1,24 @@
-= Confluent Platform Helm Charts
-:icons: font
-:toc: auto
-:toc-placement: macro
-:toc-position: auto
-:toc-title: Table of content
-:toclevels: 3
-:idprefix:
-:idseparator: -
-:sectanchors:
-:icons: font
-:source-highlighter: rouge
-:experimental:
-
+#Confluent Platform Helm Charts
 You can use the Helm charts to deploy services on Kubernetes for development, test, and proof of concept environments.
-
 CAUTION: Open Source Helm charts are not supported by Confluent.
 
-*If you want to use Confluent Platform on Kubernetes in a test or production environment, follow these instructions to install https://docs.confluent.io/current/installation/operator/index.html#operator-about-intro[Confluent Operator].*
+* If you want to use Confluent Platform on Kubernetes in a test or production environment, follow these instructions to install https://docs.confluent.io/current/installation/operator/index.html#operator-about-intro[Confluent Operator].
+* The https://github.com/confluentinc/cp-helm-charts[Confluent Platform Helm Charts] enable you to deploy Confluent Platform components on Kubernetes for development, test, and proof of concept environments.
 
-toc::[]
-
-The https://github.com/confluentinc/cp-helm-charts[Confluent Platform Helm Charts] enable you to deploy Confluent Platform components on Kubernetes for development, test, and proof of concept environments.
-
-== Installation
+## Installation
 
 [source,bash]
 .Installing helm chart
 ----
-helm repo add confluentinc https://confluentinc.github.io/cp-helm-charts/   #<1>
-helm repo update    #<2>
-helm install confluentinc/cp-helm-charts --name my-confluent --version 0.5.0    #<3>
+* helm repo add confluentinc https://confluentinc.github.io/cp-helm-charts/  
+* helm repo update    
+* helm install confluentinc/cp-helm-charts --name my-confluent --version 0.5.0   
 ----
-<1> Add `confluentinc` helm charts repo
-<2> Update repo information 
-<3> Install Confluent Platform with release name «my-confluent» and version `0.5.0` 
+1.  Add `confluentinc` helm charts repo
+2. Update repo information 
+3. Install Confluent Platform with release name «my-confluent» and version `0.5.0` 
 
-== Contributing
+## Contributing
 
 We welcome any contributions:
 
@@ -44,7 +27,7 @@ NOTE: It's not officially supported repo, hence support is on "best effort" basi
 * Report all enhancements, bugs, and tasks as https://github.com/confluentinc/cp-helm-charts/issues[GitHub issues]
 * Provide fixes or enhancements by opening pull requests in GitHub
 
-== Documentation
+## Documentation
 
 https://helm.sh/[Helm] is an open-source packaging tool that helps you install applications and services on Kubernetes.
 Helm uses a packaging format called charts.
@@ -61,11 +44,11 @@ Platform services:
 * ksqlDB
 * Confluent Control Center
 
-=== Environment Preparation
+## Environment Preparation
 
 You must have a Kubernetes cluster that has Helm configured.
 
-==== Tested Software
+## Tested Software
 
 These Helm charts have been tested with the following software versions:
 
@@ -75,7 +58,7 @@ These Helm charts have been tested with the following software versions:
 
 For local Kubernetes installation with Minikube, see <<create-local-minikube>>.
 
-==== Install Helm on Kubernetes
+## Install Helm on Kubernetes
 
 Follow the directions to https://docs.helm.sh/using_helm/#quickstart-guide[install and deploy Helm] to the Kubernetes cluster.
 
@@ -100,7 +83,7 @@ kubectl patch deploy --namespace kube-system tiller-deploy -p '{"spec":{"templat
 helm init --service-account tiller --upgrade
 ----
 
-=== Persistence
+## Persistence
 
 The ZooKeeper and Kafka cluster deployed with `StatefulSets` that have a `volumeClaimTemplate` which provides the persistent volume for each replica.
 You can define the size of the volumes by changing `dataDirSize` and `dataLogDirSize` under `cp-zookeeper` and `size` under `cp-kafka` in https://github.com/confluentinc/cp-helm-charts/blob/master/values.yaml[values.yaml].
@@ -171,9 +154,9 @@ NAME                REVISION    UPDATED                     STATUS      CHART   
 my-confluent-oss    1           Tue Jun 12 16:56:39 2018    DEPLOYED    cp-helm-charts-0.1.0    default
 ----
 
-=== Verify Installation
+## Verify Installation
 
-==== Using Helm
+### Using Helm
 
 NOTE: _This step is optional_
 
@@ -183,7 +166,7 @@ NOTE: _This step is optional_
 helm test my-confluent-oss
 ----
 
-==== Verify Kafka cluster
+### Verify Kafka cluster
 
 NOTE: _This step is optional_ - to verify that Kafka is working as expected, connect to one of the Kafka pods and produce some messages to a Kafka topic.
 [source,sh]
@@ -218,9 +201,9 @@ kubectl exec -c cp-kafka-broker -it my-confluent-oss-cp-kafka-0 -- /bin/bash  /u
 You should see the messages which were published from the console producer. 
 Press kbd:[Ctrl + C] to stop consuming.
 
-==== Manual Test
+#### Manual Test
 
-===== Zookeepers
+#### Zookeepers
 
 ----
 git clone https://github.com/confluentinc/cp-helm-charts.git        #<1>
@@ -235,7 +218,7 @@ kubectl exec -it zookeeper-client -- /bin/bash zookeeper-shell <zookeeper servic
 <3> Connect to the client pod and use the `+zookeeper-shell+` command to  explore brokers...
 <4> topics, etc.
 
-===== Kafka
+#### Kafka
 
 [source,bash]
 .Validate Kafka installation 
@@ -389,7 +372,7 @@ minikube config set driver hyperkit     #<1>
 <1> Use hyperkit drivel by default
 ====
 
-=== Start Minikube
+### Start Minikube
 
 TIP: The following command increases the memory to 6096 MB and uses the `hyperkit` driver for the native macOS Hypervisor.
 
@@ -432,7 +415,7 @@ kubectl config use-context minikube.internal
 Switched to context "minikube.internal".
 ----
 
-==== Verify Minikube Local Kubernetes Environment
+#### Verify Minikube Local Kubernetes Environment
 
 ----
 kubectl config current-context
@@ -443,7 +426,7 @@ Kubernetes master is running at https://192.168.99.106:8443
 KubeDNS is running at https://192.168.99.106:8443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
 ----
 
-== Thanks
+## Thanks
 
 Huge thanks to:
 
