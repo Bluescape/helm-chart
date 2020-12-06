@@ -6,7 +6,6 @@ CAUTION: Open Source Helm charts are not supported by Confluent.
 * The https://github.com/confluentinc/cp-helm-charts[Confluent Platform Helm Charts] enable you to deploy Confluent Platform components on Kubernetes for development, test, and proof of concept environments.
 
 ## Installation
-
 [source,bash]
 Installing helm chart
 ```
@@ -42,23 +41,18 @@ Platform services:
 * Confluent Control Center
 
 ## Environment Preparation
-
 You must have a Kubernetes cluster that has Helm configured.
-
 ## Tested Software
-
 These Helm charts have been tested with the following software versions:
 
 * https://kubernetes.io/[Kubernetes] 1.9.2+
 * https://helm.sh/[Helm] 2.8.2+
 * https://hub.docker.com/u/confluentinc/[Confluent Platform Docker Images]
 
-For local Kubernetes installation with Minikube, see <<create-local-minikube>>.
+For local Kubernetes installation with Minikube, see create-local-minikube.
 
 ## Install Helm on Kubernetes
-
-Follow the directions to https://docs.helm.sh/using_helm/#quickstart-guide[install and deploy Helm] to the Kubernetes cluster.
-
+Follow the directions to `https://docs.helm.sh/using_helm/#quickstart-guide[install and deploy Helm]` to the Kubernetes cluster.
 View a list of all deployed releases in the local installation.
 
 [source,sh]
@@ -137,7 +131,6 @@ If you want to install without the Confluent Schema Registry instance, the REST 
 ```
 helm install --set cp-schema-registry.enabled=false,cp-kafka-rest.enabled=false,cp-kafka-connect.enabled=false confluentinc/cp-helm-charts
 ```
-
 View the installed Helm releases:
 
 [source,sh]
@@ -148,7 +141,6 @@ my-confluent-oss    1           Tue Jun 12 16:56:39 2018    DEPLOYED    cp-helm-
 ```
 
 ## Verify Installation
-
 ### Using Helm
 
 NOTE: _This step is optional_
@@ -320,7 +312,7 @@ https://cloud.google.com/kubernetes-engine/docs/quickstart[Google Kubernetes Eng
 
 [[create-local-minikube]]
 ### Install Minikube and Drivers
-* Minikube version 0.23.0 or higher is required for docker server `https://github.com/moby/moby/pull/31352%5B17.05]`, which adds support for using `+ARG+` in `+FROM+` in your `+Dockerfile+`.
+* Minikube version 0.23.0 or higher is required for docker server which adds support for using `+ARG+` in `+FROM+` in your `+Dockerfile+`.
 * First follow the basic https://github.com/kubernetes/minikube[Minikube installation instructions].
 * Then install the https://github.com/kubernetes/minikube/blob/master/docs/drivers.md[Minikube drivers].
 
@@ -383,8 +375,8 @@ KubeDNS is running at https://192.168.99.106:8443/api/v1/namespaces/kube-system/
 
 ## Thanks
 Huge thanks to:
-* https://github.com/kubernetes/charts/tree/master/incubator/kafka[Kafka helm chart]
-* https://github.com/kubernetes/charts/tree/master/incubator/zookeeper[ZooKeeper helm chart]
-* https://github.com/kubernetes/charts/tree/master/incubator/schema-registry[Schema Registry helm chart]
-* https://github.com/Yolean/kubernetes-kafka[kubernetes-kafka]
-* https://github.com/solsson/dockerfiles[docker-kafka]
+* https://github.com/kubernetes/charts/tree/master/incubator/kafka [Kafka helm chart]
+* https://github.com/kubernetes/charts/tree/master/incubator/zookeeper [ZooKeeper helm chart]
+* https://github.com/kubernetes/charts/tree/master/incubator/schema-registry [Schema Registry helm chart]
+* https://github.com/Yolean/kubernetes-kafka [kubernetes-kafka]
+* https://github.com/solsson/dockerfiles [docker-kafka]
