@@ -46,3 +46,34 @@ in a format like "zkhost1:port:port;zkhost2:port:port"
 {{- end }}
 {{- printf "%s" (join ";" $zk.servers) | quote -}}
 {{- end -}}
+
+{{/*
+Common labels
+*/}}
+{{- define "cp-zookeeper.labels" -}}
+helm.sh/chart: {{ include "cp-zookeeper.chart" . }}
+{{ include "cp-zookeeper.selectorLabels" . }}
+{{- if .Chart.AppVersion }}
+app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
+{{- end }}
+app.kubernetes.io/managed-by: {{ .Release.Service }}
+{{- end }}
+
+{{/*
+Selector labels
+*/}}
+{{- define "cp-zookeeper.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "cp-zookeeper.name" . }}
+app.kubernetes.io/instance: {{ .Release.Name }}
+{{- end }}
+
+{{/*
+Create the name of the service account to use
+*/}}
+{{- define "cp-zookeeper.serviceAccountName" -}}
+{{- if .Values.serviceAccount.create }}
+{{- default (include "cp-zookeeper.fullname" .) .Values.serviceAccount.name }}
+{{- else }}
+{{- default "default" .Values.serviceAccount.name }}
+{{- end }}
+{{- end }}

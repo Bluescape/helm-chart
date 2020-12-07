@@ -86,3 +86,34 @@ Create a variable containing all the datadirs created.
 {{- printf "/opt/kafka/data-%d/logs" $k -}}
 {{- end -}}
 {{- end -}}
+
+{{/*
+Common labels
+*/}}
+{{- define "cp-kafka.labels" -}}
+helm.sh/chart: {{ include "cp-kafka.chart" . }}
+{{ include "cp-kafka.selectorLabels" . }}
+{{- if .Chart.AppVersion }}
+app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
+{{- end }}
+app.kubernetes.io/managed-by: {{ .Release.Service }}
+{{- end }}
+
+{{/*
+Selector labels
+*/}}
+{{- define "cp-kafka.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "cp-kafka.name" . }}
+app.kubernetes.io/instance: {{ .Release.Name }}
+{{- end }}
+
+{{/*
+Create the name of the service account to use
+*/}}
+{{- define "cp-kafka.serviceAccountName" -}}
+{{- if .Values.serviceAccount.create }}
+{{- default (include "cp-kafka.fullname" .) .Values.serviceAccount.name }}
+{{- else }}
+{{- default "default" .Values.serviceAccount.name }}
+{{- end }}
+{{- end }}

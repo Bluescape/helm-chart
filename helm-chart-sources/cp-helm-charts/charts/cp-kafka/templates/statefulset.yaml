@@ -39,6 +39,9 @@ spec:
       {{- end }}
       {{- end }}
     spec:
+      serviceAccountName: {{ include "cp-kafka.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
       affinity:
         podAntiAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:
@@ -58,6 +61,8 @@ spec:
       containers:
       {{- if .Values.prometheus.jmx.enabled }}
       - name: prometheus-jmx-exporter
+        securityContext:
+          {{- toYaml .Values.securityContext | nindent 12 }}      
         image: "{{ .Values.prometheus.jmx.image }}:{{ .Values.prometheus.jmx.imageTag }}"
         imagePullPolicy: "{{ .Values.prometheus.jmx.imagePullPolicy }}"
         command:
@@ -79,6 +84,8 @@ spec:
           mountPath: /etc/jmx-kafka
       {{- end }}
       - name: {{ template "cp-kafka.name" . }}-broker
+        securityContext:
+          {{- toYaml .Values.securityContext | nindent 12 }}      
         image: "{{ .Values.image }}:{{ .Values.imageTag }}"
         imagePullPolicy: "{{ .Values.imagePullPolicy }}"
         {{- if .Values.securityContext }}

@@ -126,3 +126,34 @@ else use user-provided URL
 {{- default $zookeeperConnect $zookeeperConnectOverride }}
 {{- end -}}
 {{- end -}}
+
+{{/*
+Common labels
+*/}}
+{{- define "cp-control-center.labels" -}}
+helm.sh/chart: {{ include "cp-control-center.chart" . }}
+{{ include "cp-control-center.selectorLabels" . }}
+{{- if .Chart.AppVersion }}
+app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
+{{- end }}
+app.kubernetes.io/managed-by: {{ .Release.Service }}
+{{- end }}
+
+{{/*
+Selector labels
+*/}}
+{{- define "cp-control-center.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "cp-control-center.name" . }}
+app.kubernetes.io/instance: {{ .Release.Name }}
+{{- end }}
+
+{{/*
+Create the name of the service account to use
+*/}}
+{{- define "cp-control-center.serviceAccountName" -}}
+{{- if .Values.serviceAccount.create }}
+{{- default (include "cp-control-center.fullname" .) .Values.serviceAccount.name }}
+{{- else }}
+{{- default "default" .Values.serviceAccount.name }}
+{{- end }}
+{{- end }}

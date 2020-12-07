@@ -79,3 +79,34 @@ We truncate at 63 chars because some Kubernetes name fields are limited to this 
 {{- printf "http://%s:8081" (include "cp-ksql-server.cp-schema-registry.fullname" .) -}}
 {{- end -}}
 {{- end -}}
+
+{{/*
+Common labels
+*/}}
+{{- define "cp-ksql-server.labels" -}}
+helm.sh/chart: {{ include "cp-ksql-server.chart" . }}
+{{ include "cp-ksql-server.selectorLabels" . }}
+{{- if .Chart.AppVersion }}
+app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
+{{- end }}
+app.kubernetes.io/managed-by: {{ .Release.Service }}
+{{- end }}
+
+{{/*
+Selector labels
+*/}}
+{{- define "cp-ksql-server.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "cp-ksql-server.name" . }}
+app.kubernetes.io/instance: {{ .Release.Name }}
+{{- end }}
+
+{{/*
+Create the name of the service account to use
+*/}}
+{{- define "cp-ksql-server.serviceAccountName" -}}
+{{- if .Values.serviceAccount.create }}
+{{- default (include "cp-ksql-server.fullname" .) .Values.serviceAccount.name }}
+{{- else }}
+{{- default "default" .Values.serviceAccount.name }}
+{{- end }}
+{{- end }}
