@@ -56,7 +56,7 @@ spec:
         name: vault-raft
       spec:
         # https://kubernetes.io/docs/concepts/storage/persistent-volumes/#class-1
-        # storageClassName: ""
+        storageClassName: "persistent"
         accessModes:
           - ReadWriteOnce
         volumeMode: Filesystem
