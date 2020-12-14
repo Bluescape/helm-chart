@@ -20,8 +20,8 @@ items:
       {{- if hasKey .Values.grafana.config.auth "anonymous" }}
       auth.anonymous:
         enabled: {{ default false .Values.grafana.config.auth.anonymous.enabled }}
-        auth.basic:
-          enabled: {{ default false .Values.grafana.config.auth.anonymous.auth.basic }}
+      auth.basic:
+        enabled: {{ default false .Values.grafana.config.auth.basic.enabled }}
       {{- else }}
       {{- end }}
       {{- if hasKey .Values.grafana.config.auth.users "auto_assign_org_role" }}
