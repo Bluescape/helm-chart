@@ -995,7 +995,7 @@ data:
             {
               "hide": 0,
               "label": "datasource",
-              "name": "DS_PROMETHEUS",
+              "name": "DS_PROMETHEUS_DOCKER",
               "options": [],
               "query": "prometheus",
               "refresh": 1,
