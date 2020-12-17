@@ -1,0 +1,6 @@
+dependencies:
+- name: bluescape-monitoring-dashboards
+  repository: https://bluescape.github.io/helm-charts
+  version: 0.2.0
+digest: sha256:90fd574c2a644273ec7e5beb494d977833aa13a04fba1a27f7723ad912786ce2
+generated: "2020-12-17T10:33:51.922892-08:00"
