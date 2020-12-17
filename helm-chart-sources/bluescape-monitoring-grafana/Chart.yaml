@@ -27,5 +27,5 @@ dependencies:
     alias: bluescape-monitoring-dashboards
     version: 0.2.0
     repository: https://bluescape.github.io/helm-charts
-    #repository: file:////Users/kshitijgupta/PycharmProjects/helm-charts/helm-chart-sources/bluescape-monitoring-grafana/templates/charts
+    #repository: file:///absolute/path/to/folder
     condition: custom_dashboards.enable
