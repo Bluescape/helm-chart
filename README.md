@@ -28,6 +28,6 @@
         - Reference: https://github.com/sighupio/gatekeeper-policy-manager
 
 #### Ported for internal hosting to address Helm chart deprecation issue.
-- **dex**
-- **gangway**
-- **oauth2-proxy**
+  - **dex**
+  - **gangway**
+  - **oauth2-proxy**
