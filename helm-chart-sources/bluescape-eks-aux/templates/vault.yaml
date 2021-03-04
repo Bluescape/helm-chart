@@ -146,12 +146,14 @@ spec:
               - bull-exporter
               - cmt
               - collab
+              - cobrowse
               - config
               - config-center-client
               - config-center-service
               - cors
               - document
               - elementary
+              - graphql
               - health
               - identity-api
               - identity-client
