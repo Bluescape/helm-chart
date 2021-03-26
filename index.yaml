@@ -3,9 +3,9 @@ entries:
   aws-lb-controller-crds:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-03-26T14:16:18.475335-07:00"
+    created: "2021-03-26T15:11:13.973211-07:00"
     description: A Helm chart for Kubernetes
-    digest: 9ea8f0599020e0891264465d84882fec84cdcb4a3b41474f2a029c007257098f
+    digest: 550301817704955e9913fba8cb4dc259323b3dfbe380c4fbebb73bc02794348a
     name: aws-lb-controller-crds
     type: application
     urls:
@@ -14,9 +14,9 @@ entries:
   bluescape-eks-aux:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-03-26T14:16:18.479775-07:00"
+    created: "2021-03-26T15:11:13.977321-07:00"
     description: A Helm chart for Kubernetes
-    digest: 4047423f24db5012a90afc94ec464d86804f2b95b0b549e2531f586a7043c64b
+    digest: 65b04272032825185b0556d810010d4614a966f607bfc0ba16f3dc0e16787bf9
     name: bluescape-eks-aux
     type: application
     urls:
@@ -24,7 +24,7 @@ entries:
     version: 0.1.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-03-26T14:16:18.477294-07:00"
+    created: "2021-03-26T15:11:13.97552-07:00"
     description: A Helm chart for Kubernetes
     digest: d7d41a1d1cfbb1ead78a076ad0068dc2a207f3d2754870b3603ec8400749eaaf
     name: bluescape-eks-aux
@@ -35,9 +35,9 @@ entries:
   bluescape-monitoring-crds:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-03-26T14:16:18.487756-07:00"
+    created: "2021-03-26T15:11:13.985276-07:00"
     description: A Helm chart for Kubernetes
-    digest: ca9cdb9cd3f14f79f104de36278c65a9a356621b82aee1902e076b6a3b1bffe7
+    digest: cc37259402fbca9f997cb8265d37609314134b6978010c90f8965b579fd39270
     name: bluescape-monitoring-crds
     type: application
     urls:
@@ -46,9 +46,9 @@ entries:
   bluescape-monitoring-dashboards:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-03-26T14:16:18.512145-07:00"
+    created: "2021-03-26T15:11:14.01376-07:00"
     description: A Helm chart for Kubernetes
-    digest: fa187e41820626344876f4163f8e9651b661e2ceffe128fc428ab62fc5d04b0c
+    digest: 40449310664ec071f188745dda28fabffcbcc9c450a8939d6690a751ba15010b
     name: bluescape-monitoring-dashboards
     type: application
     urls:
@@ -56,7 +56,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-03-26T14:16:18.493582-07:00"
+    created: "2021-03-26T15:11:13.991087-07:00"
     description: A Helm chart for Kubernetes
     digest: bfcf1c7cb2972ed7f62f7339524cd37046cef014eb341beebafa925b4a8504ed
     name: bluescape-monitoring-dashboards
@@ -67,7 +67,23 @@ entries:
   bluescape-monitoring-grafana:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-03-26T14:16:18.519217-07:00"
+    created: "2021-03-26T15:11:14.026427-07:00"
+    dependencies:
+    - alias: bluescape-monitoring-dashboards
+      condition: custom_dashboards.enable
+      name: bluescape-monitoring-dashboards
+      repository: https://bluescape.github.io/helm-charts
+      version: 0.2.0
+    description: A Helm chart for Kubernetes
+    digest: 4abee111bd3bacee50fdad01a2eca3161de31e7815a339060c58111af581fb59
+    name: bluescape-monitoring-grafana
+    type: application
+    urls:
+    - https://bluescape.github.io/helm-charts/packages/bluescape-monitoring-grafana-0.2.1.tgz
+    version: 0.2.1
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2021-03-26T15:11:14.020472-07:00"
     dependencies:
     - alias: bluescape-monitoring-dashboards
       condition: custom_dashboards.enable
@@ -84,7 +100,7 @@ entries:
   cortex:
   - apiVersion: v2
     appVersion: v1.4.0
-    created: "2021-03-26T14:16:18.528376-07:00"
+    created: "2021-03-26T15:11:14.035122-07:00"
     dependencies:
     - alias: memcached
       condition: memcached.enabled
@@ -102,7 +118,7 @@ entries:
       repository: https://charts.bitnami.com/bitnami
       version: 4.2.27
     description: Cortex
-    digest: 6d60552e4977e89bdec0b07fa8f16c582728da6fb74f2fa9dcff1d035644fa35
+    digest: 1b9987ea3ae5b833b7c7834f7934e6914edd7cc244a4b2e50d2d337112515953
     home: https://cortexmetrics.io/
     icon: https://avatars2.githubusercontent.com/u/43045022?s=200&v=4
     kubeVersion: ^1.10.0-0
@@ -118,7 +134,7 @@ entries:
   cp-helm-charts:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-03-26T14:16:18.572575-07:00"
+    created: "2021-03-26T15:11:14.06753-07:00"
     dependencies:
     - condition: cp-kafka.enabled
       name: cp-kafka
@@ -149,14 +165,14 @@ entries:
       repository: file://./charts/cp-control-center
       version: 0.1.0
     description: A Helm chart for Confluent Platform Community Edition
-    digest: 9981c777e16f1b2cfc05d4599abd0438692557de2733ae09cdbaeb9135ca66af
+    digest: 7da4fdfacb666c895f0b48167e94e28cd3c333c912ea8fb5b1fb868308c4a1c9
     name: cp-helm-charts
     urls:
     - https://bluescape.github.io/helm-charts/packages/cp-helm-charts-0.5.1.tgz
     version: 0.5.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-03-26T14:16:18.566222-07:00"
+    created: "2021-03-26T15:11:14.06167-07:00"
     dependencies:
     - condition: cp-kafka.enabled
       name: cp-kafka
@@ -195,10 +211,10 @@ entries:
   dex:
   - apiVersion: v1
     appVersion: 2.24.0
-    created: "2021-03-26T14:16:18.574735-07:00"
+    created: "2021-03-26T15:11:14.070368-07:00"
     deprecated: true
     description: DEPRECATED OpenID Connect Identity (OIDC) and OAuth 2.0 Provider with Pluggable Connectors
-    digest: 89f685980c9ebe585ac441f071ebe5f716503b5bdd0f5e899affdff254f66bda
+    digest: 82108c1b04ad1a9f22d7b292a7b11e524ea5985e7e79d00c086c48614a1a4349
     home: https://github.com/dexidp/dex/
     icon: https://github.com/dexidp/dex/raw/master/Documentation/logos/dex-glyph-color.png
     keywords:
@@ -211,10 +227,10 @@ entries:
   gangway:
   - apiVersion: v1
     appVersion: 3.3.0
-    created: "2021-03-26T14:16:18.576569-07:00"
+    created: "2021-03-26T15:11:14.07269-07:00"
     deprecated: true
     description: DEPRECATED An application that can be used to easily enable authentication flows via OIDC for a kubernetes cluster.
-    digest: 1b403a2c529ebea8d596b88a9b4d2bfddc684e6c56f0de19962213164a08f7c5
+    digest: c371a0495aa43a377a832e67a6ac61aea375dba75716c4b2030b1a895f518b55
     home: https://github.com/heptiolabs/gangway
     name: gangway
     sources:
@@ -225,9 +241,9 @@ entries:
   gatekeeper-policy-manager:
   - apiVersion: v2
     appVersion: v0.4.0
-    created: "2021-03-26T14:16:18.578257-07:00"
+    created: "2021-03-26T15:11:14.075241-07:00"
     description: A Helm chart for Gatekeeper Policy Manager which is a simple read-only web UI for viewing OPA Gatekeeper policies' status in a Kubernetes Cluster.
-    digest: bfda652a4e469978fb8318470fab35a70ced82f4786a36aab4fc1d0b36ee3284
+    digest: 7ab7b16093d4a4e8b8856593ab334764056dd15e2120f824f5c1cffe24334267
     name: gatekeeper-policy-manager
     type: application
     urls:
@@ -236,9 +252,9 @@ entries:
   kube-oidc-proxy:
   - apiVersion: v1
     appVersion: v0.3.0
-    created: "2021-03-26T14:16:18.580525-07:00"
+    created: "2021-03-26T15:11:14.077522-07:00"
     description: A Helm chart for kube-oidc-proxy
-    digest: 9d0e2524c056223cf70ab924d11480fb8e4ceadbb879ee5958674f94c5d39ff3
+    digest: 23f9f83a66c12405fa1e2d0537563e2e430e3d4785ad6b7cd7c6063946d26ff2
     home: https://github.com/jetstack/kube-oidc-proxy
     maintainers:
     - name: mhrabovcin
@@ -250,10 +266,10 @@ entries:
   oauth2-proxy:
   - apiVersion: v1
     appVersion: 5.1.0
-    created: "2021-03-26T14:16:18.582366-07:00"
+    created: "2021-03-26T15:11:14.079328-07:00"
     deprecated: true
     description: DEPRECATED - A reverse proxy that provides authentication with Google, Github or other providers
-    digest: ed1b39b58183042c21c23079eb8c8eb8031df26146d226a14ab4ebb27724f9b9
+    digest: 6fdd65daec201e4998d5e51e3e7834e25407e59e0acfb672e121a244bc44755e
     home: https://pusher.github.io/oauth2_proxy/
     keywords:
     - kubernetes
@@ -269,4 +285,4 @@ entries:
     urls:
     - https://bluescape.github.io/helm-charts/packages/oauth2-proxy-3.2.5.tgz
     version: 3.2.5
-generated: "2021-03-26T14:16:18.473163-07:00"
+generated: "2021-03-26T15:11:13.970825-07:00"
