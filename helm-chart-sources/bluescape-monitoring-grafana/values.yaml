@@ -8,6 +8,9 @@ fullnameOverride: ""
 custom_dashboards:
   enable: false
 
+external_secrets:
+  setup_grafana_oidc_secret: true
+
 grafana:
   replicaCount: 1
   domain_name: example.io
