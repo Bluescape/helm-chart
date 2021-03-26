@@ -3,9 +3,9 @@ entries:
   aws-lb-controller-crds:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-03-26T14:12:18.12505-07:00"
+    created: "2021-03-26T14:16:18.475335-07:00"
     description: A Helm chart for Kubernetes
-    digest: 64538817c4910f3639dd36b6052f69045342cab8e91b66d9ba12db32161190a8
+    digest: 9ea8f0599020e0891264465d84882fec84cdcb4a3b41474f2a029c007257098f
     name: aws-lb-controller-crds
     type: application
     urls:
@@ -14,7 +14,17 @@ entries:
   bluescape-eks-aux:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-03-26T14:12:18.127238-07:00"
+    created: "2021-03-26T14:16:18.479775-07:00"
+    description: A Helm chart for Kubernetes
+    digest: 4047423f24db5012a90afc94ec464d86804f2b95b0b549e2531f586a7043c64b
+    name: bluescape-eks-aux
+    type: application
+    urls:
+    - https://bluescape.github.io/helm-charts/packages/bluescape-eks-aux-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2021-03-26T14:16:18.477294-07:00"
     description: A Helm chart for Kubernetes
     digest: d7d41a1d1cfbb1ead78a076ad0068dc2a207f3d2754870b3603ec8400749eaaf
     name: bluescape-eks-aux
@@ -25,9 +35,9 @@ entries:
   bluescape-monitoring-crds:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-03-26T14:12:18.13593-07:00"
+    created: "2021-03-26T14:16:18.487756-07:00"
     description: A Helm chart for Kubernetes
-    digest: 8ab9e043d90f4615385744a618339c3172d6883fa1925436a7a9e46b729dcda2
+    digest: ca9cdb9cd3f14f79f104de36278c65a9a356621b82aee1902e076b6a3b1bffe7
     name: bluescape-monitoring-crds
     type: application
     urls:
@@ -36,9 +46,9 @@ entries:
   bluescape-monitoring-dashboards:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-03-26T14:12:18.164885-07:00"
+    created: "2021-03-26T14:16:18.512145-07:00"
     description: A Helm chart for Kubernetes
-    digest: 7d293492b94d4490138f8059bd078b09dd11ab8a583ec44584de45ca68fea76e
+    digest: fa187e41820626344876f4163f8e9651b661e2ceffe128fc428ab62fc5d04b0c
     name: bluescape-monitoring-dashboards
     type: application
     urls:
@@ -46,7 +56,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-03-26T14:12:18.158574-07:00"
+    created: "2021-03-26T14:16:18.493582-07:00"
     description: A Helm chart for Kubernetes
     digest: bfcf1c7cb2972ed7f62f7339524cd37046cef014eb341beebafa925b4a8504ed
     name: bluescape-monitoring-dashboards
@@ -57,7 +67,7 @@ entries:
   bluescape-monitoring-grafana:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-03-26T14:12:18.173079-07:00"
+    created: "2021-03-26T14:16:18.519217-07:00"
     dependencies:
     - alias: bluescape-monitoring-dashboards
       condition: custom_dashboards.enable
@@ -65,7 +75,7 @@ entries:
       repository: https://bluescape.github.io/helm-charts
       version: 0.2.0
     description: A Helm chart for Kubernetes
-    digest: 636a55c7146dec5bd80c2e090b19e8a659dd5bfb70d3f8400bf8dcbbf51c22ce
+    digest: 4fd5ba46b5cbb4f385b1903ddb37c6bd13e523dc5605b744e5c7a1e92060897f
     name: bluescape-monitoring-grafana
     type: application
     urls:
@@ -74,7 +84,7 @@ entries:
   cortex:
   - apiVersion: v2
     appVersion: v1.4.0
-    created: "2021-03-26T14:12:18.182472-07:00"
+    created: "2021-03-26T14:16:18.528376-07:00"
     dependencies:
     - alias: memcached
       condition: memcached.enabled
@@ -92,7 +102,7 @@ entries:
       repository: https://charts.bitnami.com/bitnami
       version: 4.2.27
     description: Cortex
-    digest: 5fb16d4eb6cd61022daca3aa27f2898a2e9802eac4f1fb3fb0a8e7e98e896d8d
+    digest: 6d60552e4977e89bdec0b07fa8f16c582728da6fb74f2fa9dcff1d035644fa35
     home: https://cortexmetrics.io/
     icon: https://avatars2.githubusercontent.com/u/43045022?s=200&v=4
     kubeVersion: ^1.10.0-0
@@ -108,7 +118,7 @@ entries:
   cp-helm-charts:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-03-26T14:12:18.218307-07:00"
+    created: "2021-03-26T14:16:18.572575-07:00"
     dependencies:
     - condition: cp-kafka.enabled
       name: cp-kafka
@@ -139,14 +149,14 @@ entries:
       repository: file://./charts/cp-control-center
       version: 0.1.0
     description: A Helm chart for Confluent Platform Community Edition
-    digest: b6e8be7576da876fa0b88f6f256d2154420348fe6532a7ac3e10f5772862846b
+    digest: 9981c777e16f1b2cfc05d4599abd0438692557de2733ae09cdbaeb9135ca66af
     name: cp-helm-charts
     urls:
     - https://bluescape.github.io/helm-charts/packages/cp-helm-charts-0.5.1.tgz
     version: 0.5.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-03-26T14:12:18.212311-07:00"
+    created: "2021-03-26T14:16:18.566222-07:00"
     dependencies:
     - condition: cp-kafka.enabled
       name: cp-kafka
@@ -185,10 +195,10 @@ entries:
   dex:
   - apiVersion: v1
     appVersion: 2.24.0
-    created: "2021-03-26T14:12:18.221172-07:00"
+    created: "2021-03-26T14:16:18.574735-07:00"
     deprecated: true
     description: DEPRECATED OpenID Connect Identity (OIDC) and OAuth 2.0 Provider with Pluggable Connectors
-    digest: c974bdf1dfc0d51d4199fe61260e9d25b605fac4b33886e7c2c98aa391bbc36f
+    digest: 89f685980c9ebe585ac441f071ebe5f716503b5bdd0f5e899affdff254f66bda
     home: https://github.com/dexidp/dex/
     icon: https://github.com/dexidp/dex/raw/master/Documentation/logos/dex-glyph-color.png
     keywords:
@@ -201,10 +211,10 @@ entries:
   gangway:
   - apiVersion: v1
     appVersion: 3.3.0
-    created: "2021-03-26T14:12:18.223786-07:00"
+    created: "2021-03-26T14:16:18.576569-07:00"
     deprecated: true
     description: DEPRECATED An application that can be used to easily enable authentication flows via OIDC for a kubernetes cluster.
-    digest: dc522a52aae73aa289c9879174c7cd93a410ac69b2ea105a821a221db6854ba9
+    digest: 1b403a2c529ebea8d596b88a9b4d2bfddc684e6c56f0de19962213164a08f7c5
     home: https://github.com/heptiolabs/gangway
     name: gangway
     sources:
@@ -215,9 +225,9 @@ entries:
   gatekeeper-policy-manager:
   - apiVersion: v2
     appVersion: v0.4.0
-    created: "2021-03-26T14:12:18.226131-07:00"
+    created: "2021-03-26T14:16:18.578257-07:00"
     description: A Helm chart for Gatekeeper Policy Manager which is a simple read-only web UI for viewing OPA Gatekeeper policies' status in a Kubernetes Cluster.
-    digest: ee8bf57171dd4ea72d5f88b4a422371586dba63aea439d6855f5f36a7aa68c0a
+    digest: bfda652a4e469978fb8318470fab35a70ced82f4786a36aab4fc1d0b36ee3284
     name: gatekeeper-policy-manager
     type: application
     urls:
@@ -226,9 +236,9 @@ entries:
   kube-oidc-proxy:
   - apiVersion: v1
     appVersion: v0.3.0
-    created: "2021-03-26T14:12:18.228328-07:00"
+    created: "2021-03-26T14:16:18.580525-07:00"
     description: A Helm chart for kube-oidc-proxy
-    digest: 532d58a0fb403db171e5bee6ddc7827e9b39c1f999515a259045023ec74d09f9
+    digest: 9d0e2524c056223cf70ab924d11480fb8e4ceadbb879ee5958674f94c5d39ff3
     home: https://github.com/jetstack/kube-oidc-proxy
     maintainers:
     - name: mhrabovcin
@@ -240,10 +250,10 @@ entries:
   oauth2-proxy:
   - apiVersion: v1
     appVersion: 5.1.0
-    created: "2021-03-26T14:12:18.230869-07:00"
+    created: "2021-03-26T14:16:18.582366-07:00"
     deprecated: true
     description: DEPRECATED - A reverse proxy that provides authentication with Google, Github or other providers
-    digest: 70d68d26fd0feed6ff7cbec9d694d28668ba5249ccd3bf9478a6c10f6a1ccf42
+    digest: ed1b39b58183042c21c23079eb8c8eb8031df26146d226a14ab4ebb27724f9b9
     home: https://pusher.github.io/oauth2_proxy/
     keywords:
     - kubernetes
@@ -259,4 +269,4 @@ entries:
     urls:
     - https://bluescape.github.io/helm-charts/packages/oauth2-proxy-3.2.5.tgz
     version: 3.2.5
-generated: "2021-03-26T14:12:18.122886-07:00"
+generated: "2021-03-26T14:16:18.473163-07:00"

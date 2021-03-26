@@ -182,6 +182,7 @@ spec:
               - auth-system
               - monitoring
               - loki
+              - grafana
             policies: allow_secrets
             ttl: 1h
 
