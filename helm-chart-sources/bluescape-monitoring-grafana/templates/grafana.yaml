@@ -19,6 +19,14 @@ items:
         - secretRef:
             name: grafana-oidc-auth
         {{- end }}
+    {{- else }}
+    deployment:
+      replicas: 1
+        {{- if .Values.external_secrets.setup_grafana_oidc_secret }}
+      envFrom:
+        - secretRef:
+            name: grafana-oidc-auth
+        {{- end }}
     {{- end }}
     config:
       auth:

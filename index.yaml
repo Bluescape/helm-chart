@@ -67,7 +67,7 @@ entries:
   bluescape-monitoring-grafana:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-03-26T18:44:09.150673-04:00"
+    created: "2021-03-26T19:15:55.53175-04:00"
     dependencies:
     - alias: bluescape-monitoring-dashboards
       condition: custom_dashboards.enable
@@ -75,28 +75,12 @@ entries:
       repository: https://bluescape.github.io/helm-charts
       version: 0.2.0
     description: A Helm chart for Kubernetes
-    digest: 413a7b3c6e9bea75dc93d13d0a3a733db045994b752ab296266cc775ac3be183
+    digest: ec2df4546c63d6203094ef75d957a1c200005cb15d78ff66193b4669628d45b7
     name: bluescape-monitoring-grafana
     type: application
     urls:
-    - https://bluescape.github.io/helm-charts/packages/bluescape-monitoring-grafana-0.2.2.tgz
-    version: 0.2.2
-  - apiVersion: v2
-    appVersion: 1.16.0
-    created: "2021-03-26T15:11:14.026427-07:00"
-    dependencies:
-    - alias: bluescape-monitoring-dashboards
-      condition: custom_dashboards.enable
-      name: bluescape-monitoring-dashboards
-      repository: https://bluescape.github.io/helm-charts
-      version: 0.2.0
-    description: A Helm chart for Kubernetes
-    digest: 4abee111bd3bacee50fdad01a2eca3161de31e7815a339060c58111af581fb59
-    name: bluescape-monitoring-grafana
-    type: application
-    urls:
-    - https://bluescape.github.io/helm-charts/packages/bluescape-monitoring-grafana-0.2.1.tgz
-    version: 0.2.1
+    - https://bluescape.github.io/helm-charts/packages/bluescape-monitoring-grafana-0.2.3.tgz
+    version: 0.2.3
   - apiVersion: v2
     appVersion: 1.16.0
     created: "2021-03-26T15:11:14.020472-07:00"
