@@ -21,7 +21,7 @@ jobs:
         changed_chart_files=$(git --no-pager diff --name-only HEAD $(git merge-base HEAD origin/main) -- helm-chart-sources )
         echo Changed chart files: ${changed_chart_files[@]}
 
-        mkdir -p new_packages
+        mkdir -p .tmp/packages
         changed_charts=()
 
         for chart_file in $changed_chart_files;
@@ -33,21 +33,21 @@ jobs:
           if [ "$added" = "false" ]; then
             changed_charts+=( $chart )
             echo Creating new package for: $chart
-            helm package -u -d new_packages $chart
+            helm package -u -d .tmp/packages $chart
           fi
         done
   
         echo Generating new index
-        helm repo index --url https://bluescape.github.io/helm-charts/. --merge index.yaml new_packages
+        helm repo index --url https://bluescape.github.io/helm-charts/. --merge index.yaml .tmp
 
-        echo Moving new_packages to packages
-        find new_packages/ -name *.tgz | xargs -I '{}' mv '{}' packages/
+        echo Moving .tmp to packages
+        find .tmp/ -name *.tgz | xargs -I '{}' mv '{}' packages/
 
         echo Move the new merged index
-        if [ -f new_packages/index.yaml ]; then
-          mv new_packages/index.yaml index.yaml
+        if [ -f .tmp/index.yaml ]; then
+          mv .tmp/index.yaml index.yaml
         fi
-        rm -rf new_packages
+        rm -rf .tmp
 
         echo "::set-output name=changed_charts::[\"${changed_charts// /\", \"}\"]"
     - name: Show diff
