@@ -1,0 +1,43 @@
+name: Generate Helm Index
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+    # Figure out which files were changed
+    - uses: actions/checkout@v1
+    - name: Get changed helm charts
+      run: |
+        # See which files have changed in this commit
+        changed_chart_files=$(git --no-pager diff --name-only HEAD $(git merge-base HEAD origin/main) -- helm-chart-sources )
+        echo Changed chart files: ${changed_chart_files[@]}
+
+        mkdir -p new_packages
+        changed_charts=()
+
+        for chart_file in $changed_chart_files;
+        do
+          # Only grab the top two directories
+          chart=$(echo $chart_file | awk -F "/" '{print $1"/"$2}')
+          # Don't add duplicates
+          [[ "${changed_charts[@]}" == *"$chart"* ]] && added="true" || added="false"
+          if [ "$added" = "false" ]; then
+            changed_charts+=( $chart )
+            echo Creating new package for: $chart
+            helm package -u -d new_packages $chart
+          fi
+        done
+  
+        echo Generating new index
+        helm repo index --url https://bluescape.github.io/helm-charts/. --merge index.yaml new_packages
+        # update new_packages
+        echo Moving new_packages to packages
+        mv new_packages/*.tgz packages
+        mv new_packages/index.yaml index.yaml
+        rm -rf new_packages
+    - name: Show diff
+      run: git diff
