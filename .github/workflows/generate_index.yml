@@ -14,6 +14,8 @@ jobs:
       env:
         GITHUB_CONTEXT: ${{ toJson(github) }}
       run: echo "$GITHUB_CONTEXT"
+    # This complexity is required due to lack of a feature in helm cli.
+    # It creates a new index.yaml without updating the created timestamps of the untouched packages.
     - name: Get changed helm charts
       id: get-changed-charts
       run: |
@@ -21,6 +23,7 @@ jobs:
         changed_chart_files=$(git --no-pager diff --name-only HEAD $(git merge-base HEAD origin/main) -- helm-chart-sources )
         echo Changed chart files: ${changed_chart_files[@]}
 
+        # Create a temporary directory to store new package changes in
         mkdir -p .tmp/packages
         changed_charts=()
 
@@ -40,10 +43,10 @@ jobs:
         echo Generating new index
         helm repo index --url https://bluescape.github.io/helm-charts/. --merge index.yaml .tmp
 
-        echo Moving .tmp to packages
+        echo Moving .tmp packages to packages...
         find .tmp/ -name *.tgz | xargs -I '{}' mv '{}' packages/
 
-        echo Move the new merged index
+        echo Moving the new merged index to overwrite the old one...
         if [ -f .tmp/index.yaml ]; then
           mv .tmp/index.yaml index.yaml
         fi
@@ -59,6 +62,7 @@ jobs:
         git commit -m "Generate packages and update index"
     # Push back the changes
     # - name: Push changes
+    #   if: steps.get-changed-charts.outputs.changed_charts[0] != null
     #   uses: ad-m/github-push-action@master
     #   with:
     #     github_token: ${{ secrets.GITHUB_TOKEN }}
