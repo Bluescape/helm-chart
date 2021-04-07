@@ -56,7 +56,7 @@ jobs:
     - name: Show diff
       run: git diff
     - name: Commit changes
-      if: steps.get-changed-charts.outputs.changed_charts[0] != null
+      if: ${{ !contains(toJson(steps.get-changed-charts.outputs.changed_charts), '[]') }}
       run: |
         git add .
         git commit -m "Generate packages and update index"
