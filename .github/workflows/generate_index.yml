@@ -49,7 +49,7 @@ jobs:
         fi
         rm -rf new_packages
 
-         echo "::set-output name=changed_charts::[\"${changed_charts// /\", \"}\"]"
+        echo "::set-output name=changed_charts::[\"${changed_charts// /\", \"}\"]"
     - name: Show diff
       run: git diff
     - name: Commit changes
