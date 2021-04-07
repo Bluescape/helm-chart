@@ -10,7 +10,12 @@ jobs:
     steps:
     # Figure out which files were changed
     - uses: actions/checkout@v1
+    - name: Dump GitHub context
+      env:
+        GITHUB_CONTEXT: ${{ toJson(github) }}
+      run: echo "$GITHUB_CONTEXT"
     - name: Get changed helm charts
+      id: get-changed-charts
       run: |
         # See which files have changed in this commit
         changed_chart_files=$(git --no-pager diff --name-only HEAD $(git merge-base HEAD origin/main) -- helm-chart-sources )
@@ -43,5 +48,18 @@ jobs:
           mv new_packages/index.yaml index.yaml
         fi
         rm -rf new_packages
+
+         echo "::set-output name=changed_charts::[\"${changed_charts// /\", \"}\"]"
     - name: Show diff
       run: git diff
+    - name: Commit changes
+      if: steps.get-changed-charts.outputs.changed_charts[0] != null
+      run: |
+        git add .
+        git commit -m "Generate packages and update index"
+    # Push back the changes
+    # - name: Push changes
+    #   uses: ad-m/github-push-action@master
+    #   with:
+    #     github_token: ${{ secrets.GITHUB_TOKEN }}
+    #     branch: ${{ github.ref }}
