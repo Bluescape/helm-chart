@@ -2,7 +2,8 @@ name: Generate Helm Index
 
 on:
   pull_request:
-    branches: [main]
+    paths:
+    - helm-chart-sources/**
 
 jobs:
   generate:
@@ -20,7 +21,7 @@ jobs:
       id: get-changed-charts
       run: |
         # See which files have changed in this commit
-        changed_chart_files=$(git --no-pager diff --name-only HEAD $(git merge-base HEAD origin/main) -- helm-chart-sources )
+        changed_chart_files=$(git --no-pager diff --name-only HEAD $(git merge-base HEAD origin/${{github.base_ref}}) -- helm-chart-sources )
         echo Changed chart files: ${changed_chart_files[@]}
 
         # Create a temporary directory to store new package changes in
@@ -62,9 +63,9 @@ jobs:
         git config --local user.name "github-actions[bot]"
         git commit -m "Generate packages and update index"
     # Push back the changes
-    # - name: Push changes
-    #   if: steps.get-changed-charts.outputs.changed_charts[0] != null
-    #   uses: ad-m/github-push-action@master
-    #   with:
-    #     github_token: ${{ secrets.GITHUB_TOKEN }}
-    #     branch: ${{ github.ref }}
+    - name: Push changes
+      if: steps.get-changed-charts.outputs.charts_changed == 'true'
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.head_ref }}
