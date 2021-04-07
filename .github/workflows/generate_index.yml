@@ -34,10 +34,14 @@ jobs:
   
         echo Generating new index
         helm repo index --url https://bluescape.github.io/helm-charts/. --merge index.yaml new_packages
-        # update new_packages
+
         echo Moving new_packages to packages
-        mv new_packages/*.tgz packages
-        mv new_packages/index.yaml index.yaml
+        find new_packages/ -name *.tgz | xargs -I '{}' mv '{}' packages/
+
+        echo Move the new merged index
+        if [ -f new_packages/index.yaml ]; then
+          mv new_packages/index.yaml index.yaml
+        fi
         rm -rf new_packages
     - name: Show diff
       run: git diff
