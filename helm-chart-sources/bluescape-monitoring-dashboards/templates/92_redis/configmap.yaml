@@ -110,7 +110,7 @@ data:
             {
               "expr": "(sum by (node) (avg by(node) (irate(redis_stream_length{node=~\"${node_name:regex}\"}[1m])) ))",
               "interval": "${interval}",
-              "legendFormat": "Node= {{ node }}",
+              "legendFormat": "Node= {{ `{{ node }}` }}",
               "refId": "A"
             }
           ],
@@ -206,7 +206,7 @@ data:
             {
               "expr": "(sum by (node) (avg by(node) (irate(redis_client_errors{node=~\"${node_name:regex}\"}[1m])) ))\n",
               "interval": "${interval}",
-              "legendFormat": "Node={{ node }}",
+              "legendFormat": "Node={{ `{{ node }}` }}",
               "refId": "A"
             }
           ],
@@ -303,7 +303,7 @@ data:
               "expr": "(sum by (node) (avg by(node) (irate(redis_client_reconnects{node=~\"${node_name:regex}\"}[1m])) ))\n",
               "hide": false,
               "interval": "${interval}",
-              "legendFormat": "Node= {{ node }}",
+              "legendFormat": "Node= {{ `{{ node }}` }}",
               "refId": "A"
             }
           ],
@@ -399,7 +399,7 @@ data:
             {
               "expr": "(sum by (node) (avg by(node) (irate(redis_stream_history_flush_errors{node=~\"${node_name:regex}\"}[1m])) ))\n",
               "interval": "${interval}",
-              "legendFormat": "Node={{ node }}",
+              "legendFormat": "Node={{ `{{ node }}` }}",
               "refId": "A"
             }
           ],
@@ -495,7 +495,7 @@ data:
             {
               "expr": "(sum by (node) (avg by(node) (irate(redis_stream_pending_entries_count{node=~\"${node_name:regex}\"}[1m])) ))",
               "interval": "${interval}",
-              "legendFormat": "Node= {{ node }}",
+              "legendFormat": "Node= {{ `{{ node }}` }}",
               "refId": "A"
             }
           ],
@@ -592,7 +592,7 @@ data:
               "expr": "(sum by (node) (avg by(node) (irate(redis_stream_pending_entries_sum{node=~\"${node_name:regex}\"}[1m])) ))\n",
               "hide": false,
               "interval": "${interval}",
-              "legendFormat": "Node= {{ node }}",
+              "legendFormat": "Node= {{ `{{ node }}` }}",
               "refId": "A"
             }
           ],
@@ -688,7 +688,7 @@ data:
             {
               "expr": "(sum by (node) (avg by(node) (irate(redis_stream_claimed_entries_count{node=~\"${node_name:regex}\"}[1m])) ))",
               "interval": "${interval}",
-              "legendFormat": "Node= {{ node }}",
+              "legendFormat": "Node= {{ `{{ node }}` }}",
               "refId": "A"
             }
           ],
@@ -784,7 +784,7 @@ data:
             {
               "expr": "(sum by (node) (avg by(node) (irate(redis_stream_processed_claimed_entries_sum{node=~\"${node_name:regex}\"}[1m])) ))",
               "interval": "${interval}",
-              "legendFormat": "Node= {{ node }}",
+              "legendFormat": "Node= {{ `{{ node }}` }}",
               "refId": "A"
             }
           ],
@@ -880,7 +880,7 @@ data:
             {
               "expr": "(sum by (node) (avg by(node) (irate(redis_stream_acked_assigned_entries_sum{node=~\"${node_name}\"}[1m])) ))",
               "interval": "${interval}",
-              "legendFormat": "Node= {{ node }}",
+              "legendFormat": "Node= {{ `{{ node }}` }}",
               "refId": "A"
             }
           ],
@@ -976,7 +976,7 @@ data:
             {
               "expr": "(sum by (node) (avg by(node) (irate(redis_stream_history_flush_runtime_count{node=~\"${node_name:regex}\"}[1m])) * 100))",
               "interval": "${interval}",
-              "legendFormat": "Node= {{ node }}",
+              "legendFormat": "Node= {{ `{{ node }}` }}",
               "refId": "A"
             }
           ],
@@ -1072,7 +1072,7 @@ data:
             {
               "expr": "(sum by (node) (avg by(node) (irate(redis_stream_pending_entries_bucket{node=~\"${node_name:regex}\"}[1m])) ))",
               "interval": "${interval}",
-              "legendFormat": "Node= {{ node }}",
+              "legendFormat": "Node= {{ `{{ node }}` }}",
               "refId": "A"
             }
           ],
@@ -1168,7 +1168,7 @@ data:
             {
               "expr": "(sum by (node) (avg by(node) (irate(redis_stream_history_flush_runtime_count{node=~\"${node_name:regex}\"}[1m])) ))",
               "interval": "${interval}",
-              "legendFormat": "Node= {{ node }}",
+              "legendFormat": "Node= {{ `{{ node }}` }}",
               "refId": "A"
             }
           ],
@@ -1264,7 +1264,7 @@ data:
             {
               "expr": "(sum by (node) (avg by(node) (irate(redis_stream_acked_claimed_entries_count{node=~\"${node_name:regex}\"}[1m])) ))",
               "interval": "${interval}",
-              "legendFormat": "Node= {{ node }}",
+              "legendFormat": "Node= {{ `{{ node }}` }}",
               "refId": "A"
             }
           ],

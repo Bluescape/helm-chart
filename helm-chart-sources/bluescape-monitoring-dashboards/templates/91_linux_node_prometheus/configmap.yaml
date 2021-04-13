@@ -209,7 +209,7 @@ data:
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
-              "legendFormat": "{{instance}}",
+              "legendFormat": "{{ `{{instance}}` }}",
               "refId": "A"
             }
           ],
@@ -314,7 +314,7 @@ data:
               "hide": false,
               "interval": "${interval}",
               "intervalFactor": 1,
-              "legendFormat": "Node= {{ instance }}",
+              "legendFormat": "Node= {{ `{{ instance }}` }}",
               "refId": "A"
             }
           ],
@@ -419,7 +419,7 @@ data:
               "hide": false,
               "interval": "${interval}",
               "intervalFactor": 1,
-              "legendFormat": "Node= {{ instance }}",
+              "legendFormat": "Node= {{ `{{ instance }}` }}",
               "refId": "A"
             }
           ],
@@ -525,7 +525,7 @@ data:
               "instant": false,
               "interval": "",
               "intervalFactor": 1,
-              "legendFormat": "Reads - Node= {{ node_name }}",
+              "legendFormat": "Reads - Node= {{ `{{ node_name }}` }}",
               "refId": "A"
             },
             {
@@ -533,7 +533,7 @@ data:
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
-              "legendFormat": "Writes - Node= {{ instance }}",
+              "legendFormat": "Writes - Node= {{ `{{ instance }}` }}",
               "refId": "B"
             }
           ],
@@ -638,7 +638,7 @@ data:
               "hide": false,
               "interval": "${interval}",
               "intervalFactor": 1,
-              "legendFormat": "Node= {{ instance }}",
+              "legendFormat": "Node= {{ `{{ instance }}` }}",
               "refId": "A"
             }
           ],
@@ -742,7 +742,7 @@ data:
               "format": "time_series",
               "interval": "${interval}",
               "intervalFactor": 1,
-              "legendFormat": "Node = {{ instance }}",
+              "legendFormat": "Node = {{ `{{ instance }}` }}",
               "refId": "A"
             }
           ],
@@ -846,7 +846,7 @@ data:
               "format": "time_series",
               "interval": "${interval}",
               "intervalFactor": 1,
-              "legendFormat": "Node = {{ instance }}",
+              "legendFormat": "Node = {{ `{{ instance }}` }}",
               "refId": "A"
             }
           ],
@@ -950,7 +950,7 @@ data:
               "format": "time_series",
               "interval": "${interval}",
               "intervalFactor": 1,
-              "legendFormat": "Node = {{ instance }}",
+              "legendFormat": "Node = {{ `{{ instance }}` }}",
               "refId": "A"
             }
           ],
@@ -1371,7 +1371,7 @@ data:
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
-              "legendFormat": "{{instance}}",
+              "legendFormat": "{{ `{{instance}}` }}",
               "refId": "A"
             }
           ],
@@ -1476,7 +1476,7 @@ data:
               "hide": false,
               "interval": "${interval}",
               "intervalFactor": 1,
-              "legendFormat": "Node= {{ instance }}",
+              "legendFormat": "Node= {{ `{{ instance }}` }}",
               "refId": "A"
             }
           ],
@@ -1581,7 +1581,7 @@ data:
               "hide": false,
               "interval": "${interval}",
               "intervalFactor": 1,
-              "legendFormat": "Node= {{ instance }}",
+              "legendFormat": "Node= {{ `{{ instance }}` }}",
               "refId": "A"
             }
           ],
@@ -1687,7 +1687,7 @@ data:
               "instant": false,
               "interval": "",
               "intervalFactor": 1,
-              "legendFormat": "Reads - Node= {{ node_name }}",
+              "legendFormat": "Reads - Node= {{ `{{ node_name }}` }}",
               "refId": "A"
             },
             {
@@ -1695,7 +1695,7 @@ data:
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
-              "legendFormat": "Writes - Node= {{ instance }}",
+              "legendFormat": "Writes - Node= {{ `{{ instance }}` }}",
               "refId": "B"
             }
           ],
@@ -1800,7 +1800,7 @@ data:
               "hide": false,
               "interval": "${interval}",
               "intervalFactor": 1,
-              "legendFormat": "Node= {{ instance }}",
+              "legendFormat": "Node= {{ `{{ instance }}` }}",
               "refId": "A"
             }
           ],
@@ -1904,7 +1904,7 @@ data:
               "format": "time_series",
               "interval": "${interval}",
               "intervalFactor": 1,
-              "legendFormat": "Node = {{ instance }}",
+              "legendFormat": "Node = {{ `{{ instance }}` }}",
               "refId": "A"
             }
           ],
@@ -2008,7 +2008,7 @@ data:
               "format": "time_series",
               "interval": "${interval}",
               "intervalFactor": 1,
-              "legendFormat": "Node = {{ instance }}",
+              "legendFormat": "Node = {{ `{{ instance }}` }}",
               "refId": "A"
             }
           ],
@@ -2112,7 +2112,7 @@ data:
               "format": "time_series",
               "interval": "${interval}",
               "intervalFactor": 1,
-              "legendFormat": "Node = {{ instance }}",
+              "legendFormat": "Node = {{ `{{ instance }}` }}",
               "refId": "A"
             }
           ],

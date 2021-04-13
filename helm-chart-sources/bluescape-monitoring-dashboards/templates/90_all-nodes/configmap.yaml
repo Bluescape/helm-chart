@@ -120,7 +120,7 @@ data:
               "hide": false,
               "interval": "${interval}",
               "intervalFactor": 1,
-              "legendFormat": "Node= {{instance}}",
+              "legendFormat": "Node= {{ `{{instance}}` }}",
               "refId": "A"
             }
           ],
@@ -225,7 +225,7 @@ data:
               "hide": false,
               "interval": "${interval}",
               "intervalFactor": 1,
-              "legendFormat": "Node= {{ instance }}",
+              "legendFormat": "Node= {{ `{{ instance }}` }}",
               "refId": "A"
             }
           ],
@@ -329,7 +329,7 @@ data:
               "format": "time_series",
               "interval": "${interval}",
               "intervalFactor": 1,
-              "legendFormat": "Node = {{ instance }}",
+              "legendFormat": "Node = {{ `{{ instance }}` }}",
               "refId": "A"
             }
           ],
@@ -430,7 +430,7 @@ data:
               "format": "time_series",
               "interval": "",
               "intervalFactor": 1,
-              "legendFormat": "{{ instance }} - {{mountpoint}}",
+              "legendFormat": "{{ `{{ instance }} - {{mountpoint}}` }}",
               "refId": "A"
             }
           ],
