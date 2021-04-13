@@ -1,7 +1,7 @@
 # Add new grafana dashboards
 
 This script must be run from this directory. It will verify as much
-and if it isn't int he proper directory then it will exit with an error
+and if it isn't in the proper directory then it will exit with an error
 
 ## Using add_dashboard script
 
@@ -56,7 +56,7 @@ This script should function properly on Linux and Darwin
 
 ## yaml2json and json2yaml
 
-These scripts are in [1][ops scripts repo] and require ruby installed on
+These scripts are in [ops scripts repo][1] and require ruby installed on
 your laptop.
 
 
