@@ -5,7 +5,7 @@ set -eo pipefail
 workdir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 to_add="$1"
 new_dashboard_dir="$2"
-prereqs=(yaml2json json2yaml yq jq)
+prereqs=(yaml2json json2yaml jq)
 darwin_prereqs=(ggrep gsed)
 IFS=/ read -ra DIRS <<< "$workdir"
 
