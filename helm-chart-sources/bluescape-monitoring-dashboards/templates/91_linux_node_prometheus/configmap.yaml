@@ -1164,12 +1164,12 @@ data:
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: linux_node_prometheus
+  name: linux-node-prometheus
   namespace: grafana
   labels:
     {{- include "bluescape-monitoring-dashboards.labels" . | nindent 4 }}
 data:
-  linux_node_prometheus.json: |-
+  linux-node-prometheus.json: |-
     {
       "__inputs": [
         {

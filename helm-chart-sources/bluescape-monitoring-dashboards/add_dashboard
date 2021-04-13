@@ -13,7 +13,7 @@ generate_configmap()
 {
   local skipped_entry
   skipped_entry=$($grep '{{' 0_template/configmap.yaml)
-  cm_title="$(jq -Mr .title "$to_add" | tr ' ' '_' | \
+  cm_title="$(jq -Mr .title "$to_add" | tr ' ' '-' | \
     tr '[:upper:]' '[:lower:]')-dashboard"
 
   $grep -v '{{' 0_template/configmap.yaml | \
