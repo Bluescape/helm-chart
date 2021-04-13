@@ -1,0 +1,62 @@
+# Add new grafana dashboards
+
+This script must be run from this directory. It will verify as much
+and if it isn't in the proper directory then it will exit with an error
+
+## Using add_dashboard script
+
+```
+Usage: ./add_dashboard <path/to/exported/dashboard.json> <new_dashboard_directory>
+
+```
+
+
+## Example
+
+```
+./add_dashboard $HOME/Downloads/Redis.json 44_redis_dashboard
+```
+
+## Verify
+
+Validate the configmap:
+
+```
+cat 44_redis_dashboard/configmap.yaml
+```
+
+Validate the dashboard manifest:
+
+```
+cat 44_redis_dashboard/dashboad.yaml
+```
+## Validations
+
+A cursory check is performed validating:
+
+  #. the script is running from the expected directory
+  #. the dashboard JSON is valid JSON
+  #. pre-requisite binaries are on the running machine
+
+## Pre-requisite binaries
+
+The following are necessary in order for this script to function
+properly:
+
+  * yaml2json
+  * json2yaml
+  * jq
+  * gnu sed
+  * gnu grep
+
+### yaml2json and json2yaml
+
+These scripts are in [ops scripts repo][1] and require ruby installed on
+your laptop.
+
+## Notes
+
+This script should function properly on Linux and Darwin
+
+
+[1]:https://github.com/Bluescape/ops/tree/develop/scripts
