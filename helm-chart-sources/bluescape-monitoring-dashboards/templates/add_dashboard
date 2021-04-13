@@ -26,6 +26,13 @@ generate_configmap()
   $sed -re 's/(labels:)/\1\n/' -e "s#'##g" "$new_dashboard_dir"/configmap-tmp.yaml \
     > "$new_dashboard_dir"/configmap.yaml && \
   rm "$new_dashboard_dir"/configmap-tmp.yaml
+
+  # fix reference for legendFormat gotpl braced strings so helm
+  # doesn't accidentally attempt to interpolate those strings
+  perl -ln -e \
+    'if ( /legendFormat/ &&  !/`/ ) { s/\{\{(\s*.*\s*)\}\}/{{ `{{$1}}` }}/g }; print' \
+    "$new_dashboard_dir"/configmap.yaml > "$new_dashboard_dir"/configmap-fixed.yaml && \
+  mv "$new_dashboard_dir"/configmap-fixed.yaml "$new_dashboard_dir"/configmap.yaml
 }
 
 generate_dashboard_manifest()
