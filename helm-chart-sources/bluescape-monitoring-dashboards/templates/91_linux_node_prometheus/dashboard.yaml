@@ -1,0 +1,27 @@
+---
+apiVersion: integreatly.org/v1alpha1
+kind: GrafanaDashboard
+metadata:
+  name:  linux_node_single_prometheus
+  namespace: grafana
+  labels:
+    {{- include "bluescape-monitoring-dashboards.labels" . | nindent 4 }}
+spec:
+  name: linux_node_single_prometheus
+  configMapRef:
+    name:  linux_node_single_prometheus
+    key:  linux_node_single_prometheus.json
+---
+apiVersion: integreatly.org/v1alpha1
+kind: GrafanaDashboard
+metadata:
+  name:  linux_node_prometheus
+  namespace: grafana
+  labels:
+    {{- include "bluescape-monitoring-dashboards.labels" . | nindent 4 }}
+spec:
+  name: linux_node_prometheus
+  configMapRef:
+    name:  linux_node_prometheus
+    key:  linux_node_prometheus.json
+
