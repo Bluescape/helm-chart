@@ -27,6 +27,9 @@
       policies status in a Kubernetes Cluster.
         - Reference: https://github.com/sighupio/gatekeeper-policy-manager
 
+- **host-redirect**
+    * [README.md](/helm-chart-sources/host-redirect/README.md) 
+
 #### Ported for internal hosting to address Helm chart deprecation issue.
   - **dex**
   - **gangway**
