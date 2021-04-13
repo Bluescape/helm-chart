@@ -49,15 +49,14 @@ properly:
   * gnu sed
   * gnu grep
 
+### yaml2json and json2yaml
+
+These scripts are in [ops scripts repo][1] and require ruby installed on
+your laptop.
 
 ## Notes
 
 This script should function properly on Linux and Darwin
-
-## yaml2json and json2yaml
-
-These scripts are in [ops scripts repo][1] and require ruby installed on
-your laptop.
 
 
 [1]:https://github.com/Bluescape/ops/tree/develop/scripts
