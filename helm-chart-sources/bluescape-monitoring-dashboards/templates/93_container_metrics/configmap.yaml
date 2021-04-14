@@ -25,8 +25,8 @@ data:
       "editable": true,
       "gnetId": 5720,
       "graphTooltip": 1,
-      "id": null,
-      "iteration": 1617831973642,
+      "id": 111,
+      "iteration": 1618368923120,
       "links": [],
       "panels": [
         {
@@ -662,7 +662,11 @@ data:
         "list": [
           {
             "allValue": ".+",
-            "current": {},
+            "current": {
+              "selected": false,
+              "text": "All",
+              "value": "$__all"
+            },
             "datasource": "Prometheus",
             "definition": "label_values(namespace)",
             "hide": 0,
@@ -684,7 +688,11 @@ data:
           },
           {
             "allValue": ".+",
-            "current": {},
+            "current": {
+              "selected": false,
+              "text": "All",
+              "value": "$__all"
+            },
             "datasource": "Prometheus",
             "definition": "label_values(kube_pod_container_info{namespace=~\"$namespace\"}, pod)",
             "hide": 0,
@@ -693,7 +701,7 @@ data:
             "multi": true,
             "name": "container_name",
             "options": [],
-            "query": "label_values(container)",
+            "query": "label_values(kube_pod_container_info{namespace=~\"$namespace\"}, pod)",
             "refresh": 1,
             "regex": ".+",
             "skipUrlSync": false,
@@ -808,7 +816,11 @@ data:
           },
           {
             "allValue": ".+",
-            "current": {},
+            "current": {
+              "selected": false,
+              "text": "All",
+              "value": "$__all"
+            },
             "datasource": "Prometheus",
             "definition": "label_values(node)",
             "hide": 0,
@@ -861,6 +873,6 @@ data:
       },
       "timezone": "browser",
       "title": "Overall Container Metrics",
-      "uid": "8u1PWFtGz",
-      "version": 2
+      "uid": "d3f2d8e25db7a085b0dd152e6b93980a7a680c24",
+      "version": 3
     }
