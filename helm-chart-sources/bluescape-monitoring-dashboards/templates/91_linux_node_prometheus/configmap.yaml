@@ -9,42 +9,6 @@ metadata:
 data:
   linux-node-single-prometheus.json: |-
     {
-      "__inputs": [
-        {
-          "name": "DS_PROMETHEUS",
-          "label": "Prometheus",
-          "description": "",
-          "type": "datasource",
-          "pluginId": "prometheus",
-          "pluginName": "Prometheus"
-        }
-      ],
-      "__requires": [
-        {
-          "type": "grafana",
-          "id": "grafana",
-          "name": "Grafana",
-          "version": "7.2.2"
-        },
-        {
-          "type": "panel",
-          "id": "graph",
-          "name": "Graph",
-          "version": ""
-        },
-        {
-          "type": "datasource",
-          "id": "prometheus",
-          "name": "Prometheus",
-          "version": "1.0.0"
-        },
-        {
-          "type": "panel",
-          "id": "singlestat",
-          "name": "Singlestat",
-          "version": ""
-        }
-      ],
       "annotations": {
         "list": [
           {
@@ -74,7 +38,7 @@ data:
             "rgba(237, 129, 40, 0.89)",
             "#d44a3a"
           ],
-          "datasource": "${DS_PROMETHEUS}",
+          "datasource": "Prometheus",
           "description": "Looking at time since system boot timestamp",
           "fieldConfig": {
             "defaults": {
@@ -159,7 +123,7 @@ data:
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS}",
+          "datasource": "Prometheus",
           "description": "Looking at time since system boot timestamp",
           "fieldConfig": {
             "defaults": {
@@ -259,7 +223,7 @@ data:
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS}",
+          "datasource": "Prometheus",
           "description": "Taken from prometheus alerts, focused only on dev-logger01 with no constraint on load value",
           "fieldConfig": {
             "defaults": {
@@ -364,7 +328,7 @@ data:
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS}",
+          "datasource": "Prometheus",
           "description": "Taken from prometheus alerts, focused only on dev-logger01 with no constraint on load value",
           "fieldConfig": {
             "defaults": {
@@ -469,7 +433,7 @@ data:
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS}",
+          "datasource": "Prometheus",
           "description": "Taken from prometheus alerts, focused only on dev-logger01 with no constraint on load value",
           "fieldConfig": {
             "defaults": {
@@ -583,7 +547,7 @@ data:
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS}",
+          "datasource": "Prometheus",
           "description": "",
           "fieldConfig": {
             "defaults": {
@@ -688,7 +652,7 @@ data:
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS}",
+          "datasource": "Prometheus",
           "description": "CPU Load Average of 1min",
           "fieldConfig": {
             "defaults": {
@@ -792,7 +756,7 @@ data:
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS}",
+          "datasource": "Prometheus",
           "description": "CPU Load Average of 1min",
           "fieldConfig": {
             "defaults": {
@@ -896,7 +860,7 @@ data:
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS}",
+          "datasource": "Prometheus",
           "description": "CPU Load Average of 1min",
           "fieldConfig": {
             "defaults": {
@@ -1005,7 +969,7 @@ data:
           {
             "allValue": null,
             "current": {},
-            "datasource": "${DS_PROMETHEUS}",
+            "datasource": "Prometheus",
             "definition": "label_values(node_boot_time_seconds, instance)",
             "hide": 0,
             "includeAll": false,
@@ -1173,7 +1137,7 @@ data:
     {
       "__inputs": [
         {
-          "name": "DS_PROMETHEUS",
+          "name": "Prometheus",
           "label": "Prometheus",
           "description": "",
           "type": "datasource",
@@ -1236,7 +1200,7 @@ data:
             "rgba(237, 129, 40, 0.89)",
             "#d44a3a"
           ],
-          "datasource": "${DS_PROMETHEUS}",
+          "datasource": "Prometheus",
           "description": "Looking at time since system boot timestamp",
           "fieldConfig": {
             "defaults": {
@@ -1321,7 +1285,7 @@ data:
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS}",
+          "datasource": "Prometheus",
           "description": "Looking at time since system boot timestamp",
           "fieldConfig": {
             "defaults": {
@@ -1421,7 +1385,7 @@ data:
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS}",
+          "datasource": "Prometheus",
           "description": "Taken from prometheus alerts, focused only on dev-logger01 with no constraint on load value",
           "fieldConfig": {
             "defaults": {
@@ -1526,7 +1490,7 @@ data:
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS}",
+          "datasource": "Prometheus",
           "description": "Taken from prometheus alerts, focused only on dev-logger01 with no constraint on load value",
           "fieldConfig": {
             "defaults": {
@@ -1631,7 +1595,7 @@ data:
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS}",
+          "datasource": "Prometheus",
           "description": "Taken from prometheus alerts, focused only on dev-logger01 with no constraint on load value",
           "fieldConfig": {
             "defaults": {
@@ -1745,7 +1709,7 @@ data:
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS}",
+          "datasource": "Prometheus",
           "description": "",
           "fieldConfig": {
             "defaults": {
@@ -1850,7 +1814,7 @@ data:
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS}",
+          "datasource": "Prometheus",
           "description": "CPU Load Average of 1min",
           "fieldConfig": {
             "defaults": {
@@ -1954,7 +1918,7 @@ data:
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS}",
+          "datasource": "Prometheus",
           "description": "CPU Load Average of 1min",
           "fieldConfig": {
             "defaults": {
@@ -2058,7 +2022,7 @@ data:
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS}",
+          "datasource": "Prometheus",
           "description": "CPU Load Average of 1min",
           "fieldConfig": {
             "defaults": {
@@ -2167,7 +2131,7 @@ data:
           {
             "allValue": null,
             "current": {},
-            "datasource": "${DS_PROMETHEUS}",
+            "datasource": "Prometheus",
             "definition": "label_values(node_boot_time_seconds, instance)",
             "hide": 0,
             "includeAll": true,

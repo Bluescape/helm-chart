@@ -8,36 +8,6 @@ metadata:
 data:
   overall-container-dashboard.json: |-
     {
-      "__inputs": [
-        {
-          "name": "DS_PROMETHEUS",
-          "label": "Prometheus",
-          "description": "",
-          "type": "datasource",
-          "pluginId": "prometheus",
-          "pluginName": "Prometheus"
-        }
-      ],
-      "__requires": [
-        {
-          "type": "grafana",
-          "id": "grafana",
-          "name": "Grafana",
-          "version": "7.2.2"
-        },
-        {
-          "type": "panel",
-          "id": "graph",
-          "name": "Graph",
-          "version": ""
-        },
-        {
-          "type": "datasource",
-          "id": "prometheus",
-          "name": "Prometheus",
-          "version": "1.0.0"
-        }
-      ],
       "annotations": {
         "list": [
           {
@@ -64,7 +34,7 @@ data:
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS}",
+          "datasource": "Prometheus",
           "fieldConfig": {
             "defaults": {
               "custom": {},
@@ -170,7 +140,7 @@ data:
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS}",
+          "datasource": "Prometheus",
           "decimals": 2,
           "fieldConfig": {
             "defaults": {
@@ -274,7 +244,7 @@ data:
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS}",
+          "datasource": "Prometheus",
           "fieldConfig": {
             "defaults": {
               "custom": {},
@@ -376,7 +346,7 @@ data:
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS}",
+          "datasource": "Prometheus",
           "fieldConfig": {
             "defaults": {
               "custom": {},
@@ -478,7 +448,7 @@ data:
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS}",
+          "datasource": "Prometheus",
           "fieldConfig": {
             "defaults": {
               "custom": {},
@@ -580,7 +550,7 @@ data:
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "${DS_PROMETHEUS}",
+          "datasource": "Prometheus",
           "editable": true,
           "error": false,
           "fieldConfig": {
@@ -693,7 +663,7 @@ data:
           {
             "allValue": ".+",
             "current": {},
-            "datasource": "${DS_PROMETHEUS}",
+            "datasource": "Prometheus",
             "definition": "label_values(namespace)",
             "hide": 0,
             "includeAll": true,
@@ -715,8 +685,8 @@ data:
           {
             "allValue": ".+",
             "current": {},
-            "datasource": "${DS_PROMETHEUS}",
-            "definition": "label_values(container)",
+            "datasource": "Prometheus",
+            "definition": "label_values(kube_pod_container_info{namespace=~\"$namespace\"}, pod)",
             "hide": 0,
             "includeAll": true,
             "label": "Container Name",
@@ -839,7 +809,7 @@ data:
           {
             "allValue": ".+",
             "current": {},
-            "datasource": "${DS_PROMETHEUS}",
+            "datasource": "Prometheus",
             "definition": "label_values(node)",
             "hide": 0,
             "includeAll": true,
