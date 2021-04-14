@@ -140,6 +140,22 @@ and verify your dashboards:
 if the dashboards need tweaking, wash, rinse, repeat. Once all is working, push a
 commit and PR the push to this repo.
 
+## commit, push, and PR
+
+### Chart.yaml version bump
+
+Update/bump the versions of the `Chart.yaml` (in this directory). The `Chart.yaml` contains
+decent comments about the version bump. It's sufficient to just bump the minor. The comments
+state that semver is not being used, however the versions themselves seem to follow a semver
+convention, which is likely sufficient for the bump.
+
+### commit and push
+
+Make sure you're doing work in a feature branch! When all is done and tested, commit the
+branch and push. Create a pull request. The Infra team is the owner of this repo. Only they
+can merge PRs. Make sure you've properly tested everything before creating the PR and request
+a merge.
+
 ## Notes
 
 This script should function properly on Linux and Darwin
