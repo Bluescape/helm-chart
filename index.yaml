@@ -259,6 +259,16 @@ entries:
     urls:
     - https://bluescape.github.io/helm-charts/packages/gatekeeper-policy-manager-0.4.0.tgz
     version: 0.4.0
+  host-redirect:
+  - apiVersion: v2
+    created: "2021-04-13T16:46:15.638550072Z"
+    description: A Helm chart that created FQND based redirects, requires Ambassador and Cert-Manager installed in the cluster.
+    digest: f3e13ef2813416e179be54f8fe402a9231fd9e0e6ed94bcfe7af5da63aa419a3
+    name: host-redirect
+    type: application
+    urls:
+    - https://bluescape.github.io/helm-charts/packages/host-redirect-0.1.0.tgz
+    version: 0.1.0
   kube-oidc-proxy:
   - apiVersion: v1
     appVersion: v0.3.0
