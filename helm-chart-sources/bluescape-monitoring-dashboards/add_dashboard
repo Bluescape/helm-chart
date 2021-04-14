@@ -12,14 +12,14 @@ IFS=/ read -ra DIRS <<< "$workdir"
 generate_configmap()
 {
   local skipped_entry
-  skipped_entry=$($grep '{{' 0_template/configmap.yaml)
+  skipped_entry=$($grep '{{' templates/0_template/configmap.yaml)
   cm_title="$(jq -Mr .title "$to_add" | tr ' ' '-' | \
     tr '[:upper:]' '[:lower:]')-dashboard"
 
-  $grep -v '{{' 0_template/configmap.yaml | \
+  $grep -v '{{' templates/0_template/configmap.yaml | \
     yaml2json - | \
     jq --arg addin "$skipped_entry" --arg n "$cm_title" --arg d \
-    "$(< "$to_add")" -Mr \
+    "$(< "$to_add" jq -Mr 'del(.__inputs) | del(.__requires)')" -Mr \
     '.metadata.name = $n | .data = {($n + ".json"): $d}
       | .metadata.labels = $addin' | \
     json2yaml - > "$new_dashboard_dir"/configmap-tmp.yaml && \
@@ -38,9 +38,9 @@ generate_configmap()
 generate_dashboard_manifest()
 {
   local skipped_entry
-  skipped_entry=$($grep '{{' 0_template/configmap.yaml)
+  skipped_entry=$($grep '{{' templates/0_template/configmap.yaml)
 
-  $grep -v '{{' 0_template/dashboard.yaml | \
+  $grep -v '{{' templates/0_template/dashboard.yaml | \
     yaml2json - | \
     jq --arg addin "$skipped_entry" --arg n "$cm_title" \
     '.metadata.name = $n | .metadata.labels = $addin |
@@ -108,7 +108,7 @@ sanity_check_arg2()
 {
   local desired_path
   num_dirs=${#DIRS[@]}
-  desired_path="bluescape-monitoring-dashboards/templates"
+  desired_path="helm-chart-sources/bluescape-monitoring-dashboards"
   current_path="${DIRS[((num_dirs - 2))]}/${DIRS[((num_dirs - 1))]}"
 
   if [[ -z "$new_dashboard_dir" ]]; then
@@ -119,10 +119,19 @@ sanity_check_arg2()
 
   if [[ "$current_path" != "$desired_path" ]]; then
     printf >&2 "Please run this script from the %s path in the helm-charts repo\n" $desired_path
+    echo "Current path is $current_path"
     usage
     exit 1
   fi
 
+  if [[ "$new_dashboard_dir" =~ ^/ ]]; then
+    echo >&2 'Please use a relative path for the dashboard directory.'
+    exit 1
+  fi
+
+  # if the user specifies the "templates/<directory>" then remove "templates"
+  # otherwise just use the specified relative path
+  new_dashboard_dir="templates/$(echo "${new_dashboard_dir/templates//}" | $sed -r 's#/+#/#g')"
   if ! mkdir -p "$new_dashboard_dir"; then
     echo >&2 "Unable to create dashboard directory. mkdir error code was $!"
     exit 1
