@@ -10,8 +10,10 @@ vault:
 cert_manager:
   setup_letsencrypt_prod_cluster_issuer: false
   setup_letsencrypt_prod_cluster_dns_issuer: false
+  setup_legacy_letsencrypt_old_prod_cluster_issuer: false
 
 external_secrets:
+  setup_legacy_old_prod_cluster_issuer_secret: false
   setup_gatekeeper_policy_manager_secret: false
   setup_prometheus_metrics_secret: false
   setup_threatstack_secret: false
