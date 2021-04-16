@@ -45,6 +45,26 @@ entries:
     version: 0.1.0
   bluescape-monitoring-dashboards:
   - apiVersion: v2
+    appVersion: 1.16.2
+    created: "2021-04-14T16:42:23.411938803Z"
+    description: A Helm chart for Kubernetes
+    digest: c0c33eee30ac6f13385804a4880ca0c931321774f2c6f9f5df786b37fe3dcfe0
+    name: bluescape-monitoring-dashboards
+    type: application
+    urls:
+    - https://bluescape.github.io/helm-charts/packages/bluescape-monitoring-dashboards-0.2.2.tgz
+    version: 0.2.2
+  - apiVersion: v2
+    appVersion: 1.16.1
+    created: "2021-04-14T03:55:22.88019494Z"
+    description: A Helm chart for Kubernetes
+    digest: 52d9e4d67b28f64edfd1800ac95f3c626e672eb69946ce19e8e337945e8eb0ef
+    name: bluescape-monitoring-dashboards
+    type: application
+    urls:
+    - https://bluescape.github.io/helm-charts/packages/bluescape-monitoring-dashboards-0.2.1.tgz
+    version: 0.2.1
+  - apiVersion: v2
     appVersion: 1.16.0
     created: "2021-04-08T13:15:08.311028665Z"
     description: A Helm chart for Kubernetes
@@ -259,6 +279,16 @@ entries:
     urls:
     - https://bluescape.github.io/helm-charts/packages/gatekeeper-policy-manager-0.4.0.tgz
     version: 0.4.0
+  host-redirect:
+  - apiVersion: v2
+    created: "2021-04-13T16:46:15.638550072Z"
+    description: A Helm chart that created FQND based redirects, requires Ambassador and Cert-Manager installed in the cluster.
+    digest: f3e13ef2813416e179be54f8fe402a9231fd9e0e6ed94bcfe7af5da63aa419a3
+    name: host-redirect
+    type: application
+    urls:
+    - https://bluescape.github.io/helm-charts/packages/host-redirect-0.1.0.tgz
+    version: 0.1.0
   kube-oidc-proxy:
   - apiVersion: v1
     appVersion: v0.3.0
@@ -295,4 +325,4 @@ entries:
     urls:
     - https://bluescape.github.io/helm-charts/packages/oauth2-proxy-3.2.5.tgz
     version: 3.2.5
-generated: "2021-04-08T13:15:08.306032866Z"
+generated: "2021-04-14T16:42:23.401496993Z"
