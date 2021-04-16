@@ -4,6 +4,7 @@
     * vault-custom-resource templates
     * cert-manager-cluster-issuer templates
     * external-secret templates
+    * kubeDB catalogs (mongodb 3.6.13, mongodb 4.0.11, mysql 5.6, postgres 11.1)
     
 - **bluescape-monitoring-crds**
     * For deploying monitoring CRDs to enable servicemonitors.
