@@ -20,3 +20,10 @@ external_secrets:
   setup_argocd_secret: false
   setup_github_secret: false
   setup_loki_secret: false
+
+kubedb_catalog:
+  setup_mongodb_3_6: false
+  setup_mongodb_4_0: false
+  setup_mysql_5_6: false
+  setup_postgres_11_1: false
+
