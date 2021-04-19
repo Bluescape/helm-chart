@@ -14,9 +14,9 @@ entries:
   bluescape-eks-aux:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-04-19T20:03:11.690724442Z"
+    created: "2021-04-19T14:32:20.343626-07:00"
     description: A Helm chart for Kubernetes
-    digest: 10ac78c42d64050a55e33d12ea9097780dea0389468f3dffcafcee97c71e1d35
+    digest: 83bd0fa1909fa94cfa3c8ad9aa38101055e36259a47062d81769a2ad3ccfd62d
     name: bluescape-eks-aux
     type: application
     urls:
