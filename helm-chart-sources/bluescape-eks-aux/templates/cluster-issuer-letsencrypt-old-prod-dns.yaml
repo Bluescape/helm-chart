@@ -19,8 +19,8 @@ spec:
           - "bluescape.com"
       dns01:
         route53:
-          region: us-east-1
-          #accessKeyID: YOUR ACCESS KEY
+          region: {{ .Values.cert_manager.old_prod_route53_aws_credentials.region }}
+          accessKeyID: {{ .Values.cert_manager.old_prod_route53_aws_credentials.access_key_id }}
           secretAccessKeySecretRef:
             name: legacycertmanager
             key: secretAccessKey
