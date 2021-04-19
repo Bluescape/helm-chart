@@ -1,4 +1,4 @@
-{{- if .Values.cert_manager.setup_legacy_letsencrypt_old_prod_cluster_issuer }}
+{{- if .Values.cert_manager.setup_legacy_letsencrypt_old_prod_cluster_issuer.enabled }}
 apiVersion: cert-manager.io/v1alpha2
 kind: ClusterIssuer
 metadata:
@@ -10,17 +10,18 @@ metadata:
 spec:
   acme:
     server: 'https://acme-v02.api.letsencrypt.org/directory'
-    email: ops@bluescape.com
+    email: {{ .Values.cert_manager.setup_legacy_letsencrypt_old_prod_cluster_issuer.email }}
     privateKeySecretRef:
       name: legacy-letsencrypt-old-prod-dns
     solvers:
     - selector:
         dnsZones:
-          - "bluescape.com"
+          - {{ .Values.cert_manager.setup_legacy_letsencrypt_old_prod_cluster_issuer.dns_zone | quote }}
       dns01:
         route53:
-          region: {{ .Values.cert_manager.old_prod_route53_aws_credentials.region }}
-          accessKeyID: {{ .Values.cert_manager.old_prod_route53_aws_credentials.access_key_id }}
+          region: {{ .Values.cert_manager.setup_legacy_letsencrypt_old_prod_cluster_issuer.region }}
+          role: {{ .Values.cert_manager.setup_legacy_letsencrypt_old_prod_cluster_issuer.role }}
+          accessKeyID: {{ .Values.cert_manager.setup_legacy_letsencrypt_old_prod_cluster_issuer.access_key_id }}
           secretAccessKeySecretRef:
             name: legacycertmanager
             key: secretAccessKey
