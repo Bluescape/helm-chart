@@ -11,6 +11,9 @@ cert_manager:
   setup_letsencrypt_prod_cluster_issuer: false
   setup_letsencrypt_prod_cluster_dns_issuer: false
   setup_legacy_letsencrypt_old_prod_cluster_issuer: false
+  old_prod_route53_aws_credentials:
+    access_key_id: 'ABCDEFXXXXXXX'
+    region: 'us-east-1'
 
 external_secrets:
   setup_legacy_old_prod_cluster_issuer_secret: false
