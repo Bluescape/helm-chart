@@ -27,7 +27,7 @@ data:
       "gnetId": 3089,
       "graphTooltip": 0,
       "id": 51,
-      "iteration": 1619032682310,
+      "iteration": 1619110314782,
       "links": [],
       "panels": [
         {
@@ -467,29 +467,22 @@ data:
             "allValue": null,
             "current": {
               "selected": true,
-              "tags": [],
-              "text": [
-                "10.67.71.87",
-                "10.67.66.102"
-              ],
-              "value": [
-                "10.67.71.87",
-                "10.67.66.102"
-              ]
+              "text": "All",
+              "value": "$__all"
             },
             "datasource": "Prometheus",
             "definition": "label_values(node_cpu_seconds_total{job=\"node-exporter\"}, instance)",
             "hide": 0,
             "includeAll": true,
             "label": null,
-            "multi": true,
+            "multi": false,
             "name": "node",
             "options": [],
             "query": "label_values(node_cpu_seconds_total{job=\"node-exporter\"}, instance)",
             "refresh": 1,
             "regex": "/([^:]+):.*/",
             "skipUrlSync": false,
-            "sort": 3,
+            "sort": 1,
             "tagValuesQuery": "",
             "tags": [],
             "tagsQuery": "",
@@ -525,7 +518,7 @@ data:
         ]
       },
       "time": {
-        "from": "now-2d",
+        "from": "now-3h",
         "to": "now"
       },
       "timepicker": {
@@ -551,5 +544,5 @@ data:
       "timezone": "browser",
       "title": "Node File Descriptors",
       "uid": "000000007",
-      "version": 14
+      "version": 15
     }
