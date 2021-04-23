@@ -26,8 +26,8 @@ data:
       "editable": true,
       "gnetId": 3089,
       "graphTooltip": 0,
-      "id": 51,
-      "iteration": 1619110314782,
+      "id": 132,
+      "iteration": 1619141873208,
       "links": [],
       "panels": [
         {
@@ -188,7 +188,7 @@ data:
               "hide": false,
               "interval": "",
               "intervalFactor": 1,
-              "legendFormat": "allocated",
+              "legendFormat": "{{ `{{instance}}` }}",
               "refId": "B",
               "step": 4,
               "target": ""
@@ -225,6 +225,7 @@ data:
           },
           "yaxes": [
             {
+              "$$hashKey": "object:505",
               "format": "none",
               "label": "",
               "logBase": 1,
@@ -233,6 +234,7 @@ data:
               "show": true
             },
             {
+              "$$hashKey": "object:506",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -304,7 +306,7 @@ data:
               "hide": false,
               "interval": "",
               "intervalFactor": 1,
-              "legendFormat": "{{ `{{device}}` }}",
+              "legendFormat": "{{ `{{instance}}:{{device}}` }}",
               "refId": "B",
               "step": 4,
               "target": ""
@@ -409,7 +411,7 @@ data:
               "hide": false,
               "interval": "",
               "intervalFactor": 1,
-              "legendFormat": "{{ `{{device}}` }}",
+              "legendFormat": "{{ `{{instance}}:{{device}}` }}",
               "refId": "B",
               "step": 4,
               "target": ""
@@ -466,7 +468,7 @@ data:
           {
             "allValue": null,
             "current": {
-              "selected": true,
+              "selected": false,
               "text": "All",
               "value": "$__all"
             },
@@ -543,6 +545,6 @@ data:
       },
       "timezone": "browser",
       "title": "Node File Descriptors",
-      "uid": "000000007",
-      "version": 15
+      "uid": "aeaff25c9780c3ba9bc091e9f5b4cf9c92ffbf9c",
+      "version": 2
     }

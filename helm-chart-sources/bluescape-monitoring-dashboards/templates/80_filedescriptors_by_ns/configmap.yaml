@@ -2,12 +2,12 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: filedescriptorusagebynamespace-dashboard
+  name: filedescriptors-usage-by-namespace-dashboard
   namespace: grafana
   labels:
      {{- include "bluescape-monitoring-dashboards.labels" . | nindent 4 }}
 data:
-  filedescriptorusagebynamespace-dashboard.json: |-
+  filedescriptors-usage-by-namespace-dashboard.json: |-
     {
       "annotations": {
         "list": [
@@ -25,8 +25,8 @@ data:
       "editable": true,
       "gnetId": null,
       "graphTooltip": 0,
-      "id": 53,
-      "iteration": 1619042641217,
+      "id": 133,
+      "iteration": 1619141130184,
       "links": [],
       "panels": [
         {
@@ -141,10 +141,10 @@ data:
               "selected": true,
               "tags": [],
               "text": [
-                "vault-secrets-webhook"
+                "All"
               ],
               "value": [
-                "vault-secrets-webhook"
+                "$__all"
               ]
             },
             "datasource": "Prometheus",
@@ -154,135 +154,9 @@ data:
             "label": "Namespace",
             "multi": true,
             "name": "namespace",
-            "options": [
-              {
-                "selected": false,
-                "text": "All",
-                "value": "$__all"
-              },
-              {
-                "selected": false,
-                "text": "ambassador",
-                "value": "ambassador"
-              },
-              {
-                "selected": false,
-                "text": "argocd",
-                "value": "argocd"
-              },
-              {
-                "selected": false,
-                "text": "auth-system",
-                "value": "auth-system"
-              },
-              {
-                "selected": false,
-                "text": "cert-manager",
-                "value": "cert-manager"
-              },
-              {
-                "selected": false,
-                "text": "cluster-autoscaler",
-                "value": "cluster-autoscaler"
-              },
-              {
-                "selected": false,
-                "text": "default",
-                "value": "default"
-              },
-              {
-                "selected": false,
-                "text": "dex",
-                "value": "dex"
-              },
-              {
-                "selected": false,
-                "text": "external-dns",
-                "value": "external-dns"
-              },
-              {
-                "selected": false,
-                "text": "external-secrets",
-                "value": "external-secrets"
-              },
-              {
-                "selected": false,
-                "text": "grafana",
-                "value": "grafana"
-              },
-              {
-                "selected": false,
-                "text": "ingress-nginx",
-                "value": "ingress-nginx"
-              },
-              {
-                "selected": false,
-                "text": "kafka",
-                "value": "kafka"
-              },
-              {
-                "selected": false,
-                "text": "kube-node-lease",
-                "value": "kube-node-lease"
-              },
-              {
-                "selected": false,
-                "text": "kube-public",
-                "value": "kube-public"
-              },
-              {
-                "selected": false,
-                "text": "kube-system",
-                "value": "kube-system"
-              },
-              {
-                "selected": false,
-                "text": "kubecost",
-                "value": "kubecost"
-              },
-              {
-                "selected": false,
-                "text": "kubedb",
-                "value": "kubedb"
-              },
-              {
-                "selected": false,
-                "text": "lmco",
-                "value": "lmco"
-              },
-              {
-                "selected": false,
-                "text": "loki",
-                "value": "loki"
-              },
-              {
-                "selected": false,
-                "text": "monitoring",
-                "value": "monitoring"
-              },
-              {
-                "selected": false,
-                "text": "threatstack",
-                "value": "threatstack"
-              },
-              {
-                "selected": false,
-                "text": "vault",
-                "value": "vault"
-              },
-              {
-                "selected": true,
-                "text": "vault-secrets-webhook",
-                "value": "vault-secrets-webhook"
-              },
-              {
-                "selected": false,
-                "text": "velero",
-                "value": "velero"
-              }
-            ],
+            "options": [],
             "query": "label_values(namespace)",
-            "refresh": 0,
+            "refresh": 2,
             "regex": ".*",
             "skipUrlSync": false,
             "sort": 0,
@@ -295,9 +169,13 @@ data:
           {
             "allValue": null,
             "current": {
-              "selected": false,
-              "text": "All",
-              "value": "$__all"
+              "selected": true,
+              "text": [
+                "All"
+              ],
+              "value": [
+                "$__all"
+              ]
             },
             "datasource": "Prometheus",
             "definition": "label_values(container_file_descriptors{namespace=~\"$namespace\"}, pod)",
@@ -306,26 +184,10 @@ data:
             "label": "",
             "multi": true,
             "name": "pod",
-            "options": [
-              {
-                "selected": true,
-                "text": "All",
-                "value": "$__all"
-              },
-              {
-                "selected": false,
-                "text": "secrets-webhook-vault-secrets-webhook-6cf8b9dd58-g76tk",
-                "value": "secrets-webhook-vault-secrets-webhook-6cf8b9dd58-g76tk"
-              },
-              {
-                "selected": false,
-                "text": "secrets-webhook-vault-secrets-webhook-6cf8b9dd58-r4wc8",
-                "value": "secrets-webhook-vault-secrets-webhook-6cf8b9dd58-r4wc8"
-              }
-            ],
+            "options": [],
             "query": "label_values(container_file_descriptors{namespace=~\"$namespace\"}, pod)",
-            "refresh": 0,
-            "regex": ".*",
+            "refresh": 2,
+            "regex": "/.*/",
             "skipUrlSync": false,
             "sort": 1,
             "tagValuesQuery": "",
@@ -337,12 +199,12 @@ data:
         ]
       },
       "time": {
-        "from": "now-2d",
+        "from": "now-3h",
         "to": "now"
       },
       "timepicker": {},
       "timezone": "",
-      "title": "FileDescriptorUsagebyNamespace",
-      "uid": "QVl8CCuMk",
-      "version": 4
+      "title": "FileDescriptors Usage by Namespace",
+      "uid": "dd36099e2ba9085b9a69b419a1058e8e5e20ea2c",
+      "version": 1
     }
