@@ -116,7 +116,7 @@ $ kctx atreus
 Switched to context "arn:aws:eks:us-west-2:429863676324:cluster/atreus".
 
 $ cd <repo>/helm-charts/helm-chart-sources
-$ helm --debug --dry-run upgrade --install -n grafana /bluescape-monitoring-dashboards
+$ helm upgrade --install grafana-dashboards-atreus bluescape-monitoring-dashboards -n grafana --dry-run
 ```
 
 This should give a lot of useful output and no errors.
@@ -128,7 +128,7 @@ $ kctx atreus
 Switched to context "arn:aws:eks:us-west-2:429863676324:cluster/atreus".
 
 $ cd <repo>/helm-charts/helm-chart-sources
-$ helm upgrade --install -n grafana /bluescape-monitoring-dashboards
+$ helm upgrade --install grafana-dashboards-atreus bluescape-monitoring-dashboards -n grafana
 ```
 
 This should not fail. Once this completes, login to grafana on the test cluster
