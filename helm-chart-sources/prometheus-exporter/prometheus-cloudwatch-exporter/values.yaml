@@ -86,7 +86,7 @@ rbac:
 
 # Configuration is rendered with `tpl` function, therefore you can use any Helm variables and/or templates here
 config: |-
-  region: eu-west-1
+  region: us-west-2
   period_seconds: 240
   metrics:
   - aws_namespace: AWS/ELB
@@ -113,6 +113,91 @@ config: |-
     aws_metric_name: SurgeQueueLength
     aws_dimensions: [AvailabilityZone, LoadBalancerName]
     aws_statistics: [Maximum, Sum]
+  
+  - aws_namespace: AWS/ElastiCache
+    aws_metric_name: CPUUtilization
+    aws_dimensions: [CacheClusterId]
+    aws_statistics: [Average]
+
+  - aws_namespace: AWS/ElastiCache
+    aws_metric_name: NetworkBytesIn
+    aws_dimensions: [CacheClusterId]
+    aws_statistics: [Average]
+
+  - aws_namespace: AWS/ElastiCache
+    aws_metric_name: NetworkBytesOut
+    aws_dimensions: [CacheClusterId]
+    aws_statistics: [Average]
+
+  - aws_namespace: AWS/ElastiCache
+    aws_metric_name: FreeableMemory
+    aws_dimensions: [CacheClusterId]
+    aws_statistics: [Average]
+
+  - aws_namespace: AWS/ElastiCache
+    aws_metric_name: BytesUsedForCache
+    aws_dimensions: [CacheClusterId]
+    aws_statistics: [Average]
+
+  - aws_namespace: AWS/ElastiCache
+    aws_metric_name: CurrConnections
+    aws_dimensions: [CacheClusterId]
+    aws_statistics: [Average]
+
+  - aws_namespace: AWS/ElastiCache
+    aws_metric_name: NewConnections
+    aws_dimensions: [CacheClusterId]
+    aws_statistics: [Average]
+
+  - aws_namespace: AWS/ElastiCache
+    aws_metric_name: CacheHits
+    aws_dimensions: [CacheClusterId]
+    aws_statistics: [Average]
+
+  - aws_namespace: AWS/ElastiCache
+    aws_metric_name: CacheMisses
+    aws_dimensions: [CacheClusterId]
+    aws_statistics: [Average]
+
+  - aws_namespace: AWS/ElastiCache
+    aws_metric_name: ReplicationLag
+    aws_dimensions: [CacheClusterId]
+    aws_statistics: [Average]
+
+  - aws_namespace: AWS/EFS
+    aws_metric_name: PercentIOLimit
+    aws_dimensions: [FileSystemId]
+    aws_statistics: [Average]
+
+  - aws_namespace: AWS/EFS
+    aws_metric_name: BurstCreditBalance
+    aws_dimensions: [FileSystemId]
+    aws_statistics: [Average]
+
+  - aws_namespace: AWS/EFS
+    aws_metric_name: PermittedThroughput
+    aws_dimensions: [FileSystemId]
+    aws_statistics: [Average]
+
+  - aws_namespace: AWS/EFS
+    aws_metric_name: DataReadIOBytes
+    aws_dimensions: [FileSystemId]
+    aws_statistics: [Average]
+
+  - aws_namespace: AWS/EFS
+    aws_metric_name: TotalIOBytes
+    aws_dimensions: [FileSystemId]
+    aws_statistics: [Average]
+
+  - aws_namespace: AWS/EFS
+    aws_metric_name: ClientConnections
+    aws_dimensions: [FileSystemId]
+    aws_statistics: [Sum]
+
+  - aws_namespace: AWS/EFS
+    aws_metric_name: StorageBytes
+    aws_dimensions: [FileSystemId]
+    aws_statistics: [Bytes]
 
 
 nodeSelector: {}
