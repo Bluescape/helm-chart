@@ -12,6 +12,13 @@ spec:
   vaultPodSpec:
     priorityClassName: system-node-critical
 
+  vaultAnnotations:
+    type/instance: "vault"
+
+  vaultConfigurerAnnotations:
+    type/instance: "vaultconfigurer"
+
+
   # Specify the ServiceAccount where the Vault Pod and the Bank-Vaults configurer/unsealer is running
   serviceAccount: vault
 
@@ -129,7 +136,6 @@ spec:
             bound_service_account_names:
               - external-secrets
               - vault
-              - vault-secrets-webhook
               - dex
               - oauth2-proxy
               - gangway
@@ -184,6 +190,20 @@ spec:
               - loki
               - grafana
             policies: allow_secrets
+            ttl: 1h
+
+          # Logically split inline secrets mutations away from pod mutations
+          # Allow vault-secrets-webhook to use the secret kv store
+          # for inline secrets mutation. The webhook doesn't recognize
+          # service account annotations for secrets. It uses the
+          # SA for the webhook pods instead.
+          - name: secretsmutation
+            bound_service_account_names:
+              - secrets-webhook-vault-secrets-webhook
+            bound_service_account_namespaces:
+              - vault-secrets-webhook
+            policies:
+              - allow_secrets
             ttl: 1h
 
     secrets:
