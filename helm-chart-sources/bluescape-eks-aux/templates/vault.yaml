@@ -165,7 +165,7 @@ spec:
               - identity-client
               - idfed
               - isam
-              -isam-init
+              - isam-init
               - ksqldb
               - listener-api
               - metabase
