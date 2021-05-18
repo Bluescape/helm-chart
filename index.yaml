@@ -2,6 +2,16 @@ apiVersion: v1
 entries:
   aws-lb-controller-crds:
   - apiVersion: v2
+    appVersion: 1.17.0
+    created: "2021-05-18T10:52:32.599188-07:00"
+    description: A Helm chart for Kubernetes
+    digest: 57beb6d1cf13e0e4eed2e6c5ee2c7d5d8179dab63bf6720cf29dc6b4f602fd95
+    name: aws-lb-controller-crds
+    type: application
+    urls:
+    - https://bluescape.github.io/helm-charts/packages/aws-lb-controller-crds-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
     appVersion: 1.16.0
     created: "2021-03-26T15:11:13.973211-07:00"
     description: A Helm chart for Kubernetes
