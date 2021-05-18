@@ -3,9 +3,9 @@ entries:
   aws-lb-controller-crds:
   - apiVersion: v2
     appVersion: 1.17.0
-    created: "2021-05-18T10:52:32.599188-07:00"
+    created: "2021-05-18T18:09:07.217287016Z"
     description: A Helm chart for Kubernetes
-    digest: 57beb6d1cf13e0e4eed2e6c5ee2c7d5d8179dab63bf6720cf29dc6b4f602fd95
+    digest: 8177c9e47e45fb4a1cea957b7e7f2784a99034caf6fdd57b4c253802b1eda41c
     name: aws-lb-controller-crds
     type: application
     urls:
@@ -415,4 +415,4 @@ entries:
     urls:
     - https://bluescape.github.io/helm-charts/packages/oauth2-proxy-3.2.5.tgz
     version: 3.2.5
-generated: "2021-05-13T16:03:09.199551197Z"
+generated: "2021-05-18T18:09:07.216791888Z"
