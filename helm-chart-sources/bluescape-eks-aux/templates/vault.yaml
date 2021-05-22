@@ -133,13 +133,13 @@ spec:
         roles:
           # Allow every pod in the default namespace to use the secret kv store
           - name: default
-            bound_service_account_names: |-
+            bound_service_account_names:
               {{- range .Values.vault.bound_service_account_names }}
-              - {{ . | title | quote }}
+              - {{ . }}
               {{- end }}
-            bound_service_account_namespaces: |-
+            bound_service_account_namespaces:
               {{- range .Values.vault.bound_service_account_namespaces }}
-              - {{ . | title | quote }}
+              - {{ . }}
               {{- end }}
             policies: allow_secrets
             ttl: 1h
