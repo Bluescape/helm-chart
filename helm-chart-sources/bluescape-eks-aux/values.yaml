@@ -6,6 +6,62 @@ vault:
   enabled: false
   #domain_name: ${domain_name}
   #cluster_id: ${cluster_id}
+  bound_service_account_names :
+    - external-secrets
+    - vault
+    - dex
+    - oauth2-proxy
+    - gangway
+    - grafana
+    - loki
+    - promtail
+    - analytics-api
+    - analytics-data-import
+    - analytics-data-refresh
+    - analytics-data-transform
+    - analytics-init
+    - browser-client
+    - bull-exporter
+    - cmt
+    - collab
+    - cobrowse
+    - config
+    - config-center-client
+    - config-center-service
+    - cors
+    - document
+    - elementary
+    - graphql
+    - health
+    - identity-api
+    - identity-client
+    - idfed
+    - isam
+    - isam-init
+    - ksqldb
+    - listener-api
+    - metabase
+    - metabase-internal
+    - outlook-plugin
+    - portal-api
+    - portal-client
+    - rabbitmq
+    - redis
+    - socket
+    - squid
+    - tika
+    - uc-connector
+    - wall-apps
+    - wall-tool
+    - worker
+  bound_service_account_namespaces:
+    - external-secrets
+    - vault
+    - dex
+    - auth-system
+    - monitoring
+    - loki
+    - grafana
 
 cert_manager:
   setup_letsencrypt_prod_cluster_issuer: false
