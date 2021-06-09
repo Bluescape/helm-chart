@@ -24,6 +24,16 @@ entries:
   bluescape-eks-aux:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2021-06-09T11:14:43.074260122Z"
+    description: A Helm chart for Kubernetes
+    digest: ce1f3644bc63842c573f84070058b5272cfb70515166e7ff08c5821433971ef4
+    name: bluescape-eks-aux
+    type: application
+    urls:
+    - https://bluescape.github.io/helm-charts/packages/bluescape-eks-aux-0.3.0.tgz
+    version: 0.3.0
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2021-05-22T15:49:41.747395567Z"
     description: A Helm chart for Kubernetes
     digest: f9582640a71185771dc7e70e28a45e870bf20dcb231f818b1859aa8559865e9e
@@ -353,7 +363,8 @@ entries:
     appVersion: 2.24.0
     created: "2021-03-26T15:11:14.070368-07:00"
     deprecated: true
-    description: DEPRECATED OpenID Connect Identity (OIDC) and OAuth 2.0 Provider with Pluggable Connectors
+    description: DEPRECATED OpenID Connect Identity (OIDC) and OAuth 2.0 Provider
+      with Pluggable Connectors
     digest: 82108c1b04ad1a9f22d7b292a7b11e524ea5985e7e79d00c086c48614a1a4349
     home: https://github.com/dexidp/dex/
     icon: https://github.com/dexidp/dex/raw/master/Documentation/logos/dex-glyph-color.png
@@ -369,7 +380,8 @@ entries:
     appVersion: 3.3.0
     created: "2021-03-26T15:11:14.07269-07:00"
     deprecated: true
-    description: DEPRECATED An application that can be used to easily enable authentication flows via OIDC for a kubernetes cluster.
+    description: DEPRECATED An application that can be used to easily enable authentication
+      flows via OIDC for a kubernetes cluster.
     digest: c371a0495aa43a377a832e67a6ac61aea375dba75716c4b2030b1a895f518b55
     home: https://github.com/heptiolabs/gangway
     name: gangway
@@ -382,7 +394,8 @@ entries:
   - apiVersion: v2
     appVersion: v0.4.0
     created: "2021-03-26T15:11:14.075241-07:00"
-    description: A Helm chart for Gatekeeper Policy Manager which is a simple read-only web UI for viewing OPA Gatekeeper policies' status in a Kubernetes Cluster.
+    description: A Helm chart for Gatekeeper Policy Manager which is a simple read-only
+      web UI for viewing OPA Gatekeeper policies' status in a Kubernetes Cluster.
     digest: 7ab7b16093d4a4e8b8856593ab334764056dd15e2120f824f5c1cffe24334267
     name: gatekeeper-policy-manager
     type: application
@@ -392,7 +405,8 @@ entries:
   host-redirect:
   - apiVersion: v2
     created: "2021-04-13T16:46:15.638550072Z"
-    description: A Helm chart that created FQND based redirects, requires Ambassador and Cert-Manager installed in the cluster.
+    description: A Helm chart that created FQND based redirects, requires Ambassador
+      and Cert-Manager installed in the cluster.
     digest: f3e13ef2813416e179be54f8fe402a9231fd9e0e6ed94bcfe7af5da63aa419a3
     name: host-redirect
     type: application
@@ -418,7 +432,8 @@ entries:
     appVersion: 5.1.0
     created: "2021-03-26T15:11:14.079328-07:00"
     deprecated: true
-    description: DEPRECATED - A reverse proxy that provides authentication with Google, Github or other providers
+    description: DEPRECATED - A reverse proxy that provides authentication with Google,
+      Github or other providers
     digest: 6fdd65daec201e4998d5e51e3e7834e25407e59e0acfb672e121a244bc44755e
     home: https://pusher.github.io/oauth2_proxy/
     keywords:
@@ -435,4 +450,4 @@ entries:
     urls:
     - https://bluescape.github.io/helm-charts/packages/oauth2-proxy-3.2.5.tgz
     version: 3.2.5
-generated: "2021-05-22T15:49:41.745765064Z"
+generated: "2021-06-09T11:14:43.07305629Z"
