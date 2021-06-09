@@ -24,9 +24,9 @@ entries:
   bluescape-eks-aux:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-06-09T04:06:59.485789-07:00"
+    created: "2021-06-09T11:08:56.465957538Z"
     description: A Helm chart for Kubernetes
-    digest: 9419be26a0f7fde6fddc985e8037928326a0765412b07151f5a3b8974ccd75e7
+    digest: 46ef78a50218d46190c1dfb9afb428506023389c01becaf87cd79a24bf7706b3
     name: bluescape-eks-aux
     type: application
     urls:
@@ -450,4 +450,4 @@ entries:
     urls:
     - https://bluescape.github.io/helm-charts/packages/oauth2-proxy-3.2.5.tgz
     version: 3.2.5
-generated: "2021-06-09T04:06:59.433569-07:00"
+generated: "2021-06-09T11:08:56.465111075Z"
