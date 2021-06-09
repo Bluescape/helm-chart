@@ -6,7 +6,7 @@ metadata:
   namespace: vault
 spec:
   size: 3
-  image: vault:1.6.0
+  image: "{{ .Values.vault.image }}:{{ .Values.vault.imageTag }}"
   bankVaultsImage: banzaicloud/bank-vaults:latest
 
   vaultPodSpec:
