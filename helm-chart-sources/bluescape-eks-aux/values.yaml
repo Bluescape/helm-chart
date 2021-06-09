@@ -4,6 +4,8 @@
 
 vault:
   enabled: false
+  image: vault
+  imageTag: "1.6.0"
   #domain_name: ${domain_name}
   #cluster_id: ${cluster_id}
   bound_service_account_names :
