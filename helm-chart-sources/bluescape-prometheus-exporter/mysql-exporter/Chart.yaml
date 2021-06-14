@@ -1,0 +1,11 @@
+apiVersion: v1
+description: A Helm chart for prometheus mysql exporter with cloudsqlproxy
+name: prometheus-mysql-exporter
+version: 1.2.0
+home: https://github.com/prometheus/mysqld_exporter
+appVersion: v0.12.1
+sources:
+  - https://github.com/prometheus/mysqld_exporter
+maintainers:
+  - name: thangaraj ravi
+    email: thangaraj.ravi@bluescape.com
