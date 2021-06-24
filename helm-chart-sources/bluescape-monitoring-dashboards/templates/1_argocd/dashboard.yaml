@@ -1,12 +1,13 @@
+---
 apiVersion: integreatly.org/v1alpha1
 kind: GrafanaDashboard
 metadata:
-  name:  argocd-dashboard
+  name: argocd-dashboard
   namespace: grafana
   labels:
-    {{- include "bluescape-monitoring-dashboards.labels" . | nindent 4 }}
+     {{- include "bluescape-monitoring-dashboards.labels" . | nindent 4 }}
 spec:
-  name:  argocd-dashboard
+  name: argocd-dashboard
   configMapRef:
-    name:  argocd-dashboard
-    key:  argocd-dashboard.json
+    name: argocd-dashboard
+    key: argocd-dashboard.json
