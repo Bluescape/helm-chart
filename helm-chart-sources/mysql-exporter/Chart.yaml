@@ -7,6 +7,8 @@ appVersion: v0.12.1
 sources:
   - https://github.com/prometheus/mysqld_exporter
 maintainers:
+  - name: thangarajravi
+    email: thangaraj.ravi@bluescape.com
   - name: juanchimienti
     email: juan.chimienti@gmail.com
   - name: monotek
