@@ -1,0 +1,3 @@
+rules:
+ colons: disable
+ line-length: disable 
