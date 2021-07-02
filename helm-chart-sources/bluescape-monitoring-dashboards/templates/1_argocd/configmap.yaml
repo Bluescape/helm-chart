@@ -435,7 +435,7 @@ data:
           "tableColumn": "",
           "targets": [
             {
-              "expr": "sum(argocd_app_health_status{health_status=\"Healthy\",namespace=~\"$namespace\",project=~\"$project\"} == 1)",
+              "expr": "sum(argocd_app_info{health_status=\"Healthy\",namespace=~\"$namespace\",project=~\"$project\"} == 1)",
               "format": "time_series",
               "intervalFactor": 1,
               "refId": "A"
@@ -522,7 +522,7 @@ data:
           "tableColumn": "",
           "targets": [
             {
-              "expr": "sum(argocd_app_health_status{health_status=\"Progressing\",namespace=~\"$namespace\"})",
+              "expr": "sum(argocd_app_info{health_status=\"Progressing\",namespace=~\"$namespace\"})",
               "format": "time_series",
               "intervalFactor": 1,
               "refId": "A"
@@ -608,7 +608,7 @@ data:
           "tableColumn": "",
           "targets": [
             {
-              "expr": "sum(argocd_app_health_status{health_status=\"Suspended\",namespace=~\"$namespace\",project=~\"$project\"})",
+              "expr": "sum(argocd_app_info{health_status=\"Suspended\",namespace=~\"$namespace\",project=~\"$project\"})",
               "format": "time_series",
               "intervalFactor": 1,
               "refId": "A"
@@ -694,7 +694,7 @@ data:
           "tableColumn": "",
           "targets": [
             {
-              "expr": "sum(argocd_app_health_status{health_status=\"Degraded\",namespace=~\"$namespace\",project=~\"$project\"})",
+              "expr": "sum(argocd_app_info{health_status=\"Degraded\",namespace=~\"$namespace\",project=~\"$project\"})",
               "format": "time_series",
               "intervalFactor": 1,
               "refId": "A"
@@ -780,7 +780,7 @@ data:
           "tableColumn": "",
           "targets": [
             {
-              "expr": "sum(argocd_app_health_status{health_status=\"Missing\",namespace=~\"$namespace\",project=~\"$project\"})",
+              "expr": "sum(argocd_app_info{health_status=\"Missing\",namespace=~\"$namespace\",project=~\"$project\"})",
               "format": "time_series",
               "intervalFactor": 1,
               "refId": "A"
@@ -866,7 +866,7 @@ data:
           "tableColumn": "",
           "targets": [
             {
-              "expr": "sum(argocd_app_health_status{health_status=\"Unknown\",namespace=~\"$namespace\",project=~\"$project\"})",
+              "expr": "sum(argocd_app_info{health_status=\"Unknown\",namespace=~\"$namespace\",project=~\"$project\"})",
               "format": "time_series",
               "intervalFactor": 1,
               "refId": "A"
@@ -966,7 +966,7 @@ data:
           "tableColumn": "",
           "targets": [
             {
-              "expr": "sum(argocd_app_sync_status{sync_status=\"Synced\",namespace=~\"$namespace\",project=~\"$project\"})",
+              "expr": "sum(argocd_app_info{sync_status=\"Synced\",namespace=~\"$namespace\",project=~\"$project\"})",
               "format": "time_series",
               "intervalFactor": 1,
               "refId": "A"
@@ -1052,7 +1052,7 @@ data:
           "tableColumn": "",
           "targets": [
             {
-              "expr": "sum(argocd_app_sync_status{sync_status=\"OutOfSync\",namespace=~\"$namespace\",project=~\"$project\"})",
+              "expr": "sum(argocd_app_info{sync_status=\"OutOfSync\",namespace=~\"$namespace\",project=~\"$project\"})",
               "format": "time_series",
               "intervalFactor": 1,
               "refId": "A"
@@ -1138,7 +1138,7 @@ data:
           "tableColumn": "",
           "targets": [
             {
-              "expr": "sum(argocd_app_sync_status{sync_status=\"Unknown\",namespace=~\"$namespace\",project=~\"$project\"})",
+              "expr": "sum(argocd_app_info{sync_status=\"Unknown\",namespace=~\"$namespace\",project=~\"$project\"})",
               "format": "time_series",
               "intervalFactor": 1,
               "refId": "A"
@@ -3236,14 +3236,14 @@ data:
               ]
             },
             "datasource": "$Source",
-            "definition": "label_values(argocd_app_health_status, project)",
+            "definition": "label_values(argocd_app_info, project)",
             "hide": 0,
             "includeAll": true,
             "label": null,
             "multi": true,
             "name": "project",
             "options": [],
-            "query": "label_values(argocd_app_health_status, project)",
+            "query": "label_values(argocd_app_info, project)",
             "refresh": 1,
             "regex": "",
             "skipUrlSync": false,
