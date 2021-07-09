@@ -151,8 +151,10 @@ spec:
           # SA for the webhook pods instead.
           - name: secretsmutation
             bound_service_account_names:
+              - lacework
               - secrets-webhook-vault-secrets-webhook
             bound_service_account_namespaces:
+              - lacework
               - vault-secrets-webhook
             policies:
               - allow_secrets
