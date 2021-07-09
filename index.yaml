@@ -3,7 +3,7 @@ entries:
   aws-lb-controller-crds:
   - apiVersion: v2
     appVersion: 1.17.0
-    created: "2021-05-18T18:09:07.217287016Z"
+    created: "2021-07-08T17:13:44.955302712-07:00"
     description: A Helm chart for Kubernetes
     digest: 8177c9e47e45fb4a1cea957b7e7f2784a99034caf6fdd57b4c253802b1eda41c
     name: aws-lb-controller-crds
@@ -13,7 +13,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-03-26T15:11:13.973211-07:00"
+    created: "2021-07-08T17:13:44.954976382-07:00"
     description: A Helm chart for Kubernetes
     digest: 550301817704955e9913fba8cb4dc259323b3dfbe380c4fbebb73bc02794348a
     name: aws-lb-controller-crds
@@ -24,7 +24,7 @@ entries:
   bluescape-eks-aux:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-06-09T11:14:43.074260122Z"
+    created: "2021-07-08T17:13:44.9704847-07:00"
     description: A Helm chart for Kubernetes
     digest: ce1f3644bc63842c573f84070058b5272cfb70515166e7ff08c5821433971ef4
     name: bluescape-eks-aux
@@ -34,7 +34,7 @@ entries:
     version: 0.3.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-05-22T15:49:41.747395567Z"
+    created: "2021-07-08T17:13:44.969754759-07:00"
     description: A Helm chart for Kubernetes
     digest: f9582640a71185771dc7e70e28a45e870bf20dcb231f818b1859aa8559865e9e
     name: bluescape-eks-aux
@@ -44,7 +44,7 @@ entries:
     version: 0.2.9
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-05-20T05:13:36.317681406Z"
+    created: "2021-07-08T17:13:44.969113272-07:00"
     description: A Helm chart for Kubernetes
     digest: 1f51c5303bf6c0ac0e0ef9c5f8498a1a3e89a111f165cdb1a4b28738f173ec49
     name: bluescape-eks-aux
@@ -54,7 +54,7 @@ entries:
     version: 0.2.8
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-05-13T16:03:09.200371729Z"
+    created: "2021-07-08T17:13:44.968295771-07:00"
     description: A Helm chart for Kubernetes
     digest: 2b320ac758c304be49b9d0410fdaf3f3b591005b8d89a5d8ead0f9b570268bad
     name: bluescape-eks-aux
@@ -64,7 +64,7 @@ entries:
     version: 0.2.7
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-05-11T03:49:18.727057942Z"
+    created: "2021-07-08T17:13:44.959337401-07:00"
     description: A Helm chart for Kubernetes
     digest: b32ada891842eb50191c80977fd7f6025af34970d69c462461eb0e2210969ce8
     name: bluescape-eks-aux
@@ -74,7 +74,7 @@ entries:
     version: 0.2.6
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-04-19T16:06:35.816986-07:00"
+    created: "2021-07-08T17:13:44.958684241-07:00"
     description: A Helm chart for Kubernetes
     digest: 4ac84258419ddb2c1511d47f474de4d8ee780aabc0803d2d7e5ca7fc6c370183
     name: bluescape-eks-aux
@@ -84,7 +84,7 @@ entries:
     version: 0.1.6
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-04-19T14:32:20.343626-07:00"
+    created: "2021-07-08T17:13:44.958137252-07:00"
     description: A Helm chart for Kubernetes
     digest: 83bd0fa1909fa94cfa3c8ad9aa38101055e36259a47062d81769a2ad3ccfd62d
     name: bluescape-eks-aux
@@ -94,7 +94,7 @@ entries:
     version: 0.1.5
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-04-19T18:34:28.134259399Z"
+    created: "2021-07-08T17:13:44.957623635-07:00"
     description: A Helm chart for Kubernetes
     digest: 1832cf4164520eb37b4a98ba55e7473df87d982f9660f8c76df5985923a0e3b2
     name: bluescape-eks-aux
@@ -104,7 +104,7 @@ entries:
     version: 0.1.4
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-04-16T19:28:53.490906169Z"
+    created: "2021-07-08T17:13:44.957157307-07:00"
     description: A Helm chart for Kubernetes
     digest: 26ed1956ecc21f3ee0561a7713f23fb981112c05eba486c637bced05e1ce1482
     name: bluescape-eks-aux
@@ -114,7 +114,7 @@ entries:
     version: 0.1.3
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-04-16T15:20:56.294736242Z"
+    created: "2021-07-08T17:13:44.956480778-07:00"
     description: A Helm chart for Kubernetes
     digest: 38ad60d71fc0abfb03854ed12cb59192b735d1fba9a289feb02b55e1f64dd226
     name: bluescape-eks-aux
@@ -124,7 +124,7 @@ entries:
     version: 0.1.2
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-03-26T15:11:13.977321-07:00"
+    created: "2021-07-08T17:13:44.956077932-07:00"
     description: A Helm chart for Kubernetes
     digest: 65b04272032825185b0556d810010d4614a966f607bfc0ba16f3dc0e16787bf9
     name: bluescape-eks-aux
@@ -134,7 +134,7 @@ entries:
     version: 0.1.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-03-26T15:11:13.97552-07:00"
+    created: "2021-07-08T17:13:44.955701831-07:00"
     description: A Helm chart for Kubernetes
     digest: d7d41a1d1cfbb1ead78a076ad0068dc2a207f3d2754870b3603ec8400749eaaf
     name: bluescape-eks-aux
@@ -145,7 +145,7 @@ entries:
   bluescape-monitoring-crds:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-03-26T15:11:13.985276-07:00"
+    created: "2021-07-08T17:13:44.97652555-07:00"
     description: A Helm chart for Kubernetes
     digest: cc37259402fbca9f997cb8265d37609314134b6978010c90f8965b579fd39270
     name: bluescape-monitoring-crds
@@ -156,7 +156,7 @@ entries:
   bluescape-monitoring-dashboards:
   - apiVersion: v2
     appVersion: 1.16.2
-    created: "2021-07-02T17:39:51.996641643Z"
+    created: "2021-07-08T17:13:45.01282741-07:00"
     description: A Helm chart for Kubernetes
     digest: 7a6675ddd2618856d473133ce8e8d96adb827b0d00688cc245252dec03b4524d
     name: bluescape-monitoring-dashboards
@@ -166,7 +166,7 @@ entries:
     version: 0.2.5
   - apiVersion: v2
     appVersion: 1.16.2
-    created: "2021-06-29T22:56:38.157977246Z"
+    created: "2021-07-08T17:13:45.008110935-07:00"
     description: A Helm chart for Kubernetes
     digest: a1ece6e8e88b030b2352111208fcc258fecc9b4395b3eb1a800757acbd47f796
     name: bluescape-monitoring-dashboards
@@ -176,7 +176,7 @@ entries:
     version: 0.2.4
   - apiVersion: v2
     appVersion: 1.16.2
-    created: "2021-04-23T01:54:01.773036213Z"
+    created: "2021-07-08T17:13:45.001986323-07:00"
     description: A Helm chart for Kubernetes
     digest: baf1a55b74b540d2775a30d6364b4e6cf381eb68021b45f984512cc90d7da3d3
     name: bluescape-monitoring-dashboards
@@ -186,7 +186,7 @@ entries:
     version: 0.2.3
   - apiVersion: v2
     appVersion: 1.16.2
-    created: "2021-04-14T16:42:23.411938803Z"
+    created: "2021-07-08T17:13:44.996087226-07:00"
     description: A Helm chart for Kubernetes
     digest: c0c33eee30ac6f13385804a4880ca0c931321774f2c6f9f5df786b37fe3dcfe0
     name: bluescape-monitoring-dashboards
@@ -196,7 +196,7 @@ entries:
     version: 0.2.2
   - apiVersion: v2
     appVersion: 1.16.1
-    created: "2021-04-14T03:55:22.88019494Z"
+    created: "2021-07-08T17:13:44.991477689-07:00"
     description: A Helm chart for Kubernetes
     digest: 52d9e4d67b28f64edfd1800ac95f3c626e672eb69946ce19e8e337945e8eb0ef
     name: bluescape-monitoring-dashboards
@@ -206,7 +206,7 @@ entries:
     version: 0.2.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-03-26T15:11:14.01376-07:00"
+    created: "2021-07-08T17:13:44.98623506-07:00"
     description: A Helm chart for Kubernetes
     digest: 40449310664ec071f188745dda28fabffcbcc9c450a8939d6690a751ba15010b
     name: bluescape-monitoring-dashboards
@@ -216,7 +216,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-03-26T15:11:13.991087-07:00"
+    created: "2021-07-08T17:13:44.980522707-07:00"
     description: A Helm chart for Kubernetes
     digest: bfcf1c7cb2972ed7f62f7339524cd37046cef014eb341beebafa925b4a8504ed
     name: bluescape-monitoring-dashboards
@@ -227,7 +227,7 @@ entries:
   bluescape-monitoring-grafana:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-03-26T19:15:55.53175-04:00"
+    created: "2021-07-08T17:13:45.022238966-07:00"
     dependencies:
     - alias: bluescape-monitoring-dashboards
       condition: custom_dashboards.enable
@@ -243,7 +243,7 @@ entries:
     version: 0.2.3
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-03-26T15:11:14.020472-07:00"
+    created: "2021-07-08T17:13:45.017825083-07:00"
     dependencies:
     - alias: bluescape-monitoring-dashboards
       condition: custom_dashboards.enable
@@ -260,7 +260,7 @@ entries:
   cortex:
   - apiVersion: v2
     appVersion: v1.4.0
-    created: "2021-03-26T15:11:14.035122-07:00"
+    created: "2021-07-08T17:13:45.028340665-07:00"
     dependencies:
     - alias: memcached
       condition: memcached.enabled
@@ -294,7 +294,7 @@ entries:
   cp-helm-charts:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-03-26T15:11:14.06753-07:00"
+    created: "2021-07-08T17:13:45.056491034-07:00"
     dependencies:
     - condition: cp-kafka.enabled
       name: cp-kafka
@@ -332,7 +332,7 @@ entries:
     version: 0.5.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-03-26T15:11:14.06167-07:00"
+    created: "2021-07-08T17:13:45.053088218-07:00"
     dependencies:
     - condition: cp-kafka.enabled
       name: cp-kafka
@@ -371,7 +371,7 @@ entries:
   dex:
   - apiVersion: v1
     appVersion: 2.24.0
-    created: "2021-03-26T15:11:14.070368-07:00"
+    created: "2021-07-08T17:13:45.0573563-07:00"
     deprecated: true
     description: DEPRECATED OpenID Connect Identity (OIDC) and OAuth 2.0 Provider
       with Pluggable Connectors
@@ -388,7 +388,7 @@ entries:
   gangway:
   - apiVersion: v1
     appVersion: 3.3.0
-    created: "2021-03-26T15:11:14.07269-07:00"
+    created: "2021-07-08T17:13:45.05791233-07:00"
     deprecated: true
     description: DEPRECATED An application that can be used to easily enable authentication
       flows via OIDC for a kubernetes cluster.
@@ -403,7 +403,7 @@ entries:
   gatekeeper-policy-manager:
   - apiVersion: v2
     appVersion: v0.4.0
-    created: "2021-03-26T15:11:14.075241-07:00"
+    created: "2021-07-08T17:13:45.058402586-07:00"
     description: A Helm chart for Gatekeeper Policy Manager which is a simple read-only
       web UI for viewing OPA Gatekeeper policies' status in a Kubernetes Cluster.
     digest: 7ab7b16093d4a4e8b8856593ab334764056dd15e2120f824f5c1cffe24334267
@@ -414,7 +414,7 @@ entries:
     version: 0.4.0
   host-redirect:
   - apiVersion: v2
-    created: "2021-04-13T16:46:15.638550072Z"
+    created: "2021-07-08T17:13:45.058573393-07:00"
     description: A Helm chart that created FQND based redirects, requires Ambassador
       and Cert-Manager installed in the cluster.
     digest: f3e13ef2813416e179be54f8fe402a9231fd9e0e6ed94bcfe7af5da63aa419a3
@@ -426,7 +426,7 @@ entries:
   kube-oidc-proxy:
   - apiVersion: v1
     appVersion: v0.3.0
-    created: "2021-03-26T15:11:14.077522-07:00"
+    created: "2021-07-08T17:13:45.059048036-07:00"
     description: A Helm chart for kube-oidc-proxy
     digest: 23f9f83a66c12405fa1e2d0537563e2e430e3d4785ad6b7cd7c6063946d26ff2
     home: https://github.com/jetstack/kube-oidc-proxy
@@ -437,10 +437,51 @@ entries:
     urls:
     - https://bluescape.github.io/helm-charts/packages/kube-oidc-proxy-0.3.1.tgz
     version: 0.3.1
+  lacework-agent:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2021-07-08T17:13:45.061064602-07:00"
+    description: Lacework Agent
+    digest: 961ae3a0af30c93935ea9d927b60ffd4047a85d6a074a5bb85472cdac799c2ce
+    home: https://www.lacework.com
+    icon: https://www.lacework.com/wp-content/uploads/2019/07/Lacework_Logo_color_2019.svg
+    keywords:
+    - monitoring
+    - security
+    - run-time
+    - metric
+    - troubleshooting
+    maintainers:
+    - email: info@lacework.net
+      name: lacework-support
+    name: lacework-agent
+    urls:
+    - https://bluescape.github.io/helm-charts/packages/lacework-v4.0.33-blsc-vault.tgz
+    version: 4.0.34
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2021-07-08T17:13:45.060730664-07:00"
+    description: Lacework Agent
+    digest: 8b1fe5f1e196380ebcdee7daff2e653d4eb60320edd36c721205a5af106a5a77
+    home: https://www.lacework.com
+    icon: https://www.lacework.com/wp-content/uploads/2019/07/Lacework_Logo_color_2019.svg
+    keywords:
+    - monitoring
+    - security
+    - run-time
+    - metric
+    - troubleshooting
+    maintainers:
+    - email: info@lacework.net
+      name: lacework-support
+    name: lacework-agent
+    urls:
+    - https://bluescape.github.io/helm-charts/packages/lacework-v4.0.32.tgz
+    version: 4.0.32
   oauth2-proxy:
   - apiVersion: v1
     appVersion: 5.1.0
-    created: "2021-03-26T15:11:14.079328-07:00"
+    created: "2021-07-08T17:13:45.061696087-07:00"
     deprecated: true
     description: DEPRECATED - A reverse proxy that provides authentication with Google,
       Github or other providers
@@ -460,4 +501,4 @@ entries:
     urls:
     - https://bluescape.github.io/helm-charts/packages/oauth2-proxy-3.2.5.tgz
     version: 3.2.5
-generated: "2021-07-02T17:39:51.988900824Z"
+generated: "2021-07-08T17:13:44.954637453-07:00"
