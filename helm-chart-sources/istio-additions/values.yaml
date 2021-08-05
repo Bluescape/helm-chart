@@ -1,0 +1,70 @@
+# Default values for istio-additions.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+## Ambassador configuration(s) for ServiceMesh/SideCars
+ambassador:
+  setup_tracingservice:
+    enabled: false
+    tracing_uri: 'jaeger-aio-collector.istio-system.svc.cluster.local:9411'
+  setup_tlscontext:
+    enabled: false
+
+## Istio
+### ServiceMonitor configuration(s)
+serviceMonitor:
+  enabled: false
+
+### Enable PeerAuthentication for auxiliary components
+PeerAuthentication:
+  setup_vault:
+    enabled: false
+    mode: PERMISSIVE
+  setup_vault_secrets_webhook:
+    enabled: false
+    mode: PERMISSIVE
+  setup_bitnami_redis:
+    enabled: false
+    mode: PERMISSIVE
+  setup_bitnami_mongodb:
+    enabled: false
+    mode: PERMISSIVE
+
+## Management console for an Istio-based service mesh
+kiali:
+  basic_config:
+    enabled: false
+    ingress:
+      enabled: false
+      host: 'kiali.example.bluescape.io'
+    in_cluster_urls:
+      grafana: 'http://grafana-service.grafana.svc:3000'
+      prometheus: 'http://kube-prometheus-stack-prometheus.monitoring.svc.cluster.local:9090'
+      tracing: 'http://jaeger-aio-query.istio-system.svc.cluster.local:16686/jaeger'
+  prod_config:
+    enabled: false
+    ingress:
+      enabled: false
+      host: 'kiali.example.bluescape.io'
+    in_cluster_urls:
+      grafana: 'http://grafana-service.grafana.svc:3000'
+      prometheus: 'http://kube-prometheus-stack-prometheus.monitoring.svc.cluster.local:9090'
+      tracing: 'http://jaeger-aio-query.istio-system.svc.cluster.local:16686/jaeger'
+
+## Open source end-to-end distributed tracing system
+jaeger:
+  basic_config:
+    enabled: false
+    ingress:
+      enabled: false
+  prod_config:
+    enabled: false
+    ingress:
+      enabled: false
+
+
+
+
+
+
+
