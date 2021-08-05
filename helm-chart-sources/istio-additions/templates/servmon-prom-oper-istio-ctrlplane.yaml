@@ -1,5 +1,5 @@
 ### Prometheus control plane configuration
-{{- if .Values.serviceMonitor.enabled }}
+{{- if .Values.istio.serviceMonitor.enabled }}
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:

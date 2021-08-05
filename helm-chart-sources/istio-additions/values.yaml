@@ -2,7 +2,7 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-## Ambassador configuration(s) for ServiceMesh/SideCars
+## Ambassador configuration(s) for ServiceMesh
 ambassador:
   setup_tracingservice:
     enabled: false
@@ -11,24 +11,25 @@ ambassador:
     enabled: false
 
 ## Istio
-### ServiceMonitor configuration(s)
-serviceMonitor:
-  enabled: false
+istio:
+  ### ServiceMonitor configuration(s)
+  serviceMonitor:
+    enabled: false
 
-### Enable PeerAuthentication for auxiliary components
-PeerAuthentication:
-  setup_vault:
-    enabled: false
-    mode: PERMISSIVE
-  setup_vault_secrets_webhook:
-    enabled: false
-    mode: PERMISSIVE
-  setup_bitnami_redis:
-    enabled: false
-    mode: PERMISSIVE
-  setup_bitnami_mongodb:
-    enabled: false
-    mode: PERMISSIVE
+  ### Enable PeerAuthentication for auxiliary components
+  peerauthentication:
+    setup_vault:
+      enabled: false
+      mode: PERMISSIVE
+    setup_vault_secrets_webhook:
+      enabled: false
+      mode: PERMISSIVE
+    setup_bitnami_redis:
+      enabled: false
+      mode: PERMISSIVE
+    setup_bitnami_mongodb:
+      enabled: false
+      mode: PERMISSIVE
 
 ## Management console for an Istio-based service mesh
 kiali:

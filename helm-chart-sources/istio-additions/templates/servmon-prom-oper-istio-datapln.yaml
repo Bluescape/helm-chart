@@ -1,5 +1,5 @@
 ### Data plane pods to set up scraping
-{{- if .Values.serviceMonitor.enabled }}
+{{- if .Values.istio.serviceMonitor.enabled }}
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:

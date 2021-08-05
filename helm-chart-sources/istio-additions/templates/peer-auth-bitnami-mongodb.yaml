@@ -1,4 +1,4 @@
-{{- if .Values.PeerAuthentication.setup_bitnami_mongodb.enabled }}
+{{- if .Values.istio.peerauthentication.setup_bitnami_mongodb.enabled }}
 apiVersion: security.istio.io/v1beta1
 kind: PeerAuthentication
 metadata:
@@ -11,5 +11,5 @@ metadata:
     {{- include "istio-additions.labels" . | nindent 4 }}
 spec:
   mtls:
-    mode: {{ .Values.PeerAuthentication.setup_bitnami_mongodb.mode }}
+    mode: {{ .Values.istio.peerauthentication.setup_bitnami_mongodb.mode }}
 {{- end }}
