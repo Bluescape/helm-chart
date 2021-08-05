@@ -61,10 +61,3 @@ jaeger:
     enabled: false
     ingress:
       enabled: false
-
-
-
-
-
-
-
