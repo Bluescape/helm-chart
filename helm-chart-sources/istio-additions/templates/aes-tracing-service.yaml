@@ -1,0 +1,18 @@
+{{- if .Values.ambassador.setup_tracingservice.enabled }}
+apiVersion: getambassador.io/v2
+kind: TracingService
+metadata:
+  name:  tracing
+  namespace: ambassador
+  annotations:
+    argocd.argoproj.io/sync-options: Prune=false
+  labels:
+    {{- include "istio-additions.labels" . | nindent 4 }}
+spec:
+  service: {{ .Values.ambassador.setup_tracingservice.tracing_uri }}
+  driver: zipkin
+  config: {}
+  tag_headers:
+    - ":authority"
+    - ":path"
+{{- end }}
