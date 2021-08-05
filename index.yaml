@@ -433,6 +433,17 @@ entries:
     urls:
     - https://bluescape.github.io/helm-charts/packages/host-redirect-0.1.0.tgz
     version: 0.1.0
+  istio-additions:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2021-08-05T18:11:40.183857371Z"
+    description: A Helm chart for Kubernetes
+    digest: b49e2b9300abc4ab6497bafa87ac9f6367e51f01b74e6148628fb8d6ee2c17d7
+    name: istio-additions
+    type: application
+    urls:
+    - https://bluescape.github.io/helm-charts/packages/istio-additions-0.1.0.tgz
+    version: 0.1.0
   kube-oidc-proxy:
   - apiVersion: v1
     appVersion: v0.3.0
@@ -511,4 +522,4 @@ entries:
     urls:
     - https://bluescape.github.io/helm-charts/packages/oauth2-proxy-3.2.5.tgz
     version: 3.2.5
-generated: "2021-07-17T18:56:29.841698631Z"
+generated: "2021-08-05T18:11:40.182061761Z"
