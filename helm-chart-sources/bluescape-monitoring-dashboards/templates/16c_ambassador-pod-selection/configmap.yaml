@@ -26,8 +26,8 @@ data:
       "editable": true,
       "gnetId": 10850,
       "graphTooltip": 0,
-      "id": 55,
-      "iteration": 1628097195459,
+      "id": 64,
+      "iteration": 1628125408299,
       "links": [],
       "panels": [
         {
@@ -97,9 +97,11 @@ data:
           "tableColumn": "",
           "targets": [
             {
-              "expr": "sum(increase(envoy_http_downstream_cx_total{envoy_http_conn_manager_prefix!=\"admin\"}[1m]))",
+              "expr": "sum(increase(envoy_http_downstream_cx_total{envoy_http_conn_manager_prefix!=\"admin\", pod=~\"${pod}\"}[1m]))",
               "format": "time_series",
+              "interval": "",
               "intervalFactor": 1,
+              "legendFormat": "",
               "refId": "A"
             }
           ],
@@ -185,9 +187,11 @@ data:
           "tableColumn": "",
           "targets": [
             {
-              "expr": "sum(envoy_http_downstream_cx_ssl_active)-sum(envoy_cluster_upstream_cx_active)",
+              "expr": "abs(sum(envoy_http_downstream_cx_ssl_active{pod=~\"${pod}\"}) - sum(envoy_cluster_upstream_cx_active{pod=~\"${pod}\"}))",
               "format": "time_series",
+              "interval": "",
               "intervalFactor": 1,
+              "legendFormat": "",
               "refId": "A"
             }
           ],
@@ -273,9 +277,11 @@ data:
           "tableColumn": "",
           "targets": [
             {
-              "expr": "sum(envoy_http_downstream_cx_ssl_active{envoy_http_conn_manager_prefix!=\"admin\"})",
+              "expr": "sum(envoy_http_downstream_cx_ssl_active{envoy_http_conn_manager_prefix!=\"admin\", pod=~\"${pod}\"})",
               "format": "time_series",
+              "interval": "",
               "intervalFactor": 1,
+              "legendFormat": "",
               "refId": "A"
             }
           ],
@@ -361,9 +367,11 @@ data:
           "tableColumn": "",
           "targets": [
             {
-              "expr": "sum(increase(envoy_http_downstream_rq_xx{envoy_response_code_class=\"4\"}[1m]))",
+              "expr": "sum(increase(envoy_http_downstream_rq_xx{envoy_response_code_class=\"4\", pod=~\"${pod}\"}[1m]))",
               "format": "time_series",
+              "interval": "",
               "intervalFactor": 1,
+              "legendFormat": "",
               "refId": "A"
             }
           ],
@@ -449,9 +457,11 @@ data:
           "tableColumn": "",
           "targets": [
             {
-              "expr": "sum(increase(envoy_http_downstream_rq_xx{envoy_response_code_class=\"4\"}[1m]))",
+              "expr": "sum(increase(envoy_http_downstream_rq_xx{envoy_response_code_class=\"4\", pod=~\"${pod}\"}[1m]))",
               "format": "time_series",
+              "interval": "",
               "intervalFactor": 1,
+              "legendFormat": "",
               "refId": "A"
             }
           ],
@@ -537,9 +547,11 @@ data:
           "tableColumn": "",
           "targets": [
             {
-              "expr": "sum(increase(envoy_http_downstream_rq_xx{envoy_response_code_class=\"5\"}[1m]))",
+              "expr": "sum(increase(envoy_http_downstream_rq_xx{envoy_response_code_class=\"5\", pod=~\"${pod}\"}[1m]))",
               "format": "time_series",
+              "interval": "",
               "intervalFactor": 1,
+              "legendFormat": "",
               "refId": "A"
             }
           ],
@@ -626,9 +638,11 @@ data:
           "tableColumn": "",
           "targets": [
             {
-              "expr": "sum(envoy_cluster_upstream_cx_rx_bytes_total{envoy_cluster_name!~\"(xds_cluster|cluster_127_0_0_1_8877)\"})",
+              "expr": "sum(envoy_cluster_upstream_cx_rx_bytes_total{envoy_cluster_name!~\"(xds_cluster|cluster_127_0_0_1_8877)\", pod=~\"${pod}\"})",
               "format": "time_series",
+              "interval": "",
               "intervalFactor": 1,
+              "legendFormat": "",
               "refId": "A"
             }
           ],
@@ -715,9 +729,11 @@ data:
           "tableColumn": "",
           "targets": [
             {
-              "expr": "sum(envoy_cluster_upstream_cx_tx_bytes_total{envoy_cluster_name!~\"(xds_cluster|cluster_127_0_0_1_8877)\"})",
+              "expr": "sum(envoy_cluster_upstream_cx_tx_bytes_total{envoy_cluster_name!~\"(xds_cluster|cluster_127_0_0_1_8877)\", pod=~\"${pod}\"})",
               "format": "time_series",
+              "interval": "",
               "intervalFactor": 1,
+              "legendFormat": "",
               "refId": "A"
             }
           ],
@@ -804,9 +820,11 @@ data:
           "tableColumn": "",
           "targets": [
             {
-              "expr": "sum(envoy_http_downstream_cx_rx_bytes_total{envoy_http_conn_manager_prefix!=\"admin\"})",
+              "expr": "sum(envoy_http_downstream_cx_rx_bytes_total{envoy_http_conn_manager_prefix!=\"admin\", pod=~\"${pod}\"})",
               "format": "time_series",
+              "interval": "",
               "intervalFactor": 1,
+              "legendFormat": "",
               "refId": "A"
             }
           ],
@@ -893,9 +911,11 @@ data:
           "tableColumn": "",
           "targets": [
             {
-              "expr": "sum(envoy_http_downstream_cx_tx_bytes_total{envoy_http_conn_manager_prefix!=\"admin\"})",
+              "expr": "sum(envoy_http_downstream_cx_tx_bytes_total{envoy_http_conn_manager_prefix!=\"admin\", pod=~\"${pod}\"})",
               "format": "time_series",
+              "interval": "",
               "intervalFactor": 1,
+              "legendFormat": "",
               "refId": "A"
             }
           ],
@@ -982,9 +1002,11 @@ data:
           "tableColumn": "",
           "targets": [
             {
-              "expr": "sum(increase(envoy_cluster_upstream_cx_tx_bytes_total{envoy_cluster_name!=\"admin\"}[1m]))",
+              "expr": "sum(increase(envoy_cluster_upstream_cx_tx_bytes_total{envoy_cluster_name!=\"admin\", pod=~\"${pod}\"}[1m]))",
               "format": "time_series",
+              "interval": "",
               "intervalFactor": 1,
+              "legendFormat": "",
               "refId": "A"
             }
           ],
@@ -1071,9 +1093,11 @@ data:
           "tableColumn": "",
           "targets": [
             {
-              "expr": "sum(increase(envoy_cluster_upstream_cx_rx_bytes_total{envoy_cluster_name!=\"admin\"}[1m]))",
+              "expr": "sum(increase(envoy_cluster_upstream_cx_rx_bytes_total{envoy_cluster_name!=\"admin\", pod=~\"${pod}\"}[1m]))",
               "format": "time_series",
+              "interval": "",
               "intervalFactor": 1,
+              "legendFormat": "",
               "refId": "A"
             }
           ],
@@ -1160,9 +1184,11 @@ data:
           "tableColumn": "",
           "targets": [
             {
-              "expr": "sum(increase(envoy_http_downstream_cx_tx_bytes_total{envoy_http_conn_manager_prefix!=\"admin\"}[1m]))",
+              "expr": "sum(increase(envoy_http_downstream_cx_tx_bytes_total{envoy_http_conn_manager_prefix!=\"admin\", pod=~\"${pod}\"}[1m]))",
               "format": "time_series",
+              "interval": "",
               "intervalFactor": 1,
+              "legendFormat": "",
               "refId": "A"
             }
           ],
@@ -1249,9 +1275,11 @@ data:
           "tableColumn": "",
           "targets": [
             {
-              "expr": "sum(increase(envoy_http_downstream_cx_rx_bytes_total{envoy_http_conn_manager_prefix!=\"admin\"}[1m]))",
+              "expr": "sum(increase(envoy_http_downstream_cx_rx_bytes_total{envoy_http_conn_manager_prefix!=\"admin\", pod=~\"${pod}\"}[1m]))",
               "format": "time_series",
+              "interval": "",
               "intervalFactor": 1,
+              "legendFormat": "",
               "refId": "A"
             }
           ],
@@ -2953,7 +2981,6 @@ data:
             "allValue": null,
             "current": {
               "selected": true,
-              "tags": [],
               "text": [
                 "All"
               ],
@@ -3013,6 +3040,6 @@ data:
       },
       "timezone": "",
       "title": "Ambassador / Performance Metrics by Pod",
-      "uid": "wjay_KGnz",
-      "version": 1
+      "uid": "16ada62b7aa5ceca8f90061a92bd2922f177bf3f",
+      "version": 5
     }
