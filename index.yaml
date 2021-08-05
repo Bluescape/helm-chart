@@ -436,9 +436,9 @@ entries:
   istio-additions:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-08-05T17:59:00.725521875Z"
+    created: "2021-08-05T18:11:40.183857371Z"
     description: A Helm chart for Kubernetes
-    digest: 640883d4a71e64bc8208629455d11aa95e72066d6749965d9edd7da980c2a5ea
+    digest: b49e2b9300abc4ab6497bafa87ac9f6367e51f01b74e6148628fb8d6ee2c17d7
     name: istio-additions
     type: application
     urls:
@@ -522,4 +522,4 @@ entries:
     urls:
     - https://bluescape.github.io/helm-charts/packages/oauth2-proxy-3.2.5.tgz
     version: 3.2.5
-generated: "2021-08-05T17:59:00.724758506Z"
+generated: "2021-08-05T18:11:40.182061761Z"
