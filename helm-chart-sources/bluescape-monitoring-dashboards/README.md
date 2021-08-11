@@ -23,7 +23,7 @@ Jump down to verify dashboards below.
 
 ## Automatic Addition
 
-These instructions cover how to use the `add_dashboard` script located
+These instructions cover how to use the `generate_dashboard` script located
 in `<repo>/helm-charts/helm-chart-sources/bluescape-monitoring-dashboards`
 
 ### Pre-requisites
@@ -44,7 +44,7 @@ and if it isn't in the proper directory then it will exit with an error
 
 
 ```
-Usage: ./add_dashboard <path/to/exported/dashboard.json> <new_dashboard_directory>
+Usage: ./generate_dashboard <path/to/exported/dashboard.json> <new_dashboard_directory>
 
 ```
 
@@ -58,7 +58,7 @@ pathing. A simple name such as `65_dashboard_name` is sufficient.
 
 ```
 $ cd <repo>/helm-charts/helm-chart-sources/bluescape-monitoring-dashboards
-./add_dashboard $HOME/Downloads/Redis.json 44_redis_dashboard
+./generate_dashboard $HOME/Downloads/Redis.json 44_redis_dashboard
 ```
 
 ### Validations performed at runtime
@@ -80,13 +80,13 @@ your laptop. Most OSes will automatically have a proper Ruby interpreter install
 
 ## Verify Dashboards
 
-Validate the configmap:
+Visually validate the configmap:
 
 ```
 cat 44_redis_dashboard/configmap.yaml
 ```
 
-Validate the dashboard manifest:
+Visually validate the dashboard manifest:
 
 ```
 cat 44_redis_dashboard/dashboad.yaml
@@ -102,11 +102,19 @@ $ helm template /bluescape-monitoring-dashboards | yamllint -
 You should get no errors from `yamllint` and you should get no errors
 from `helm`.
 
-This check is also mildly a good chart check.
+This check is a good method of topically validating the manifests returned are
+valid yaml.
 
 ### Chart validation
 
-The following will perform a dry-run of the chart.
+The following will perform a dry-run of the chart. For the purposes of this
+set of examples, we'll be using the Atreus cluster to perform these tests.
+You'll have to transpose these directions with whichever [test] cluster you, the
+reader, is working in.
+
+Note that if the `bluescape-monitoring-dashboards` are already installed on your
+cluster, you'll need to re-use the same deployment name under which those were
+installed with helm before.
 
 ```
 # for good practice you should make sure you're using the correct cluster
@@ -115,13 +123,28 @@ The following will perform a dry-run of the chart.
 $ kctx atreus
 Switched to context "arn:aws:eks:us-west-2:429863676324:cluster/atreus".
 
-$ cd <repo>/helm-charts/helm-chart-sources
-$ helm upgrade --install grafana-dashboards-atreus bluescape-monitoring-dashboards -n grafana --dry-run
+$ helm ls
+NAME                            NAMESPACE       REVISION        UPDATED                                 STATUS          CHART                                   APP VERSION
+a-atreus                        grafana         1               2021-08-09 23:37:45.464990415 +0000 UTC deployed        grafana-operator-0.2.5                  master
+grafana-a-atreus                grafana         1               2021-08-09 23:38:16.854245718 +0000 UTC deployed        bluescape-monitoring-grafana-0.2.3      1.16.0
+grafana-dashboards-a-atreus     grafana         6               2021-08-09 23:23:16.473682282 +0000 UTC deployed        bluescape-monitoring-dashboards-0.2.3   1.16.2
 ```
 
-This should give a lot of useful output and no errors.
+...so in this case, we'll need to make note that the dashboards were
+installed under the deployment name `grafana-dashboards-a-atreus` or else `helm`
+will go nuts.
 
-Now install the chart in a test cluster. We'll continue to use Atreus.
+Now run the dry-run
+
+```
+$ cd <repo>/helm-charts/helm-chart-sources
+$ helm upgrade --install grafana-dashboards-a-atreus bluescape-monitoring-dashboards -n grafana --dry-run
+```
+
+This should give a lot of useful output and no errors. If there are errors,
+you'll need to address them.
+
+Assuming there are no errors, now install the chart in a test cluster. We'll continue to use Atreus.
 
 ```
 $ kctx atreus
