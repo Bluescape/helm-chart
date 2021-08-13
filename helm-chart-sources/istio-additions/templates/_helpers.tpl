@@ -41,3 +41,11 @@ app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
 app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{- end }}
+
+{{/*
+Selector labels
+*/}}
+{{- define "istio-additions.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "istio-additions.name" . }}
+app.kubernetes.io/instance: {{ .Release.Name }}
+{{- end }}
