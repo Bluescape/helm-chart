@@ -22,6 +22,11 @@ vault:
     - analytics-data-refresh
     - analytics-data-transform
     - analytics-init
+    - analytics-data-transform-main
+    - analytics-data-transform-all-s3
+    - analytics-data-transform-parsed-s3
+    - analytics-data-transform-processed-postgres
+    - analytics-data-transform-redacted-snowflake
     - browser-client
     - bull-exporter
     - cmt
