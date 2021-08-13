@@ -30,11 +30,11 @@ istio:
     setup_bitnami_mongodb:
       enabled: false
       mode: PERMISSIVE
-    setup_bluescape_ns:
-      - namespace: default
-        mode: PERMISSIVE
-#      - namespace: default
-#        mode: UNSET
+#    setup_bluescape_ns:
+#      - namespace: ns1
+#        mode: PERMISSIVE
+#      - namespace: ns2
+#        mode: STRICT
 
 ## Management console for an Istio-based service mesh
 kiali:
