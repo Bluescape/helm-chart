@@ -1,3 +1,4 @@
+## Reference : https://www.getambassador.io/docs/edge-stack/latest/topics/running/services/tracing-service/
 {{- if .Values.ambassador.setup_tracingservice.enabled }}
 apiVersion: getambassador.io/v2
 kind: TracingService
