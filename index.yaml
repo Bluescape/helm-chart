@@ -287,6 +287,17 @@ entries:
     urls:
     - https://bluescape.github.io/helm-charts/packages/bluescape-monitoring-grafana-0.2.0.tgz
     version: 0.2.0
+  bluescape-nxlog-ce:
+  - apiVersion: v2
+    appVersion: 2.11.2190
+    created: "2021-08-20T21:57:24.507221582Z"
+    description: A Helm chart for Kubernetes
+    digest: 645c3f0bd806c655b2b79a3ffc45c73d5b3b5965e9d2d29dc9b82a6088d4e3c1
+    name: bluescape-nxlog-ce
+    type: application
+    urls:
+    - https://bluescape.github.io/helm-charts/packages/bluescape-nxlog-ce-0.0.1.tgz
+    version: 0.0.1
   cortex:
   - apiVersion: v2
     appVersion: v1.4.0
@@ -542,4 +553,4 @@ entries:
     urls:
     - https://bluescape.github.io/helm-charts/packages/oauth2-proxy-3.2.5.tgz
     version: 3.2.5
-generated: "2021-08-19T21:58:56.723452573Z"
+generated: "2021-08-20T21:57:24.505950873Z"
