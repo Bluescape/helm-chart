@@ -1,0 +1,168 @@
+# Default values for bluescape-nxlog-ce.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  repository: nginx
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: ""
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: "nxlog-ce"
+
+deploymentAnnotations:
+  keel.sh/policy: "${KEEL_POLICY}"
+  keel.sh/trigger: "${KEEL_TRIGGER}"
+  keel.sh/pollSchedule: "${KEEL_POLL_SCHEDULE}"
+  keel.sh/approvals: "${KEEL_APPROVALS}"
+  keel.sh/match-tag: "${KEEL_MATCH_TAG_FLAG}"
+
+configmapAnnotations: {}
+
+podAnnotations:
+  # Prometheus Metrics Scraping
+  bluescape.io/path: "${PROMETHEUS_METRICS_PATH}"
+  bluescape.io/port: "${PROMETHEUS_METRICS_PORT}"
+  bluescape.io/prometheus_scrape: "${PROMETHEUS_METRICS_SCRAPE_FLAG}"
+  # Reloader
+  reloader.stakater.com/auto: "${RELOADER_FLAG}"
+
+
+podSecurityContext: {}
+  # fsGroup: 2000
+
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+service:
+  ports:
+  - name: 1514-tcp
+    port: 1514
+    protocol: TCP
+    targetPort: 1514
+  - name: 8080-tcp
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  - name: 8443-tcp
+    port: 8443
+    protocol: TCP
+    targetPort: 8443
+
+pod:
+  env:
+  # The name of the node to pass with the downward API
+  - name: NODE_NAME
+    valueFrom:
+      fieldRef:
+        fieldPath: spec.nodeName
+  # The pod name to pass with the downward API
+  - name: POD_NAME
+    valueFrom:
+      fieldRef:
+        fieldPath: metadata.name
+  # The pod namespace to pass with the downward API
+  - name: OPENSHIFT_NAMESPACE
+    valueFrom:
+      fieldRef:
+        fieldPath: metadata.namespace
+
+
+ingress:
+  enabled: false
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  hosts:
+    - host: chart-example.local
+      paths: []
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
+
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+  # targetMemoryUtilizationPercentage: 80
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+
+config: |-
+  ########################################
+  # Global directives                    #
+  ########################################
+  User nxlog
+  Group nxlog
+
+  LogFile /tmp/nxlog.log
+  LogLevel INFO
+  ########################################
+  # Modules                              #
+  ########################################
+  <Input input_tcp>
+      Module      im_tcp
+      Host        0.0.0.0
+      Port        8080
+      InputType   LineBased
+  </Input>
+
+  #<Output logFileOut>
+  #    Module      om_file
+  #    File        "/tmp/out_file.log"
+  #</Output>
+
+  <Output logConsoleOut>
+      Module      om_file
+      File        "/dev/stdout"
+  </Output>
+
+  ########################################
+  # Routes                               #
+  ########################################
+
+  #<Route tcproute_debug>
+  #     Path        input_tcp => logFileOut, logConsoleOut
+  #</Route>
+
+  <Route tcproute>
+       Path        input_tcp => logConsoleOut
+  </Route>
+
