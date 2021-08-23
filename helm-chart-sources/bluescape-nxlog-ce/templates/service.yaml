@@ -5,7 +5,7 @@ metadata:
   labels:
     {{- include "bluescape-nxlog-ce.labels" . | nindent 4 }}
 spec:
-  {{ with .Values.service }}
+  {{ with .Values.service.ports }}
   ports:
     {{ toYaml . | nindent 6 }}
   {{ end }}

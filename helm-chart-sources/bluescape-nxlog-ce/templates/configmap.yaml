@@ -9,4 +9,6 @@ metadata:
   annotations:
     {{ toYaml . | nindent 4 }}
   {{- end }}
-data: {{ toYaml .Values.config | nindent 4 }}
+data:
+  nxlog.conf: |-
+  {{ .Values.config | nindent 4 }}
