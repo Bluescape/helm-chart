@@ -72,6 +72,6 @@ spec:
             items:
               - key: nxlog.conf
                 path: nxlog.conf
-            name: nxlog-conf
+            name: {{ include "bluescape-nxlog-ce.fullname" . }}
           name: nxlog-conf-vol-mount
 
