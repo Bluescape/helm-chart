@@ -290,9 +290,9 @@ entries:
   bluescape-nxlog-ce:
   - apiVersion: v2
     appVersion: 2.11.2190
-    created: "2021-08-23T17:32:44.045277203Z"
+    created: "2021-08-23T19:12:02.655013762Z"
     description: A Helm chart for Kubernetes
-    digest: 68479cea402b73ad922d6c2c3f6b878645a6213f2e772d399f2ff308d52ab3cd
+    digest: 959012c43f13e5b74b07adc52d70fa44d66d3af84dc11761b35da1761379b26e
     name: bluescape-nxlog-ce
     type: application
     urls:
@@ -553,4 +553,4 @@ entries:
     urls:
     - https://bluescape.github.io/helm-charts/packages/oauth2-proxy-3.2.5.tgz
     version: 3.2.5
-generated: "2021-08-23T17:32:44.044354703Z"
+generated: "2021-08-23T19:12:02.654139113Z"
