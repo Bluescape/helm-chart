@@ -166,9 +166,9 @@ entries:
   bluescape-monitoring-dashboards:
   - apiVersion: v2
     appVersion: 1.16.2
-    created: "2021-08-19T21:58:56.73139618Z"
+    created: "2021-08-24T21:17:35.841382113Z"
     description: A Helm chart for Kubernetes
-    digest: a35133255bb2310ac5183487502c0996d34694a70600f8e748dc70aedfbc7719
+    digest: 973695a816848526a800f86a813c1fdff1d21f7d52e067e17bd5ca2640727c27
     name: bluescape-monitoring-dashboards
     type: application
     urls:
@@ -542,4 +542,4 @@ entries:
     urls:
     - https://bluescape.github.io/helm-charts/packages/oauth2-proxy-3.2.5.tgz
     version: 3.2.5
-generated: "2021-08-19T21:58:56.723452573Z"
+generated: "2021-08-24T21:17:35.834082268Z"
