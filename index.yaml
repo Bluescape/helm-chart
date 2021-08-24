@@ -188,7 +188,7 @@ entries:
     appVersion: 1.16.2
     created: "2021-07-09T00:37:18.044017839-07:00"
     description: A Helm chart for Kubernetes
-    digest: 7a6675ddd2618856d473133ce8e8d96adb827b0d00688cc245252dec03b4524d
+    digest: 3d4eb1ab7361f80ae1182f8a7ba91a4d0d1738abe6964aaabb238290cbe72aef
     name: bluescape-monitoring-dashboards
     type: application
     urls:
