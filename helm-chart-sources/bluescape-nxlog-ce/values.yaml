@@ -1,13 +1,11 @@
-# Default values for bluescape-nxlog-ce.
-# This is a YAML-formatted file.
-# Declare variables to be passed into your templates.
-
+### Values manifest for nxlog-ce
+### Author: Jim Conner <jim.conner@bluescape.com>
+---
 replicaCount: 1
 
 image:
   repository: nxlog/nxlog-ce
   pullPolicy: IfNotPresent
-  # Overrides the image tag whose default is the chart appVersion.
   tag: "2.11.2190"
 
 imagePullSecrets: []
@@ -132,7 +130,7 @@ tolerations: []
 
 affinity: {}
 
-
+## nxlog-ce configuration
 config: |-
   ########################################
   # Global directives                    #
