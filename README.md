@@ -31,6 +31,9 @@
 - **host-redirect**
     * [README.md](/helm-chart-sources/host-redirect/README.md) 
 
+- **istio-additions**
+    * For deploying supporting configurations for Istio Service Mesh.
+
 #### Ported for internal hosting to address Helm chart deprecation issue.
   - **dex**
   - **gangway**

@@ -166,7 +166,27 @@ entries:
   bluescape-monitoring-dashboards:
   - apiVersion: v2
     appVersion: 1.16.2
-    created: "2021-08-05T01:23:00.106752433Z"
+    created: "2021-08-19T21:58:56.73139618Z"
+    description: A Helm chart for Kubernetes
+    digest: a35133255bb2310ac5183487502c0996d34694a70600f8e748dc70aedfbc7719
+    name: bluescape-monitoring-dashboards
+    type: application
+    urls:
+    - https://bluescape.github.io/helm-charts/packages/bluescape-monitoring-dashboards-0.2.7.tgz
+    version: 0.2.7
+  - apiVersion: v2
+    appVersion: 1.16.2
+    created: "2021-08-11T21:33:16.099862997Z"
+    description: A Helm chart for Kubernetes
+    digest: 95a5ad176fb1f459f9a09595687ecfec55ee0800849c8fab4404059700214a16
+    name: bluescape-monitoring-dashboards
+    type: application
+    urls:
+    - https://bluescape.github.io/helm-charts/packages/bluescape-monitoring-dashboards-0.2.6.tgz
+    version: 0.2.6
+  - apiVersion: v2
+    appVersion: 1.16.2
+    created: "2021-07-09T00:37:18.044017839-07:00"
     description: A Helm chart for Kubernetes
     digest: 3d4eb1ab7361f80ae1182f8a7ba91a4d0d1738abe6964aaabb238290cbe72aef
     name: bluescape-monitoring-dashboards
@@ -433,6 +453,17 @@ entries:
     urls:
     - https://bluescape.github.io/helm-charts/packages/host-redirect-0.1.0.tgz
     version: 0.1.0
+  istio-additions:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2021-08-13T10:59:04.74212098Z"
+    description: A Helm chart for Kubernetes
+    digest: 713cbce5471f44aced9feceb9f322ca5e14c1ea5c5f440bc7b5b6438a419c2fb
+    name: istio-additions
+    type: application
+    urls:
+    - https://bluescape.github.io/helm-charts/packages/istio-additions-0.1.0.tgz
+    version: 0.1.0
   kube-oidc-proxy:
   - apiVersion: v1
     appVersion: v0.3.0
@@ -511,4 +542,4 @@ entries:
     urls:
     - https://bluescape.github.io/helm-charts/packages/oauth2-proxy-3.2.5.tgz
     version: 3.2.5
-generated: "2021-08-05T01:23:00.097983102Z"
+generated: "2021-08-19T21:58:56.723452573Z"
