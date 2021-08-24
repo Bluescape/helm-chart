@@ -6,7 +6,7 @@ metadata:
     {{- include "bluescape-nxlog-ce.labels" . | nindent 4 }}
   {{- with .Values.deploymentAnnotations }}
   annotations:
-    {{ toYaml . | nindent 4 }}
+    {{- toYaml . | nindent 4 }}
   {{- end }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
@@ -39,19 +39,25 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           {{- with .Values.pod.env }}
           env:
-            {{ toYaml . | nindent 12 }}
+            {{- toYaml . | nindent 12 }}
           {{- end }}
-          {{ with .Values.service.ports }}
-            {{- range . }}
+          command:
+            - /usr/bin/nxlog
+          args:
+            - "-fc"
+            - "/nxlog/nxlog.conf"
           ports:
+          {{- with .Values.service.ports }}
+            {{- range . }}
             - name: {{ .name }}
               containerPort: {{ .port }}
               protocol: {{ .protocol }}
-            {{ end }}
+            {{- end }}
           {{- end }}
           volumeMounts:
-            - mountPath: /tmp/nxlog-conf
+            - mountPath: /nxlog
               name: nxlog-conf-vol-mount
+              readOnly: false
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
@@ -74,4 +80,3 @@ spec:
                 path: nxlog.conf
             name: {{ include "bluescape-nxlog-ce.fullname" . }}
           name: nxlog-conf-vol-mount
-
