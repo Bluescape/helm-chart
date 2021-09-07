@@ -481,9 +481,9 @@ entries:
   lacework-agent:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-09-07T21:57:21.157488659Z"
+    created: "2021-09-07T22:08:41.212963655Z"
     description: Lacework Agent
-    digest: 08f66ceabd95dc7ab598002794fd3f9dfff8eedb895a36f38f7a29e3add36f42
+    digest: 4c2d81facbfa97303085963962e09060f6717e2c37ddc8f03bf7bd7b06aed5a1
     home: https://www.lacework.com
     icon: https://www.lacework.com/wp-content/uploads/2019/07/Lacework_Logo_color_2019.svg
     keywords:
@@ -562,4 +562,4 @@ entries:
     urls:
     - https://bluescape.github.io/helm-charts/packages/oauth2-proxy-3.2.5.tgz
     version: 3.2.5
-generated: "2021-09-07T21:57:21.156779433Z"
+generated: "2021-09-07T22:08:41.212139232Z"
