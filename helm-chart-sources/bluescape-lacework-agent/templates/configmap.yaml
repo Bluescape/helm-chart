@@ -9,4 +9,4 @@ metadata:
   {{- end }}
 data:
   config.json: |
-          {"tokens":{"AccessToken":"{{ .Values.laceworkConfig.accessToken }}"}, "serverurl":"{{ .Values.laceworkConfig.serverUrl}}", "tags":{"Env":"{{ .Values.laceworkConfig.env }}", {{- if .Values.laceworkConfig.clustername }} "KubernetesCluster" :"{{ .Values.laceworkConfig.clustername}}" {{- end }}}}
+          {"tokens":{"AccessToken":"{{ required "A valid AccessToken is required! Specify your Lacework agent token in values.yaml" .Values.laceworkConfig.accessToken }}"}, "serverurl":"{{ .Values.laceworkConfig.serverUrl}}", "tags":{"Env":"{{ .Values.laceworkConfig.env }}", {{- if .Values.laceworkConfig.clustername }} "KubernetesCluster" :"{{ .Values.laceworkConfig.clustername}}" {{- end }}}}
