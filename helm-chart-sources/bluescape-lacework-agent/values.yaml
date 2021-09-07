@@ -22,7 +22,14 @@ image:
 configmapAnnotations: {}
 
 # serviceAccountName (optional)
-serviceAccountName: ""
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
 
 resources:
   # The requests/limits is guidance and should be adjusted based on the workload
@@ -39,9 +46,9 @@ resources:
 laceworkConfig:
   # [Required] An access token is required before running agents.
   # Visit https://<LACEWORK UI URL> for eg: https://lacework.lacework.net
-  accessToken: 
+  accessToken:
   # [Optional] Give your k8s environment a friendly name
-  env: 
+  env:
   # [Optional] Kubernetes cluster name
   # https://support.lacework.com/hc/en-us/articles/360005263034-Deploy-on-Kubernetes
   clustername:
