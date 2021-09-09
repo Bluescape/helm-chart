@@ -22,7 +22,7 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
     spec:
-      tolerations: 
+      tolerations:
 {{ toYaml .Values.tolerations | indent 8 }}
 {{- if .Values.image.pullSecrets }}
       imagePullSecrets:
@@ -31,8 +31,8 @@ spec:
       terminationGracePeriodSeconds: 20
       hostPID: true
       hostNetwork: true
-      {{- if .Values.serviceAccountName }}
-      serviceAccountName: {{ .Values.serviceAccountName }}
+      {{- if .Values.serviceAccount.name }}
+      serviceAccountName: {{ .Values.serviceAccount.name }}
       {{- end }}
       containers:
       - name: lacework
