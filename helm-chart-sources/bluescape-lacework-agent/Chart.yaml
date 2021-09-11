@@ -1,6 +1,6 @@
 apiVersion: v1
 name: lacework-agent
-version: 4.0.35
+version: 4.0.36
 appVersion: "1.0"
 description: Lacework Agent
 namespace: kube-system
@@ -13,5 +13,7 @@ keywords:
 home: https://www.lacework.com
 icon: https://www.lacework.com/wp-content/uploads/2019/07/Lacework_Logo_color_2019.svg
 maintainers:
+- name: Jim Conner
+  email: jim.conner@bluescape.com
 - name: lacework-support
   email: info@lacework.net
