@@ -72,6 +72,9 @@ spec:
             readOnly: true
           - name: podinfo
             mountPath: /etc/podinfo
+{{- if .Values.priorityClass.name }}
+      priorityClassName: {{ .Values.priorityClass.name }}
+{{- end }}
       volumes:
         - name: dev
           hostPath:
