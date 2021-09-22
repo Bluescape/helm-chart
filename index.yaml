@@ -481,6 +481,28 @@ entries:
   lacework-agent:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2021-09-11T05:58:57.945332163Z"
+    description: Lacework Agent
+    digest: 855b56beb70b2707ec876c09ab6156d7218f829b65f88eb9fb0fb00393ba97e7
+    home: https://www.lacework.com
+    icon: https://www.lacework.com/wp-content/uploads/2019/07/Lacework_Logo_color_2019.svg
+    keywords:
+    - monitoring
+    - security
+    - run-time
+    - metric
+    - troubleshooting
+    maintainers:
+    - email: jim.conner@bluescape.com
+      name: Jim Conner
+    - email: info@lacework.net
+      name: lacework-support
+    name: lacework-agent
+    urls:
+    - https://bluescape.github.io/helm-charts/packages/lacework-agent-4.0.36.tgz
+    version: 4.0.36
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2021-09-09T16:36:18.652927738Z"
     description: Lacework Agent
     digest: 6aa006245b049ea3bfd4b9db57064a09b3c73c1e97302b68c23e3fc6f7b3978e
@@ -562,4 +584,4 @@ entries:
     urls:
     - https://bluescape.github.io/helm-charts/packages/oauth2-proxy-3.2.5.tgz
     version: 3.2.5
-generated: "2021-09-09T16:36:18.651963526Z"
+generated: "2021-09-11T05:58:57.944587857Z"

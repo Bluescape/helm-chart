@@ -57,7 +57,15 @@ laceworkConfig:
 
 ##########################################################################
 # Set daemonset priorityClassName
-priorityClassName:
+# To assign a priorityClass to a pod, leave `create` false and enter a name
+# for the name property.
+# if `create` is true, be sure to assign a description, name, and value here
+# and a priorityclass will be created.
+priorityClass:
+  create: false
+  description: ""
+  name:  ""
+  value: null
 
 # Allow Lacework agent to run on all nodes including master node
 tolerations:
