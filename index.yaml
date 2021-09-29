@@ -584,4 +584,23 @@ entries:
     urls:
     - https://bluescape.github.io/helm-charts/packages/oauth2-proxy-3.2.5.tgz
     version: 3.2.5
-generated: "2021-09-24T11:00:32.19142511Z"
+  vault-secrets-webhook:
+  - apiVersion: v1
+    appVersion: 1.14.1
+    created: "2021-09-29T23:21:59.692871607Z"
+    description: A Helm chart that deploys a mutating admission webhook that configures
+      applications to request env vars from Vault Secrets
+    digest: 9cd84a6f63624e99065c1b9169ef7daf62033b4dda58408c95a8ea4cc145b7d6
+    home: https://banzaicloud.com/products/bank-vaults/
+    maintainers:
+    - email: jim.conner@bluescape.com
+      name: Jim Conner
+    - email: info@banzaicloud.com
+      name: Banzai Cloud
+    name: vault-secrets-webhook
+    sources:
+    - https://github.com/banzaicloud/bank-vaults
+    urls:
+    - https://bluescape.github.io/helm-charts/packages/vault-secrets-webhook-1.14.2.tgz
+    version: 1.14.2
+generated: "2021-09-29T23:21:59.691313664Z"
