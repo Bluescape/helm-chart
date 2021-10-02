@@ -16,6 +16,8 @@ spec:
     # Email address used for ACME registration
     email: ops@bluescape.com
     # Name of a secret used to store the ACME account private key
+    preferredChain: ISRG Root X1
+    # preferredChain option will allow you to specify a CA’s common name for the certificate to be issued by
     privateKeySecretRef:
       name: letsencrypt-prod
     # Enable the HTTP-01 challenge provider

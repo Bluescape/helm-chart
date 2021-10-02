@@ -79,6 +79,7 @@ cert_manager:
     cname_strategy: None
     acme_server: 'https://acme-v02.api.letsencrypt.org/directory' # Production URL
     #acme_server: 'https://acme-staging-v02.api.letsencrypt.org/directory' # Staging URL for Testing
+    preferred_chain: 'ISRG Root X1' # Specify a CA’s common name for the certificate to be issued by
 
 external_secrets:
   setup_legacy_old_prod_cluster_issuer_secret: false
