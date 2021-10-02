@@ -11,6 +11,7 @@ spec:
   acme:
     server: {{ .Values.cert_manager.setup_legacy_letsencrypt_old_prod_cluster_issuer.acme_server }}
     email: {{ .Values.cert_manager.setup_legacy_letsencrypt_old_prod_cluster_issuer.email }}
+    preferredChain: {{ .Values.cert_manager.setup_legacy_letsencrypt_old_prod_cluster_issuer.preferred_chain }}
     privateKeySecretRef:
       name: legacy-letsencrypt-old-prod-dns
     solvers:
