@@ -51,6 +51,7 @@ vault:
     - redis
     - socket
     - squid
+    - test-automation-analytics
     - tika
     - uc-connector
     - wall-apps
