@@ -51,6 +51,7 @@ vault:
     - redis
     - socket
     - squid
+    - sre
     - tika
     - uc-connector
     - wall-apps
@@ -64,6 +65,7 @@ vault:
     - monitoring
     - loki
     - grafana
+    - sre
 
 cert_manager:
   setup_letsencrypt_prod_cluster_issuer: false
