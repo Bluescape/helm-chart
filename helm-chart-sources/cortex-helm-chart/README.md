@@ -86,13 +86,13 @@ Kubernetes: `^1.19.0-0`
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://charts.bitnami.com/bitnami | memcached(memcached) | 5.15.5 |
-| https://charts.bitnami.com/bitnami | memcached-index-read(memcached) | 5.15.5 |
-| https://charts.bitnami.com/bitnami | memcached-index-write(memcached) | 5.15.5 |
-| https://charts.bitnami.com/bitnami | memcached-frontend(memcached) | 5.15.5 |
-| https://charts.bitnami.com/bitnami | memcached-blocks-index(memcached) | 5.15.5 |
-| https://charts.bitnami.com/bitnami | memcached-blocks(memcached) | 5.15.5 |
-| https://charts.bitnami.com/bitnami | memcached-blocks-metadata(memcached) | 5.15.5 |
+| https://charts.bitnami.com/bitnami | memcached(memcached) | 5.15.4 |
+| https://charts.bitnami.com/bitnami | memcached-index-read(memcached) | 5.15.4 |
+| https://charts.bitnami.com/bitnami | memcached-index-write(memcached) | 5.15.4 |
+| https://charts.bitnami.com/bitnami | memcached-frontend(memcached) | 5.15.4 |
+| https://charts.bitnami.com/bitnami | memcached-blocks-index(memcached) | 5.15.4 |
+| https://charts.bitnami.com/bitnami | memcached-blocks(memcached) | 5.15.4 |
+| https://charts.bitnami.com/bitnami | memcached-blocks-metadata(memcached) | 5.15.4 |
 
 ## Values
 
@@ -434,7 +434,6 @@ Kubernetes: `^1.19.0-0`
 | ingester.&ZeroWidthSpace;startupProbe.&ZeroWidthSpace;initialDelaySeconds | int | `120` |  |
 | ingester.&ZeroWidthSpace;startupProbe.&ZeroWidthSpace;periodSeconds | int | `30` |  |
 | ingester.&ZeroWidthSpace;statefulSet.&ZeroWidthSpace;enabled | bool | `false` |  |
-| ingester.&ZeroWidthSpace;statefulSet.&ZeroWidthSpace;podManagementPolicy | string | `"OrderedReady"` | see https://cortexmetrics.io/docs/guides/ingesters-scaling-up-and-down/#scaling-down and https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/#pod-management-policies for scaledown details |
 | ingester.&ZeroWidthSpace;statefulStrategy.&ZeroWidthSpace;type | string | `"RollingUpdate"` |  |
 | ingester.&ZeroWidthSpace;strategy.&ZeroWidthSpace;rollingUpdate.&ZeroWidthSpace;maxSurge | int | `0` |  |
 | ingester.&ZeroWidthSpace;strategy.&ZeroWidthSpace;rollingUpdate.&ZeroWidthSpace;maxUnavailable | int | `1` |  |
