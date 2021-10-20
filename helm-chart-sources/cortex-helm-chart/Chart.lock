@@ -1,12 +1,24 @@
 dependencies:
 - name: memcached
-  repository: https://kubernetes-charts.storage.googleapis.com/
-  version: 3.2.3
+  repository: https://charts.bitnami.com/bitnami
+  version: 5.15.5
 - name: memcached
-  repository: https://kubernetes-charts.storage.googleapis.com/
-  version: 3.2.3
+  repository: https://charts.bitnami.com/bitnami
+  version: 5.15.5
 - name: memcached
-  repository: https://kubernetes-charts.storage.googleapis.com/
-  version: 3.2.3
-digest: sha256:15343a3a535fa858a532546a47dbb63e1379be1d4081f55b01de56db3d2b7617
-generated: "2020-07-02T10:49:04.929498-07:00"
+  repository: https://charts.bitnami.com/bitnami
+  version: 5.15.5
+- name: memcached
+  repository: https://charts.bitnami.com/bitnami
+  version: 5.15.5
+- name: memcached
+  repository: https://charts.bitnami.com/bitnami
+  version: 5.15.5
+- name: memcached
+  repository: https://charts.bitnami.com/bitnami
+  version: 5.15.5
+- name: memcached
+  repository: https://charts.bitnami.com/bitnami
+  version: 5.15.5
+digest: sha256:e1dd6d327732c572b376ea95621c0d684249d3ac7f3784503a8f616949a39a51
+generated: "2021-10-14T09:51:04.845484756+02:00"
