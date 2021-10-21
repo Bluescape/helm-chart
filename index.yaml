@@ -309,6 +309,67 @@ entries:
     version: 0.2.0
   cortex:
   - apiVersion: v2
+    appVersion: v1.10.0
+    created: "2021-10-20T17:36:51.851861991Z"
+    dependencies:
+    - alias: memcached
+      condition: memcached.enabled
+      name: memcached
+      repository: https://charts.bitnami.com/bitnami
+      version: 5.15.4
+    - alias: memcached-index-read
+      condition: memcached-index-read.enabled
+      name: memcached
+      repository: https://charts.bitnami.com/bitnami
+      version: 5.15.4
+    - alias: memcached-index-write
+      condition: memcached-index-write.enabled
+      name: memcached
+      repository: https://charts.bitnami.com/bitnami
+      version: 5.15.4
+    - alias: memcached-frontend
+      condition: memcached-frontend.enabled
+      name: memcached
+      repository: https://charts.bitnami.com/bitnami
+      version: 5.15.4
+    - alias: memcached-blocks-index
+      name: memcached
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - blocks-storage-memcached
+      version: 5.15.4
+    - alias: memcached-blocks
+      name: memcached
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - blocks-storage-memcached
+      version: 5.15.4
+    - alias: memcached-blocks-metadata
+      name: memcached
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - blocks-storage-memcached
+      version: 5.15.4
+    description: Horizontally scalable, highly available, multi-tenant, long term
+      Prometheus.
+    digest: c02986e86a454752752cc63df8368c47630381d65e2cd90fa785d0aa23ab9df0
+    home: https://cortexmetrics.io/
+    icon: https://avatars2.githubusercontent.com/u/43045022?s=200&v=4
+    kubeVersion: ^1.19.0-0
+    maintainers:
+    - email: thayward@infoblox.com
+      name: Tom Hayward
+      url: https://github.com/kd7lxl
+    - email: Niclas.Schad@plusserver.com
+      name: Niclas Schad
+      url: https://github.com/ShuzZzle
+    name: cortex
+    sources:
+    - https://github.com/cortexproject/cortex-helm-chart
+    urls:
+    - https://bluescape.github.io/helm-charts/packages/cortex-0.7.0.tgz
+    version: 0.7.0
+  - apiVersion: v2
     appVersion: v1.4.0
     created: "2021-07-09T00:37:18.06817605-07:00"
     dependencies:
@@ -623,4 +684,4 @@ entries:
     urls:
     - https://bluescape.github.io/helm-charts/packages/vault-secrets-webhook-1.14.2.tgz
     version: 1.14.2
-generated: "2021-10-18T18:52:43.149123408Z"
+generated: "2021-10-20T17:36:51.840865359Z"
