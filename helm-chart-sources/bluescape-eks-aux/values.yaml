@@ -50,6 +50,7 @@ vault:
     - rabbitmq
     - redis
     - socket
+    - sre
     - squid
     - sre
     - tika
