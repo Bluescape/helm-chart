@@ -186,9 +186,9 @@ entries:
   bluescape-monitoring-dashboards:
   - apiVersion: v2
     appVersion: 1.16.2
-    created: "2021-10-26T12:18:00.240746029Z"
+    created: "2021-11-01T15:49:37.929283585Z"
     description: A Helm chart for Kubernetes
-    digest: 17d8b211eda58bd93afb9223c94328ad32d557ad41a7c410fe19658fc6fe5eae
+    digest: fcfecafd3be4bc874cc5b2649e974864b40ed06b4f8510e1aeee646d81a099ce
     name: bluescape-monitoring-dashboards
     type: application
     urls:
@@ -684,4 +684,4 @@ entries:
     urls:
     - https://bluescape.github.io/helm-charts/packages/vault-secrets-webhook-1.14.2.tgz
     version: 1.14.2
-generated: "2021-10-26T12:18:00.230874853Z"
+generated: "2021-11-01T15:49:37.919710959Z"
