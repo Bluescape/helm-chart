@@ -277,7 +277,7 @@ entries:
   bluescape-monitoring-grafana:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-07-09T00:37:18.059584109-07:00"
+    created: "2021-11-08T19:35:32.685706786Z"
     dependencies:
     - alias: bluescape-monitoring-dashboards
       condition: custom_dashboards.enable
@@ -285,7 +285,7 @@ entries:
       repository: https://bluescape.github.io/helm-charts
       version: 0.2.0
     description: A Helm chart for Kubernetes
-    digest: ec2df4546c63d6203094ef75d957a1c200005cb15d78ff66193b4669628d45b7
+    digest: 79383349beca9f34e5cc93fe3013ff5d3d8f5718645f55f84b65b7a8583899ed
     name: bluescape-monitoring-grafana
     type: application
     urls:
@@ -684,4 +684,4 @@ entries:
     urls:
     - https://bluescape.github.io/helm-charts/packages/vault-secrets-webhook-1.14.2.tgz
     version: 1.14.2
-generated: "2021-11-01T15:55:56.92690022Z"
+generated: "2021-11-08T19:35:32.677987485Z"
