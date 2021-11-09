@@ -93,6 +93,8 @@ external_secrets:
   setup_github_secret: false
   setup_loki_secret: false
 
+  argocd_secret_oidc_vault_key: oidc
+
 kubedb_catalog:
   setup_mongodb_3_6: false
   setup_mongodb_4_0: false
