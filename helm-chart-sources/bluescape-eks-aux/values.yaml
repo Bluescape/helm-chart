@@ -12,6 +12,7 @@ vault:
     - external-secrets
     - vault
     - dex
+    - dex-admin
     - oauth2-proxy
     - gangway
     - grafana
