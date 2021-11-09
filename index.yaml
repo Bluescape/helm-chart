@@ -24,9 +24,9 @@ entries:
   bluescape-eks-aux:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-11-09T16:37:03.081756335Z"
+    created: "2021-11-09T22:00:31.572208183Z"
     description: A Helm chart for Kubernetes
-    digest: 4707c8eb087aea6740fb6f2861351a8a9002a76bace0d934bade73578b147648
+    digest: f4120744e7b2e88af0328b44d3f8796e90d9113b82470024c47221616d3e9458
     name: bluescape-eks-aux
     type: application
     urls:
@@ -704,4 +704,4 @@ entries:
     urls:
     - https://bluescape.github.io/helm-charts/packages/vault-secrets-webhook-1.14.2.tgz
     version: 1.14.2
-generated: "2021-11-09T16:37:03.080699029Z"
+generated: "2021-11-09T22:00:31.564397033Z"
