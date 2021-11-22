@@ -1,5 +1,5 @@
 apiVersion: v2
-name: aws-load-balancer-controller
+name: bluescape-aws-load-balancer-controller
 description: AWS Load Balancer Controller Helm chart for Kubernetes
 version: 1.3.3
 appVersion: v2.3.0
