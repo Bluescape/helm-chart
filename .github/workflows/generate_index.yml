@@ -21,7 +21,8 @@ jobs:
       id: get-changed-charts
       run: |
         # See which files have changed in this commit
-        changed_chart_files=$(git --no-pager diff --name-only HEAD $(git merge-base HEAD origin/${{github.base_ref}}) -- helm-chart-sources )
+        #changed_chart_files=$(git --no-pager diff --name-only HEAD $(git merge-base HEAD origin/${{github.base_ref}}) -- helm-chart-sources )
+        changed_chart_files=$(git --no-pager diff --compact-summary $(git merge-base HEAD origin/main) HEAD -- helm-chart-sources | grep -Pv '(gone)')
         echo Changed chart files: ${changed_chart_files[@]}
 
         # Create a temporary directory to store new package changes in
@@ -41,7 +42,7 @@ jobs:
             echo "::set-output name=charts_changed::true"
           fi
         done
-  
+
         echo Generating new index
         helm repo index --url https://bluescape.github.io/helm-charts/. --merge index.yaml .tmp
 
