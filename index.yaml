@@ -752,10 +752,10 @@ entries:
   vault-secrets-webhook:
   - apiVersion: v1
     appVersion: 1.14.1
-    created: "2021-09-29T23:24:37.480618754Z"
+    created: "2021-11-29T20:39:29.572601195Z"
     description: A Helm chart that deploys a mutating admission webhook that configures
       applications to request env vars from Vault Secrets
-    digest: 4b82acb1f2bc4f4968144b9236c6ffa1930d2e18582026ad8180aff6de9631dd
+    digest: 345837a6572006a0de77b340e4b777b9babca08cfd2ce54be61eea38893a0df8
     home: https://banzaicloud.com/products/bank-vaults/
     maintainers:
     - email: jim.conner@bluescape.com
@@ -768,4 +768,4 @@ entries:
     urls:
     - https://bluescape.github.io/helm-charts/packages/vault-secrets-webhook-1.14.2.tgz
     version: 1.14.2
-generated: "2021-11-22T21:10:40.77402205Z"
+generated: "2021-11-29T20:39:29.571118325Z"
