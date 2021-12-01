@@ -96,7 +96,7 @@ cat 44_redis_dashboard/dashboad.yaml
 
 ```
 $ cd <repo>/helm-charts/helm-chart-sources
-$ helm template /bluescape-monitoring-dashboards | yamllint -
+$ helm template bluescape-monitoring-dashboards | yamllint -
 ```
 
 You should get no errors from `yamllint` and you should get no errors
