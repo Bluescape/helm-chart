@@ -629,6 +629,17 @@ entries:
     urls:
     - https://bluescape.github.io/helm-charts/packages/istio-additions-0.1.0.tgz
     version: 0.1.0
+  jimtest:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2021-11-30T01:46:07.830901055-08:00"
+    description: A Helm chart for Kubernetes
+    digest: 2bd9d6f9f7ab3527ddd486c2b5185ab16a86fadd76d1143a843b513f6381e78d
+    name: jimtest
+    type: application
+    urls:
+    - https://bluescape.github.io/helm-charts/packages/jimtest-0.1.0.tgz
+    version: 0.1.0
   kube-oidc-proxy:
   - apiVersion: v1
     appVersion: v0.3.0
@@ -768,4 +779,4 @@ entries:
     urls:
     - https://bluescape.github.io/helm-charts/packages/vault-secrets-webhook-1.14.2.tgz
     version: 1.14.2
-generated: "2021-11-22T21:10:40.77402205Z"
+generated: "2021-11-30T01:46:07.830143534-08:00"
