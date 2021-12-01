@@ -97,7 +97,8 @@ remove_deleted_charts_from_repo()
   for repo in "${all_charts[@]}"; do
     echo " Verifying that chart directory '$repo' is non-existent..."
     if [[ ! -d "$BASE_PATH/$repo" ]]; then
-      git checkout main -- "$BASE_PATH/$repo/Chart.yaml"
+      # temporary checkout of deleted Chart.yaml to extract name of chart.
+      git checkout origin/main -- "$BASE_PATH/$repo/Chart.yaml"
       say "  will delete chart '$repo' from index.yaml"
       if delete_entry "$repo"; then
         rm -rf "${BASE_PATH:?}/$repo"
