@@ -12,6 +12,9 @@ Simply delete the chart source directory from the `helm-chart-sources` directory
 Commit and push the change to github. GH actions will remove the chart from the
 repository.
 
+Note that this does NOT remove the archive from the packages directory. This is
+intentional. You must remove those files using `git rm packages/<chart>*.tgz`
+
 ## Some hosted charts
 This is list is not exhaustive
 
