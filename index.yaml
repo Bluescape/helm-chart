@@ -21,6 +21,60 @@ entries:
     urls:
     - https://bluescape.github.io/helm-charts/packages/aws-lb-controller-crds-0.1.0.tgz
     version: 0.1.0
+  aws-load-balancer-controller:
+  - apiVersion: v2
+    appVersion: v2.3.0
+    created: "2021-11-17T21:40:14.597342344Z"
+    description: AWS Load Balancer Controller Helm chart for Kubernetes
+    digest: 2172e1083c1e7be4abfcc4d045ecf3c7657334f21686258c1ad2ea8f9e35b27f
+    home: https://github.com/aws/eks-charts
+    icon: https://raw.githubusercontent.com/aws/eks-charts/master/docs/logo/aws.png
+    keywords:
+    - eks
+    - alb
+    - load balancer
+    - ingress
+    - nlb
+    maintainers:
+    - email: kishorj@users.noreply.github.com
+      name: kishorj
+      url: https://github.com/kishorj
+    - email: m00nf1sh@users.noreply.github.com
+      name: m00nf1sh
+      url: https://github.com/m00nf1sh
+    name: aws-load-balancer-controller
+    sources:
+    - https://github.com/aws/eks-charts
+    urls:
+    - https://bluescape.github.io/helm-charts/packages/aws-load-balancer-controller-1.3.3.tgz
+    version: 1.3.3
+  bluescape-aws-load-balancer-controller:
+  - apiVersion: v2
+    appVersion: v2.3.0
+    created: "2021-11-22T16:17:33.648042341Z"
+    description: AWS Load Balancer Controller Helm chart for Kubernetes
+    digest: 120a816f7c7780a12aa67e210e09a367fcc9b31433a94f22bc9d61c67f0336e4
+    home: https://github.com/aws/eks-charts
+    icon: https://raw.githubusercontent.com/aws/eks-charts/master/docs/logo/aws.png
+    keywords:
+    - eks
+    - alb
+    - load balancer
+    - ingress
+    - nlb
+    maintainers:
+    - email: kishorj@users.noreply.github.com
+      name: kishorj
+      url: https://github.com/kishorj
+    - email: m00nf1sh@users.noreply.github.com
+      name: m00nf1sh
+      url: https://github.com/m00nf1sh
+    name: bluescape-aws-load-balancer-controller
+    sources:
+    - https://github.com/aws/eks-charts
+    urls:
+    - https://bluescape.github.io/helm-charts/packages/bluescape-aws-load-balancer-controller-1.3.3.tgz
+    version: 1.3.3
   bluescape-eks-aux:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -206,7 +260,17 @@ entries:
   bluescape-monitoring-dashboards:
   - apiVersion: v2
     appVersion: 1.16.2
-    created: "2021-11-17T17:31:17.818723112Z"
+    created: "2021-11-22T21:10:40.793608158Z"
+    description: A Helm chart for Kubernetes
+    digest: 19b4b38af14c2e4d050fde6aee8941dfbb2f2c5fabf86644fa59b7260a89762a
+    name: bluescape-monitoring-dashboards
+    type: application
+    urls:
+    - https://bluescape.github.io/helm-charts/packages/bluescape-monitoring-dashboards-0.2.8.tgz
+    version: 0.2.8
+  - apiVersion: v2
+    appVersion: 1.16.2
+    created: "2021-11-01T15:55:56.935941249Z"
     description: A Helm chart for Kubernetes
     digest: 68b48259def1de1e3e60ecc4baf5660c0e29b7d87fcc832b542fa12bfb1cf979
     name: bluescape-monitoring-dashboards
@@ -704,4 +768,4 @@ entries:
     urls:
     - https://bluescape.github.io/helm-charts/packages/vault-secrets-webhook-1.14.2.tgz
     version: 1.14.2
-generated: "2021-11-17T17:31:17.81019312Z"
+generated: "2021-11-22T21:10:40.77402205Z"
