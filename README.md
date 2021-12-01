@@ -2,13 +2,13 @@
 
 ## Adding charts
 
-Simply add the chart source in the `helm-chart-sources` directory.
+Simply add the chart source directory to the `helm-chart-sources` directory.
 Commit and push the change to github. GH actions will build the repository and
 the package archive and make it available on github.io.
 
 ## Deleting charts
 
-Simply delete the chart source from the `helm-chart-sources` directory.
+Simply delete the chart source directory from the `helm-chart-sources` directory.
 Commit and push the change to github. GH actions will remove the chart from the
 repository.
 
