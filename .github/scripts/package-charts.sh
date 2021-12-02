@@ -67,9 +67,10 @@ delete_entry()
   chart_name="$(extract_chart_name "$1")"
 
   # such a hack...but unfortunately, I believe I've found a bug
-  # in jq.
+  # in jq thus this hack.
   #yq --arg chart "$chart_name" -Mr -Y 'del(.[$chart]?)' index.yaml > new-index.yaml
   yq -Mr -Y 'del(.entries."'"$chart_name"'")' index.yaml > new-index.yaml
+  say "   extracted chart name from '$repo': '$chart_name'"
   if ! diff -q index.yaml new-index.yaml >/dev/null 2>&1; then
     # might want to make this a better, more bulletproof method of validating
     # the specific entry is deleted...
