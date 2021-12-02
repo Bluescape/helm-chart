@@ -43,15 +43,6 @@ store_git_diff()
   deleteddiff="$(git diff --name-only --diff-filter=D "$(git merge-base HEAD origin/main)" HEAD -- helm-chart-sources)"
 }
 
-#transmogrify()
-#{
-#  while read -r line; do
-#    :
-#  done <<< "$(echo "${gitdiff[*]}"  | \
-#    awk -F '|' '{print $1}' | \
-#    sed -r 's#helm-chart-sources/(.*?)/(.*?)\s+\((new|gone)\)?.*#\1^\2^\3#g')"
-#}
-
 uniq_charts_from_gitdiff()
 {
   gitlist="$1"
