@@ -646,9 +646,9 @@ entries:
   lacework-agent:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-12-02T23:47:30.259172061Z"
+    created: "2021-12-03T00:58:58.234504236Z"
     description: Lacework Agent
-    digest: b40a0ec945953fdd0e27b445aac84aadcfa4a8c34b8bda7bfb8a9c9f096257d5
+    digest: df8ce2819c3800223ad1c6affb68be9b86755de2b4290fc0beae66f83c767f6a
     home: https://www.lacework.com
     icon: https://www.lacework.com/wp-content/uploads/2019/07/Lacework_Logo_color_2019.svg
     keywords:
@@ -790,4 +790,4 @@ entries:
     urls:
     - https://bluescape.github.io/helm-charts/packages/vault-secrets-webhook-1.14.2.tgz
     version: 1.14.2
-generated: "2021-12-02T23:47:30.257641514Z"
+generated: "2021-12-03T00:58:58.233371632Z"
