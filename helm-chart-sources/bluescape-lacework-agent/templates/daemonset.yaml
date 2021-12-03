@@ -32,9 +32,7 @@ spec:
       terminationGracePeriodSeconds: 20
       hostPID: true
       hostNetwork: true
-      {{- if .Values.serviceAccount.name }}
-      serviceAccountName: {{ .Values.serviceAccount.name }}
-      {{- end }}
+      serviceAccountName: {{ .Values.serviceAccount.name | default (include "lacework-agent.name" .) }}
       containers:
       - name: lacework
         image: {{ template "lacework-agent.image" . }}

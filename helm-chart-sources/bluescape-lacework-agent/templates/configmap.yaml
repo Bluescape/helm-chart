@@ -10,9 +10,6 @@ metadata:
 data:
   config.json: |
     {
-      "tokens": {
-        "AccessToken":"{{ required "A valid AccessToken is required! Specify your Lacework agent token in values.yaml" .Values.laceworkConfig.accessToken }}"
-      },
       "serverurl": "{{ .Values.laceworkConfig.serverUrl}}",
       "autoupgrade": "{{ required "A value for autoupgrade is required" .Values.laceworkConfig.autoUpgrade }}",
       "tags": {

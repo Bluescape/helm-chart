@@ -21,6 +21,10 @@ image:
 # configmap mutation
 configmapAnnotations: {}
 
+# secret Annotations for things like banzaicloud's vault-secrets-webhook
+# inline secrets mutation
+secretAnnotations: {}
+
 serviceAccount:
   # Specifies whether a service account should be created
   create: true
