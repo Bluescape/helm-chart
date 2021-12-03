@@ -260,9 +260,9 @@ entries:
   bluescape-monitoring-dashboards:
   - apiVersion: v2
     appVersion: 1.16.2
-    created: "2021-11-22T21:10:40.793608158Z"
+    created: "2021-12-01T15:25:20.286296672Z"
     description: A Helm chart for Kubernetes
-    digest: 19b4b38af14c2e4d050fde6aee8941dfbb2f2c5fabf86644fa59b7260a89762a
+    digest: c9fb11c040b12940a921bf27ba8484e0fd19324a65963742c839c17c3ca4c3c2
     name: bluescape-monitoring-dashboards
     type: application
     urls:
@@ -272,7 +272,7 @@ entries:
     appVersion: 1.16.2
     created: "2021-11-01T15:55:56.935941249Z"
     description: A Helm chart for Kubernetes
-    digest: 21f109030fe5d6d70b4bd3e386b864e90eef55b86c7277f1dbf14cfbc09faf39
+    digest: 68b48259def1de1e3e60ecc4baf5660c0e29b7d87fcc832b542fa12bfb1cf979
     name: bluescape-monitoring-dashboards
     type: application
     urls:
