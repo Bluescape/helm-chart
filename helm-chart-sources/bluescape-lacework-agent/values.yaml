@@ -3,7 +3,7 @@
 image:
   registry: docker.io
   repository: lacework/datacollector
-  tag: latest
+  tag: 5.0.0
 
   # imagePullPolicy should be Always to get the latest container
   # http://kubernetes.io/docs/user-guide/images/#pre-pulling-images
@@ -12,7 +12,7 @@ image:
   # [Optional] imagePullSecrets.
   # https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
   # imagePullSecrets:
-  #   - name: CustomerRegistrKeySecretName
+  #   - name: CustomerRegistryKeySecretName
 
 # Annotations to instantiated pods
   podAnnotations: {}
@@ -20,6 +20,10 @@ image:
 # configmap Annotations for things like banzaicloud's vault-secrets-webhook
 # configmap mutation
 configmapAnnotations: {}
+
+# secret Annotations for things like banzaicloud's vault-secrets-webhook
+# inline secrets mutation
+secretAnnotations: {}
 
 serviceAccount:
   # Specifies whether a service account should be created
@@ -43,6 +47,8 @@ resources:
     memory: 1450Mi
 
 laceworkConfig:
+  # [Optional] Set to "disable" to disable autoupgrade of the datacollector
+  autoUpgrade: enable
   # [Required] An access token is required before running agents.
   # Visit https://<LACEWORK UI URL> for eg: https://lacework.lacework.net
   accessToken:
@@ -50,22 +56,14 @@ laceworkConfig:
   env:
   # [Optional] Kubernetes cluster name
   # https://support.lacework.com/hc/en-us/articles/360005263034-Deploy-on-Kubernetes
-  clustername:
+  kubernetesCluster:
   # [Optional] Region specific Lacework service URL. If not provided
   # the Agent defaults to the US region
   serverUrl:
 
 ##########################################################################
 # Set daemonset priorityClassName
-# To assign a priorityClass to a pod, leave `create` false and enter a name
-# for the name property.
-# if `create` is true, be sure to assign a description, name, and value here
-# and a priorityclass will be created.
-priorityClass:
-  create: false
-  description: ""
-  name:  ""
-  value: null
+priorityClassName:
 
 # Allow Lacework agent to run on all nodes including master node
 tolerations:

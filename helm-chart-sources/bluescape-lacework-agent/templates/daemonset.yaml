@@ -11,8 +11,6 @@ spec:
   selector:
     matchLabels:
       name: {{ include "lacework-agent.name" . }}
-  updateStrategy:
-    type: RollingUpdate
   template:
     metadata:
       labels:
@@ -24,20 +22,29 @@ spec:
     spec:
       tolerations:
 {{ toYaml .Values.tolerations | indent 8 }}
-{{- if .Values.image.pullSecrets }}
+{{- if .Values.priorityClassName }}
+      priorityClassName: {{ .Values.priorityClassName | quote }}
+{{- end }}
+{{- if .Values.image.imagePullSecrets }}
       imagePullSecrets:
-{{ toYaml .Values.image.pullSecrets | indent 8 }}
+{{ toYaml .Values.image.imagePullSecrets | indent 8 }}
 {{- end }}
       terminationGracePeriodSeconds: 20
       hostPID: true
       hostNetwork: true
-      {{- if .Values.serviceAccount.name }}
-      serviceAccountName: {{ .Values.serviceAccount.name }}
-      {{- end }}
+      serviceAccountName: {{ .Values.serviceAccount.name | default (include "lacework-agent.name" .) }}
       containers:
       - name: lacework
         image: {{ template "lacework-agent.image" . }}
         imagePullPolicy: {{ .Values.image.pullPolicy }}
+        env:
+          - name: LaceworkLogStdout
+            value: "yes"
+          - name: LaceworkAccessToken
+            valueFrom:
+              secretKeyRef:
+                name: {{ include "lacework-agent.name" . }}-access-token
+                key: agent-access-token
         resources:
 {{ toYaml .Values.resources | indent 12 }}
         securityContext:
@@ -72,9 +79,6 @@ spec:
             readOnly: true
           - name: podinfo
             mountPath: /etc/podinfo
-{{- if .Values.priorityClass.name }}
-      priorityClassName: {{ .Values.priorityClass.name }}
-{{- end }}
       volumes:
         - name: dev
           hostPath:
