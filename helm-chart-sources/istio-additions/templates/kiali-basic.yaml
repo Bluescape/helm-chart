@@ -13,6 +13,10 @@ spec:
   auth:
     strategy: anonymous
   deployment:
+    {{- if .Values.kiali.basic_config.image.override }}
+    image_name: {{ .Values.kiali.basic_config.image.repository }}
+    image_version: {{ .Values.kiali.basic_config.image.tag }}
+    {{- end }}
     ingress_enabled: {{ .Values.kiali.basic_config.ingress.enabled }}
     override_ingress_yaml:
       metadata:
