@@ -9,11 +9,6 @@ jobs:
   generate:
     runs-on: ubuntu-latest
     steps:
-    - name: Install dependencies
-      run: |
-        pip install yq jq
-        echo "/home/runner/.local/bin" >> $GITHUB_PATH
-
     # Figure out which files were changed
     - uses: actions/checkout@v1
 
