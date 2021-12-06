@@ -11,48 +11,17 @@ jobs:
     steps:
     # Figure out which files were changed
     - uses: actions/checkout@v1
+
     - name: Dump GitHub context
       env:
         GITHUB_CONTEXT: ${{ toJson(github) }}
       run: echo "$GITHUB_CONTEXT"
+
     # This complexity is required due to lack of a feature in helm cli.
     # It creates a new index.yaml without updating the created timestamps of the untouched packages.
-    - name: Get changed helm charts
-      id: get-changed-charts
-      run: |
-        # See which files have changed in this commit
-        changed_chart_files=$(git --no-pager diff --name-only HEAD $(git merge-base HEAD origin/${{github.base_ref}}) -- helm-chart-sources )
-        echo Changed chart files: ${changed_chart_files[@]}
-
-        # Create a temporary directory to store new package changes in
-        mkdir -p .tmp/packages
-        changed_charts=()
-
-        for chart_file in $changed_chart_files;
-        do
-          # Only grab the top two directories
-          chart=$(echo $chart_file | awk -F "/" '{print $1"/"$2}')
-          # Don't add duplicates
-          [[ "${changed_charts[@]}" == *"$chart"* ]] && added="true" || added="false"
-          if [ "$added" = "false" ]; then
-            changed_charts+=( $chart )
-            echo Creating new package for: $chart
-            helm package -u -d .tmp/packages $chart
-            echo "::set-output name=charts_changed::true"
-          fi
-        done
-  
-        echo Generating new index
-        helm repo index --url https://bluescape.github.io/helm-charts/. --merge index.yaml .tmp
-
-        echo Moving .tmp packages to packages...
-        find .tmp/ -name *.tgz | xargs -I '{}' mv '{}' packages/
-
-        echo Moving the new merged index to overwrite the old one...
-        if [ -f .tmp/index.yaml ]; then
-          mv .tmp/index.yaml index.yaml
-        fi
-        rm -rf .tmp
+    - name: Package Helm Charts
+      id: package-charts
+      run: ./.github/scripts/package-charts.sh
     - name: Show diff
       run: git diff
     - name: Commit changes
