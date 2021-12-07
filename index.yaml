@@ -621,6 +621,16 @@ entries:
   istio-additions:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2021-12-04T04:50:55.772277978Z"
+    description: A Helm chart for Kubernetes
+    digest: 6670ab013919873142735e70ea04c577c764e25f527d125699f28dee9cc5dd4a
+    name: istio-additions
+    type: application
+    urls:
+    - https://bluescape.github.io/helm-charts/packages/istio-additions-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2021-08-13T10:59:04.74212098Z"
     description: A Helm chart for Kubernetes
     digest: 713cbce5471f44aced9feceb9f322ca5e14c1ea5c5f440bc7b5b6438a419c2fb
@@ -790,4 +800,4 @@ entries:
     urls:
     - https://bluescape.github.io/helm-charts/packages/vault-secrets-webhook-1.14.2.tgz
     version: 1.14.2
-generated: "2021-12-03T00:58:58.233371632Z"
+generated: "2021-12-04T04:50:55.771353574Z"
