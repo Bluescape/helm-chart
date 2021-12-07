@@ -8,7 +8,16 @@ BLSC_HELM_URL='https://bluescape.github.io/helm-charts/packages/.'
 find_chart_sources()
 {
   say '  Finding and packaging chart sources...'
-  find "$BASE_PATH"/ -maxdepth 1 -type d -exec helm package -ud packages/ {} \;
+  if ! pushd "$BASE_PATH/" >/dev/null; then
+    say "Not able to chdir to $BASE_PATH/"
+    return 1
+  fi
+
+  find . -maxdepth 1 -type d -print -exec helm package -ud ../packages/ {} \;
+  if ! popd >/dev/null; then
+    say "Not able to chdir up one from $BASE_PATH/"
+    return 1
+  fi
 }
 
 generate_index()
