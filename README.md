@@ -16,7 +16,7 @@ Note that this does NOT remove the archive from the packages directory. This is
 intentional. You must remove those files using `git rm packages/<chart>*.tgz`
 
 ## Some hosted charts
-This is list is not exhaustive
+This list is not exhaustive
 
 - **bluescape-eks-aux**
     * vault-custom-resource templates
