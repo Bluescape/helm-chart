@@ -23,7 +23,7 @@ jobs:
       id: package-charts
       run: ./.github/scripts/package-charts.sh
     - name: Show diff
-      run: git diff --cc --binary
+      run: git diff
     - name: Commit changes
 #     if: steps.get-changed-charts.outputs.charts_changed == 'true'
       run: |
