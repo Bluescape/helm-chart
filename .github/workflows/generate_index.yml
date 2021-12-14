@@ -22,8 +22,8 @@ jobs:
     - name: Package Helm Charts
       id: package-charts
       run: ./.github/scripts/package-charts.sh
-    - name: Show diff
-      run: git diff
+#   - name: Show diff
+#     run: git diff
     - name: Commit changes
       if: steps.get-changed-charts.outputs.charts_changed == 'true'
       run: |
