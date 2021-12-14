@@ -33,7 +33,7 @@ jobs:
         git commit -m "Generate packages and update index"
     # Push back the changes
     - name: Push changes
-      if: steps.get-changed-charts.outputs.charts_changed == 'true'
+#     if: steps.get-changed-charts.outputs.charts_changed == 'true'
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
