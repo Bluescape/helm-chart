@@ -3,7 +3,7 @@ name: Generate Helm Index
 on:
   pull_request:
     paths:
-    - helm-chart-sources/**
+    - helm-chart-sources/**/Chart.yaml
 
 jobs:
   generate:
