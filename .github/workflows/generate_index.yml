@@ -22,10 +22,10 @@ jobs:
     - name: Package Helm Charts
       id: package-charts
       run: ./.github/scripts/package-charts.sh
-#   - name: Show diff
-#     run: git diff
+    - name: Show diff
+      run: git diff --cc --binary
     - name: Commit changes
-      if: steps.get-changed-charts.outputs.charts_changed == 'true'
+#     if: steps.get-changed-charts.outputs.charts_changed == 'true'
       run: |
         git add .
         git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
