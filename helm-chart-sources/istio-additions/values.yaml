@@ -40,6 +40,10 @@ istio:
 kiali:
   basic_config:
     enabled: false
+    image:
+      override: false
+      repository: quay.io/kiali/kiali
+      tag: v1.37.0
     ingress:
       enabled: false
       host: 'kiali.example.bluescape.io'
@@ -49,6 +53,10 @@ kiali:
       tracing: 'http://jaeger-aio-query.istio-system.svc.cluster.local:16686/jaeger'
   prod_config:
     enabled: false
+    image:
+      override: false
+      repository: quay.io/kiali/kiali
+      tag: v1.37.0
     ingress:
       enabled: false
       host: 'kiali.example.bluescape.io'
@@ -61,9 +69,15 @@ kiali:
 jaeger:
   basic_config:
     enabled: false
+    image:
+      repository: jaegertracing/all-in-one
+      tag: 1.23
     ingress:
       enabled: false
   prod_config:
     enabled: false
+    image:
+      repository: jaegertracing/all-in-one
+      tag: 1.23
     ingress:
       enabled: false
