@@ -15,7 +15,7 @@ grafana:
   replicaCount: 1
   domain_name: example.io
   cluster_id: example
-  baseImage: 8.3.3
+  baseImage: grafana/grafana:8.3.3
 
   # Deploy cluster in HA Mode - 3 replicas with PostgreSQL database cluster
   # deployed with kubedb

@@ -10,7 +10,6 @@ items:
     deployment:
       replicas: {{ .Values.grafana.replicaCount }}
       skipCreateAdminAccount: true
-      baseImage: {{ .Values.grafana.baseImage }}
       envFrom:
         - secretRef:
             name: postgres-grafana-auth
@@ -71,6 +70,7 @@ items:
         user: "$__env{POSTGRES_USER}"
         password: "$__env{POSTGRES_PASSWORD}"
       {{- end }}
+    baseImage: {{ .Values.grafana.baseImage }}
     dashboardLabelSelector:
     - matchExpressions:
       - key: app.kubernetes.io/instance
