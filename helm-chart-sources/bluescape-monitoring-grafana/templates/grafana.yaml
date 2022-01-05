@@ -10,6 +10,7 @@ items:
     deployment:
       replicas: {{ .Values.grafana.replicaCount }}
       skipCreateAdminAccount: true
+      baseImage: {{ .Values.grafana.baseImage }}
       envFrom:
         - secretRef:
             name: postgres-grafana-auth
