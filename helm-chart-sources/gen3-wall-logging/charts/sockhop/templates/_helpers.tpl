@@ -35,6 +35,8 @@ Common labels
 */}}
 {{- define "sockhop.labels" -}}
 helm.sh/chart: {{ include "sockhop.chart" . }}
+app: bluescape
+component: sockhop
 {{ include "sockhop.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
