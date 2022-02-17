@@ -13,11 +13,19 @@ metadata:
   name: {{ $fullName }}
   labels:
     {{- include "sockhop.labels" . | nindent 4 }}
-  # {{- with .Values.ingress.annotations }}
+{{- if semverCompare ">=1.19-0" .Capabilities.KubeVersion.GitVersion -}}
+  {{- with .Values.ingress.annotations }}
   annotations:
     {{- toYaml . | nindent 4 }}
-    nginx.org/ssl-services: '{{ include "sockhop.fullname" $ }}'
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+    # nginx.org/ssl-services: '{{ include "stunnel.fullname" $ }}'
   {{- end }}
+{{- else }}
+  {{- with .Values.ingress.annotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+{{- end }}
 spec:
   {{- if .Values.ingress.tls }}
   tls:
@@ -30,7 +38,7 @@ spec:
     {{- end }}
   {{- end }}
   rules:
-    {{- if semverCompare ">=1.19-0" $.Capabilities.KubeVersion.GitVersion -}}
+    {{- if semverCompare ">=1.19-0" .Capabilities.KubeVersion.GitVersion -}}
     {{- range .Values.ingress.hosts }}
     - host: {{ .host | quote }}
       http:
