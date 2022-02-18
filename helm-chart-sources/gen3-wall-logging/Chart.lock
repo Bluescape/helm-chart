@@ -1,0 +1,12 @@
+dependencies:
+- name: nxlog-ce
+  repository: file://./charts/nxlog-ce
+  version: 0.1.0
+- name: stunnel
+  repository: file://./charts/stunnel
+  version: 0.1.0
+- name: sockhop
+  repository: file://./charts/sockhop
+  version: 0.1.0
+digest: sha256:c68f6eb326e71b08bc72108b6f1471f30d121ffba6103e8c9c6f07d3fe7b3dfb
+generated: "2022-02-18T11:33:12.396331206Z"
