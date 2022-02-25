@@ -1,12 +1,12 @@
 apiVersion: integreatly.org/v1alpha1
 kind: GrafanaDashboard
 metadata:
-  name:  template-dashboard
+  name:  entitler-errors-dashboard
   namespace: grafana
   labels:
     {{- include "bluescape-monitoring-dashboards.labels" . | nindent 4 }}
 spec:
-  name:  template-dashboard
+  name:  entitler-errors-dashboard
   configMapRef:
-    name:  template-dashboard
-    key:  template-dashboard.json
+    name:  entitler-errors-dashboard
+    key:  entitler-errors-dashboard.json
