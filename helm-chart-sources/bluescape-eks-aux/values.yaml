@@ -10,6 +10,8 @@ vault:
   #cluster_id: ${cluster_id}
   # DO NOT ADD BINDINGS HERE!!
   # Add bindings to https://github.com/Bluescape/terraform-helm-k8s-generic/blob/main/vault.tf#L195
+  # For lacework and inline secrets bindings, those are in vault.yaml in templates (in this directory)
+  # for now. Those will be moved eventually. (J.Conner 2022-03-04)
   bound_service_account_names: []
   bound_service_account_namespaces: []
 
