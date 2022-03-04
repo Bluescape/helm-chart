@@ -8,69 +8,12 @@ vault:
   imageTag: "1.6.0"
   #domain_name: ${domain_name}
   #cluster_id: ${cluster_id}
-  bound_service_account_names :
-    - external-secrets
-    - vault
-    - dex
-    - dex-admin
-    - oauth2-proxy
-    - gangway
-    - grafana
-    - loki
-    - promtail
-    - analytics-api
-    - analytics-data-import
-    - analytics-data-refresh
-    - analytics-data-transform
-    - analytics-data-transform-all-s3
-    - analytics-data-transform-parsed-s3
-    - analytics-data-transform-redacted-firehose
-    - analytics-init
-    - browser-client
-    - bull-exporter
-    - cmt
-    - collab
-    - cobrowse
-    - config
-    - config-center-client
-    - config-center-service
-    - cors
-    - document
-    - elementary
-    - graphql
-    - health
-    - identity-api
-    - identity-client
-    - idfed
-    - isam
-    - isam-init
-    - ksqldb
-    - listener-api
-    - metabase
-    - metabase-internal
-    - outlook-plugin
-    - portal-api
-    - portal-client
-    - rabbitmq
-    - redis
-    - socket
-    - sre
-    - squid
-    - sre
-    - tika
-    - uc-connector
-    - wall-apps
-    - wall-tool
-    - worker
-  bound_service_account_namespaces:
-    - external-secrets
-    - vault
-    - dex
-    - auth-system
-    - monitoring
-    - loki
-    - grafana
-    - sre
+  # DO NOT ADD BINDINGS HERE!!
+  # Add bindings to https://github.com/Bluescape/terraform-helm-k8s-generic/blob/main/vault.tf#L195
+  # For lacework and inline secrets bindings, those are in vault.yaml in templates (in this directory)
+  # for now. Those will be moved eventually. (J.Conner 2022-03-04)
+  bound_service_account_names: []
+  bound_service_account_namespaces: []
 
 cert_manager:
   setup_letsencrypt_prod_cluster_issuer: false
