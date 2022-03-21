@@ -15,7 +15,7 @@ type: application
 # This is the chart version. This version number should be incremented each time you make changes
 # to the chart and its templates, including the app version.
 # Versions are expected to follow Semantic Versioning (https://semver.org/)
-version: 0.1.0
+version: 0.2.0
 
 # This is the version number of the application being deployed. This version number should be
 # incremented each time you make changes to the application. Versions are not expected to
@@ -28,10 +28,10 @@ dependencies:
   repository: file://./charts/nxlog-ce
   condition: nxlog-ce.enabled
 - name: stunnel
-  version: 0.1.0
+  version: 0.2.0
   repository: file://./charts/stunnel
   condition: stunnel.enabled
 - name: sockhop 
-  version: 0.1.0
+  version: 0.2.0
   repository: file://./charts/sockhop
   condition: sockhop.enabled
