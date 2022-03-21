@@ -135,13 +135,13 @@ stunnel:
     enabled: true
     annotations: {}
     hosts:
-      - host: chart-example.local
+      - host: stunnel-chart-example.local
         paths: []
     tls: []
     #  - secretName: chart-example-tls
     #    hosts:
     #      - chart-example.local
-  
+
   resources: {}
     # We usually recommend not to specify default resources and to leave this as a conscious
     # choice for the user. This also increases chances charts run on environments with little
@@ -153,39 +153,49 @@ stunnel:
     # requests:
     #   cpu: 100m
     #   memory: 128Mi
-  
+
   autoscaling:
     enabled: false
     minReplicas: 1
     maxReplicas: 100
     targetCPUUtilizationPercentage: 80
     # targetMemoryUtilizationPercentage: 80
-  
+
   nodeSelector: {}
-  
+
   tolerations: []
-  
+
   affinity: {}
 
+  certificate:
+    enabled: true
+    name: cert
+    tls: true
+    issuerRef:
+      name: letsencrypt-prod
+      kind: ClusterIssuer
+    secretName: stunnel-tls-secret
+    dnsNames:
+      - stunnel-chart-example.local
 
 sockhop:
   enabled: true
   # Default values for sockhop.
   # This is a YAML-formatted file.
   # Declare variables to be passed into your templates.
-  
+
   replicaCount: 1
-  
+
   image:
     repository: bluescape/sockhop
     pullPolicy: IfNotPresent
     # Overrides the image tag whose default is the chart appVersion.
     tag: latest
-  
+
   imagePullSecrets: []
   nameOverride: ""
   fullnameOverride: ""
-  
+
   serviceAccount:
     # Specifies whether a service account should be created
     create: true
@@ -194,12 +204,12 @@ sockhop:
     # The name of the service account to use.
     # If not set and create is true, a name is generated using the fullname template
     name: ""
-  
+
   podAnnotations: {}
-  
+
   podSecurityContext: {}
     # fsGroup: 2000
-  
+
   securityContext: {}
     # capabilities:
     #   drop:
@@ -207,11 +217,11 @@ sockhop:
     # readOnlyRootFilesystem: true
     # runAsNonRoot: true
     # runAsUser: 1000
-  
+
   service:
     type: ClusterIP
     port: 8080
-  
+
   ingress:
     enabled: true
     annotations: {}
@@ -222,7 +232,7 @@ sockhop:
     #  - secretName: chart-example-tls
     #    hosts:
     #      - sockhop.chart-example.local
-  
+
   resources: {}
     # We usually recommend not to specify default resources and to leave this as a conscious
     # choice for the user. This also increases chances charts run on environments with little
@@ -234,17 +244,27 @@ sockhop:
     # requests:
     #   cpu: 100m
     #   memory: 128Mi
-  
+
   autoscaling:
     enabled: false
     minReplicas: 1
     maxReplicas: 100
     targetCPUUtilizationPercentage: 80
     # targetMemoryUtilizationPercentage: 80
-  
+
   nodeSelector: {}
-  
+
   tolerations: []
-  
+
   affinity: {}
-  
+
+  certificate:
+    enabled: true
+    name: cert
+    tls: true
+    issuerRef:
+      name: letsencrypt-prod
+      kind: ClusterIssuer
+    secretName: sockhop-tls-secret
+    dnsNames:
+      - sockhop.chart-example.local

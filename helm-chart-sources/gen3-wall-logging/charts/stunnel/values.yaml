@@ -76,3 +76,29 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+certificate:
+  enabled: false
+  name: cert
+  tls: true
+  # secretName: stunnel-tls-secret
+  # issuerRef:
+  #   name: letsencrypt-prod
+  #   kind: ClusterIssuer
+  # dnsNames:
+  #   - example.org
+  #   - subdomain.example.org
+
+volumes:
+  - name: stunnel-certs
+    secret:
+      secretName: stunnel-tls-secret
+      defaultMode: 420
+
+volumeMounts:
+  - name: stunnel-certs
+    mountPath: /etc/stunnel/pki/cert.pem
+    subPath: tls.crt
+  - name: stunnel-certs
+    mountPath: /etc/stunnel/pki/key.pem
+    subPath: tls.key
