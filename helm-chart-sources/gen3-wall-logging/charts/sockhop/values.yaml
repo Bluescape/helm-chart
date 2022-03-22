@@ -75,3 +75,15 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+certificate:
+  enabled: false
+  name: cert
+  tls: true
+  # secretName: sockhop-tls-secret
+  # issuerRef:
+  #   name: letsencrypt-prod
+  #   kind: ClusterIssuer
+  # dnsNames:
+  #   - example.org
+  #   - subdomain.example.org

@@ -33,6 +33,8 @@ spec:
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       terminationGracePeriodSeconds: 30
+      volumes:
+        {{- toYaml .Values.volumes | default "" | nindent 8 }}
       containers:
         - name: {{ .Chart.Name }}
           env:
@@ -58,6 +60,8 @@ spec:
             value: '1024'
           - name: CERT_PARAMS
             value:  "/C=US/ST=California/L=San Carlos/O=Bluescape/CN={{- with (index .Values.ingress.hosts 0) }}{{ .host }}{{- end }}"
+          volumeMounts:
+            {{- toYaml .Values.volumeMounts | default "" | nindent 12 }}
           stdin: false
           tty: false
           securityContext:
