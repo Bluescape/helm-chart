@@ -31,14 +31,14 @@ data:
       "editable": true,
       "fiscalYearStartMonth": 0,
       "graphTooltip": 0,
-      "id": 67,
+      "id": 11,
       "links": [],
       "liveNow": false,
       "panels": [
         {
           "datasource": {
             "type": "loki",
-            "uid": "P9F0D2318CC5FCCFB"
+            "uid": "PBEC7A2ED9322AC83"
           },
           "fieldConfig": {
             "defaults": {
@@ -108,48 +108,15 @@ data:
             {
               "datasource": {
                 "type": "loki",
-                "uid": "P9F0D2318CC5FCCFB"
+                "uid": "PBEC7A2ED9322AC83"
               },
               "expr": "count_over_time({ component=\"entitler\" }|json|level=\"50\"[1m])",
               "hide": false,
-              "instant": true,
+              "instant": false,
               "legendFormat": "TIME: {{ `{{time}}` }} || CLUSTER ID: {{ `{{cluster_id}}` }} || NAMESPACE: {{ `{{namespace}}` }} || POD: {{ `{{pod}}` }} || COMPONENT EXTRACTED: {{ `{{component_extracted}}` }} || ERROR LEVEL: {{ `{{level}}` }} || ERROR MSG:  {{ `{{msg}}` }} || ERROR STACK: {{ `{{err_stack}}` }}",
-              "range": false,
+              "range": true,
               "refId": "A",
               "resolution": 10
-            },
-            {
-              "conditions": [
-                {
-                  "evaluator": {
-                    "params": [
-                      0,
-                      0
-                    ],
-                    "type": "gt"
-                  },
-                  "operator": {
-                    "type": "and"
-                  },
-                  "query": {
-                    "params": [
-                      "A"
-                    ]
-                  },
-                  "reducer": {
-                    "params": [],
-                    "type": "count"
-                  },
-                  "type": "query"
-                }
-              ],
-              "datasource": {
-                "type": "__expr__",
-                "uid": "__expr__"
-              },
-              "hide": false,
-              "refId": "B",
-              "type": "classic_conditions"
             }
           ],
           "title": "Entitler Level 50 Errors",
@@ -158,7 +125,7 @@ data:
         {
           "datasource": {
             "type": "loki",
-            "uid": "P9F0D2318CC5FCCFB"
+            "uid": "PBEC7A2ED9322AC83"
           },
           "fieldConfig": {
             "defaults": {
@@ -228,48 +195,15 @@ data:
             {
               "datasource": {
                 "type": "loki",
-                "uid": "P9F0D2318CC5FCCFB"
+                "uid": "PBEC7A2ED9322AC83"
               },
               "expr": "count_over_time({ component=\"entitler\" }|json|level=\"60\"[1m])",
               "hide": false,
-              "instant": true,
+              "instant": false,
               "legendFormat": "TIME: {{ `{{time}}` }} || CLUSTER ID: {{ `{{cluster_id}}` }} || NAMESPACE: {{ `{{namespace}}` }} || POD: {{ `{{pod}}` }} || COMPONENT EXTRACTED: {{ `{{component_extracted}}` }} || ERROR LEVEL: {{ `{{level}}` }} || ERROR MSG:  {{ `{{msg}}` }} || ERROR STACK: {{ `{{err_stack}}` }}",
-              "range": false,
+              "range": true,
               "refId": "A",
               "resolution": 10
-            },
-            {
-              "conditions": [
-                {
-                  "evaluator": {
-                    "params": [
-                      0,
-                      0
-                    ],
-                    "type": "gt"
-                  },
-                  "operator": {
-                    "type": "and"
-                  },
-                  "query": {
-                    "params": [
-                      "A"
-                    ]
-                  },
-                  "reducer": {
-                    "params": [],
-                    "type": "count"
-                  },
-                  "type": "query"
-                }
-              ],
-              "datasource": {
-                "type": "__expr__",
-                "uid": "__expr__"
-              },
-              "hide": false,
-              "refId": "B",
-              "type": "classic_conditions"
             }
           ],
           "title": "Entitler Level 60 Errors",
@@ -284,13 +218,13 @@ data:
         "list": []
       },
       "time": {
-        "from": "now-12h",
+        "from": "now-2d",
         "to": "now"
       },
       "timepicker": {},
       "timezone": "",
       "title": "Entitler Errors",
-      "uid": "b-tGTAB7z",
-      "version": 8,
+      "uid": "da831ff1fc22f9034d07f3f7889752b8745de559",
+      "version": 3,
       "weekStart": ""
     }
