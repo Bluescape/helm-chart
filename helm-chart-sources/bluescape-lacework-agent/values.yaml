@@ -61,7 +61,7 @@ laceworkConfig:
   # the Agent defaults to the US region
   serverUrl:
 
-##########################################################################
+###########################################################################
 # Set daemonset priorityClassName
 # To assign a priorityClass to a pod, leave `create` false and enter a name
 # for the name property.
