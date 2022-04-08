@@ -120,7 +120,7 @@ data:
             {
               "expr": "worker_status",
               "interval": "",
-              "legendFormat": "{{pod}}",
+              "legendFormat": "{{ `{{pod}}` }}",
               "refId": "A"
             }
           ],
@@ -196,7 +196,7 @@ data:
               "expr": "rate(worker_aws_request_count{service=\"worker\"}[5m])",
               "interval": "",
               "intervalFactor": 1,
-              "legendFormat": "{{ pod }}",
+              "legendFormat": "{{ `{{pod}}` }}",
               "refId": "A"
             }
           ],
@@ -256,7 +256,7 @@ data:
               "instant": false,
               "interval": "",
               "intervalFactor": 1,
-              "legendFormat": "{{pod}}",
+              "legendFormat": "{{ `{{pod}}` }}",
               "refId": "A"
             }
           ],
@@ -318,7 +318,7 @@ data:
             {
               "expr": "rate(worker_aws_failure[5m])",
               "interval": "",
-              "legendFormat": "Pod= {{ pod }}",
+              "legendFormat": "Pod= {{ `{{pod}}` }}",
               "refId": "A"
             }
           ],
@@ -396,7 +396,7 @@ data:
             {
               "expr": "rate(worker_max_jobs_allowed [5m])",
               "interval": "",
-              "legendFormat": "{{ pod }}",
+              "legendFormat": "{{ `{{pod}}` }}",
               "refId": "A"
             }
           ],
@@ -470,7 +470,7 @@ data:
             {
               "expr": "worker_upload_full_document_count",
               "interval": "${interval}",
-              "legendFormat": "Node= {{ node }}",
+              "legendFormat": "Node= {{ `{{node}}` }}",
               "refId": "A"
             }
           ],
@@ -555,7 +555,7 @@ data:
             {
               "expr": "worker_upload_full_document_count",
               "interval": "",
-              "legendFormat": "Pod= {{ pod }}",
+              "legendFormat": "Pod= {{ `{{pod}}` }}",
               "refId": "A"
             }
           ],
@@ -637,7 +637,7 @@ data:
             {
               "expr": "worker_upload_antivirus_count",
               "interval": "${interval}",
-              "legendFormat": "Node= {{ node }}",
+              "legendFormat": "Node= {{ `{{node}}` }}",
               "refId": "A"
             }
           ],
@@ -721,7 +721,7 @@ data:
             {
               "expr": "worker_upload_antivirus_count",
               "interval": "",
-              "legendFormat": "Pod= {{ pod }}",
+              "legendFormat": "Pod= {{ `{{pod}}` }}",
               "refId": "A"
             }
           ],
@@ -801,7 +801,7 @@ data:
             {
               "expr": "worker_upload_upload_preview_metadata_count",
               "interval": "${interval}",
-              "legendFormat": "Node= {{ node }}",
+              "legendFormat": "Node= {{ `{{node}}` }}",
               "refId": "A"
             }
           ],
@@ -885,7 +885,7 @@ data:
             {
               "expr": "worker_upload_upload_preview_metadata_count",
               "interval": "",
-              "legendFormat": "Pod= {{ pod }}",
+              "legendFormat": "Pod= {{ `{{pod}}` }}",
               "refId": "A"
             }
           ],
@@ -965,7 +965,7 @@ data:
             {
               "expr": "worker_upload_pdftron_count",
               "interval": "${interval}",
-              "legendFormat": "Node= {{ node }}",
+              "legendFormat": "Node= {{ `{{node}}` }}",
               "refId": "A"
             }
           ],
@@ -1049,7 +1049,7 @@ data:
             {
               "expr": "worker_upload_pdftron_count",
               "interval": "",
-              "legendFormat": "Pod= {{ pod }}",
+              "legendFormat": "Pod= {{ `{{pod}}` }}",
               "refId": "A"
             }
           ],
@@ -1129,7 +1129,7 @@ data:
             {
               "expr": "worker_upload_antivirus_pdftron_count",
               "interval": "${interval}",
-              "legendFormat": "Node= {{ node }}",
+              "legendFormat": "Node= {{ `{{node}}` }}",
               "refId": "A"
             }
           ],
@@ -1213,7 +1213,7 @@ data:
             {
               "expr": "worker_upload_antivirus_pdftron_count",
               "interval": "",
-              "legendFormat": "Node= {{ pod }}",
+              "legendFormat": "Node= {{ `{{pod}}` }}",
               "refId": "A"
             }
           ],
