@@ -463,7 +463,7 @@ data:
             "orientation": "auto",
             "reduceOptions": {
               "calcs": [
-                "sum"
+                "lastNotNull"
               ],
               "fields": "",
               "values": false
@@ -477,7 +477,7 @@ data:
                 "type": "loki",
                 "uid": "PADDD940222AE7A45"
               },
-              "expr": "sum(count_over_time({component=\"entitler\"} |~\"level=50\"[$__interval]))",
+              "expr": "sum(count_over_time({component=\"entitler\"} | json |=`\"level\":50`[$__range]))",
               "refId": "A"
             }
           ],
@@ -527,7 +527,7 @@ data:
             "orientation": "auto",
             "reduceOptions": {
               "calcs": [
-                "sum"
+                "lastNotNull"
               ],
               "fields": "",
               "values": false
@@ -541,7 +541,7 @@ data:
                 "type": "loki",
                 "uid": "PADDD940222AE7A45"
               },
-              "expr": "sum(count_over_time({component=\"entitler\"} |~\"level=60\"[$__interval]))",
+              "expr": "sum(count_over_time({component=\"entitler\"} | json |=`\"level\":60`[$__range]))",
               "refId": "A"
             }
           ],
@@ -1018,13 +1018,13 @@ data:
         "list": []
       },
       "time": {
-        "from": "now-24h",
+        "from": "now-2d",
         "to": "now"
       },
       "timepicker": {},
       "timezone": "",
       "title": "Self-Serve Unified Logging",
       "uid": "8JVL5Aynk",
-      "version": 16,
+      "version": 18,
       "weekStart": ""
     }
