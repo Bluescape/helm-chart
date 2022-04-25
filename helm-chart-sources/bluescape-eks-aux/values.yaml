@@ -39,7 +39,7 @@ external_secrets:
   setup_argocd_secret: false
   setup_github_secret: false
   setup_loki_secret: false
-  setup_aes-edge-stack_secret: false
+  setup_aes_edge_stack_secret: false
 
   argocd_secret_oidc_vault_key: oidc
 
