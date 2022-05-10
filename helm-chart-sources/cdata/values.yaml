@@ -10,7 +10,8 @@ image:
   pullPolicy: IfNotPresent
 
 imagePullSecrets:
-  - name: regcred # default bluescape regcred
+  # default bluescape dockerhub credentials secret
+  - name: regcred
 nameOverride: "cdata"
 fullnameOverride: ""
 
@@ -105,3 +106,8 @@ affinity:
               operator: NotIn
               values:
                 - spot
+
+persistence:
+  #storageClass: default
+  accessMode: ReadWriteOnce
+  size: 5Gi

@@ -31,11 +31,20 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-
           ports:
             - name: http
               containerPort: {{ .Values.service.targetPort }}
               protocol: TCP
+          volumeMounts:
+            - mountPath: /usr/src/app/cdata-sync/db/
+              name: data
+              subPath: db
+            - mountPath: /usr/src/app/cdata-sync/data/
+              name: data
+              subPath: data
+            - mountPath: /usr/src/app/cdata-sync/downloads/
+              name: data
+              subPath: downloads
           livenessProbe:
             tcpSocket:
               port: {{ .Values.service.targetPort }}
@@ -66,3 +75,7 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
+      volumes:
+      - name: data
+        persistentVolumeClaim:
+          claimName: {{ include "cdata.fullname" . }}
