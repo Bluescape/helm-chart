@@ -1,12 +1,9 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name:  {{ include "cdata.fullname" . }}
+  name: {{ include "cdata.fullname" . }}
   labels:
-    app:  {{ include "cdata.fullname" . }}
-    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
-    release: "{{ .Release.Name }}"
-    heritage: "{{ .Release.Service }}"
+    {{- include "cdata.labels" . | nindent 4 }}
   annotations:
   {{- if .Values.persistence.storageClass }}
     volume.beta.kubernetes.io/storage-class: {{ .Values.persistence.storageClass | quote }}

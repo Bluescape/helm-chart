@@ -60,3 +60,21 @@ Create the name of the service account to use
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}
 {{- end }}
+
+{{/*
+syncRealm.properties file content with configurable admin password
+*/}}
+{{- define "cdata.syncRealmPropertiesFileB64Encoded" -}}
+{{- $password := include "validatePasswordLength" .  | required "adminPassword needs to be at least 12 characters" -}}
+{{ printf "admin: %s,cdata_admin" $password | b64enc | quote }}
+{{- end }}
+
+{{/*
+Simple length validator
+*/}}
+{{- define "validatePasswordLength" -}}
+{{ $length := len .Values.adminPassword }}
+{{- if ge $length 12 -}}
+{{ .Values.adminPassword }}
+{{- end -}}
+{{- end -}}

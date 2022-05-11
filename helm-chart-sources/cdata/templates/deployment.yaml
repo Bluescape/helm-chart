@@ -45,6 +45,12 @@ spec:
             - mountPath: /usr/src/app/cdata-sync/downloads/
               name: data
               subPath: downloads
+            - mountPath: /usr/src/app/cdata-sync/libs/
+              name: data
+              subPath: libs
+            - mountPath: /usr/src/app/cdata-sync/syncRealm.properties
+              name: secret
+              subPath: syncRealm.properties
           livenessProbe:
             tcpSocket:
               port: {{ .Values.service.targetPort }}
@@ -79,3 +85,7 @@ spec:
       - name: data
         persistentVolumeClaim:
           claimName: {{ include "cdata.fullname" . }}
+      - name: secret
+        secret:
+          secretName: {{ include "cdata.fullname" . }}
+
