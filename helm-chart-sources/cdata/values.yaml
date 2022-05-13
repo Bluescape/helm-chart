@@ -111,6 +111,6 @@ affinity:
                 - spot
 
 persistence:
-  #storageClass: default
+  storageClass: #default
   accessMode: ReadWriteOnce
   size: 5Gi
