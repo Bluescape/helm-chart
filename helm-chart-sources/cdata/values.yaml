@@ -47,6 +47,10 @@ service:
   port: 80
   targetPort: 8181
 
+# annotations for secret
+secret:
+  annotations: {}
+
 ingress:
   enabled: false
   className: ""
