@@ -2,8 +2,8 @@ apiVersion: v2
 appVersion: 2.2.2
 dependencies:
 - name: emissary-ingress
-  repository: https://s3.amazonaws.com/datawire-static-files/charts
   version: 7.3.2
+  repository: file://./charts/emissary-ingress
 description: A Helm chart for Ambassador Edge Stack
 home: https://www.getambassador.io/
 icon: https://www.getambassador.io/images/logo.png
