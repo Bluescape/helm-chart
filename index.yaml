@@ -506,10 +506,10 @@ entries:
     version: 0.2.0
   cdata:
   - apiVersion: v2
-    appVersion: a902a55-release-21.06.1
-    created: "2022-05-17T12:52:13.698444359Z"
+    appVersion: 9dd09eb6-release-22.05.2
+    created: "2022-05-17T12:04:00.751822-04:00"
     description: A Helm chart for CDATA container
-    digest: 82317f62ba980343189e808d21184af45ba5bcb379822701e7fc7507f2d3f260
+    digest: 6ea8849f79c9a55aa00f0bf49c00074b7c63b2ebe265b9f996f0149624a854c1
     name: cdata
     type: application
     urls:
