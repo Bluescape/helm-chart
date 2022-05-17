@@ -504,6 +504,17 @@ entries:
     urls:
     - https://bluescape.github.io/helm-charts/packages/bluescape-monitoring-grafana-0.2.0.tgz
     version: 0.2.0
+  cdata:
+  - apiVersion: v2
+    appVersion: a902a55-release-21.06.1
+    created: "2022-05-13T12:39:03.370521-04:00"
+    description: A Helm chart for CDATA container
+    digest: 6765a38377f78598015bb4af570da07cb7f9cc9e42ef5b691e5c83d966ea5ebd
+    name: cdata
+    type: application
+    urls:
+    - https://raw.githubusercontent.com/Bluescape/helm-charts/dev/NEX-1431-cdata/packages/cdata-0.1.0.tgz
+    version: 0.1.0
   cortex:
   - apiVersion: v2
     appVersion: v1.10.0
