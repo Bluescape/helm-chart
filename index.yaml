@@ -513,7 +513,7 @@ entries:
     name: cdata
     type: application
     urls:
-    - https://bluescape.github.io/helm-charts/packages/cdata-0.1.0.tgz
+    - https://raw.githubusercontent.com/Bluescape/helm-charts/dev/NEX-1431-cdata/packages/cdata-0.1.0.tgz
     version: 0.1.0
   cortex:
   - apiVersion: v2
