@@ -2,9 +2,6 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-# Must be set to drive main admin password
-adminPassword:
-
 image:
   # image source: https://github.com/Bluescape/analytics-init/tree/main/cdata
   repository: bluescape/cdata
@@ -114,6 +111,7 @@ affinity:
                 - spot
 
 persistence:
-  storageClass: #default
+  # must be set
+  storageClass:
   accessMode: ReadWriteOnce
   size: 5Gi

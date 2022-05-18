@@ -1,14 +1,15 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: {{ include "cdata.fullname" . }}
   labels:
     {{- include "cdata.labels" . | nindent 4 }}
 spec:
-  replicas: 1 # supporting only one instance due to licence limitation
+  replicas: 1 # supporting only one instance due to license limitation
   selector:
     matchLabels:
       {{- include "cdata.selectorLabels" . | nindent 6 }}
+  serviceName: {{ include "cdata.fullname" . }}
   template:
     metadata:
       {{- with .Values.podAnnotations }}
@@ -37,20 +38,17 @@ spec:
               protocol: TCP
           volumeMounts:
             - mountPath: /usr/src/app/cdata-sync/db/
-              name: data
+              name: {{ include "cdata.fullname" . }}
               subPath: db
             - mountPath: /usr/src/app/cdata-sync/data/
-              name: data
+              name: {{ include "cdata.fullname" . }}
               subPath: data
             - mountPath: /usr/src/app/cdata-sync/downloads/
-              name: data
+              name: {{ include "cdata.fullname" . }}
               subPath: downloads
             - mountPath: /usr/src/app/cdata-sync/libs/
-              name: data
+              name: {{ include "cdata.fullname" . }}
               subPath: libs
-            - mountPath: /usr/src/app/cdata-sync/syncRealm.properties
-              name: secret
-              subPath: syncRealm.properties
           livenessProbe:
             tcpSocket:
               port: {{ .Values.service.targetPort }}
@@ -81,11 +79,15 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      volumes:
-      - name: data
-        persistentVolumeClaim:
-          claimName: {{ include "cdata.fullname" . }}
-      - name: secret
-        secret:
-          secretName: {{ include "cdata.fullname" . }}
-
+  volumeClaimTemplates:
+  - metadata:
+      name: {{ include "cdata.fullname" . }}
+      labels:
+      {{- include "cdata.labels" . | nindent 8 }}
+    spec:
+      storageClassName: {{  .Values.persistence.storageClass | required "persistence.storageClass must be specified"| quote }}
+      accessModes:
+        - {{ .Values.persistence.accessMode | quote }}
+      resources:
+        requests:
+          storage: {{ .Values.persistence.size | quote }}
