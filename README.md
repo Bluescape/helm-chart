@@ -1,3 +1,5 @@
+# DEPRECATED, please evolve your charts in this repo: <https://github.com/Bluescape/helm>
+
 ## Bluescape Helm Repo
 
 ## Adding charts
